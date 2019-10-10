@@ -29,6 +29,12 @@
 				<a href='../Controller/PROFESOR_Controller.php'>
 					<?php echo 'Gestión Profesores'; ?>
 				</a>
-			</li>						
+			</li>
+
+			<li>
+				<a href='../Controller/PROF_ESPACIO_Controller.php'>
+					<?php echo 'Gestión Profesores/Espacios'; ?>
+				</a>
+			</li>					
 		</ul>
 	</nav>

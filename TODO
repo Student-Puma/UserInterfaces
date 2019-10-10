@@ -5,3 +5,4 @@
 - Strings en texto estático
 - Locale: GALLEGO
 - Fix SHOWALL PROFESOR View
+- Value Len : el mismo para el mismo campo en diferentes vistas
