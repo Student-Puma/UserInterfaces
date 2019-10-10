@@ -13,7 +13,7 @@
 			include '../View/Header.php'; //header necesita los strings
 		?>
 			<h1><?php echo $strings['SHOWCURRENT']; ?></h1>	
-			<form name = 'Form' action='../Controller/USUARIOS_Controller.php' method='post' onsubmit="return comprobar_registro();"">
+			<form name = 'Form' action='../Controller/USUARIOS_Controller.php' method='post' onsubmit="return comprobar_registro();">
 			
 				 	Login : <input type = 'text' name = 'login' id = 'login' placeholder = 'Utiliza tu dni' size = '9' value = '<?php echo $this->tupla['login']; ?>' onblur="esNoVacio('login')  && comprobarDni('login')" readonly><br>
 

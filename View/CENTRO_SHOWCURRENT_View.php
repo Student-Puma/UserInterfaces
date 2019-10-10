@@ -13,7 +13,7 @@
 			include '../View/Header.php'; //header necesita los strings
 		?>
 			<h1><?php echo $strings['SHOWCURRENT']; ?></h1>	
-			<form name = 'Form' action='../Controller/CENTRO_Controller.php' method='post' onsubmit="return comprobar_registro();"">
+			<form name = 'Form' action='../Controller/CENTRO_Controller.php' method='post' onsubmit="return comprobar_registro();">
 			
 				 	Codigo Centro : <input type = 'text' name = 'CODCentro' id = 'CODCentro' placeholder = 'Utiliza tu dni' size = '9' value = '<?php echo $this->tupla['CODCENTRO']; ?>' onblur="esNoVacio('CODCentro')  && comprobarDni('CODCentro')" readonly><br>
 					Codigo Edificio : <input type = 'text' name = 'CODEdificio' id = 'CODEdificio' placeholder = 'letras y numeros' size = '15' value = '<?php echo $this->tupla['CODEDIFICIO']; ?>' onblur="esNoVacio('CODEdificio')  && comprobarLetrasNumeros('CODEdificio',15)" readonly><br>

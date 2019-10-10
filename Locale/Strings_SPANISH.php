@@ -20,6 +20,7 @@ array(
 	'EDIT' => 'EDITAR',
 	'Gestión Usuarios' => 'Gestión Usuarios',
 	'Gestión Centros' => 'Gestión Centros',
+	'Gestión Edificios' => 'Gestión Edificios',
 	'SEARCH' => 'BUSCAR',
 	'DELETE' => 'BORRAR',
 	'SHOWCURRENT' => 'DETALLE',
