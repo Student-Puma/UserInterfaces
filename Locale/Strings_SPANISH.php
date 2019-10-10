@@ -21,6 +21,7 @@ array(
 	'Gestión Usuarios' => 'Gestión Usuarios',
 	'Gestión Centros' => 'Gestión Centros',
 	'Gestión Edificios' => 'Gestión Edificios',
+	'Gestión Espacios' => 'Gestión Espacios',
 	'SEARCH' => 'BUSCAR',
 	'DELETE' => 'BORRAR',
 	'SHOWCURRENT' => 'DETALLE',

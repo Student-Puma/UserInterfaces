@@ -17,6 +17,12 @@
 				<a href='../Controller/EDIFICIO_Controller.php'>
 					<?php echo $strings['Gestión Edificios']; ?>
 				</a>
-			</li>								
+			</li>
+
+			<li>
+				<a href='../Controller/ESPACIO_Controller.php'>
+					<?php echo $strings['Gestión Espacios']; ?>
+				</a>
+			</li>							
 		</ul>
 	</nav>

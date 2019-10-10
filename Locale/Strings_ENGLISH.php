@@ -22,6 +22,7 @@ array(
 	'Gestión Usuarios' => 'User management',
 	'Gestión Centros' => 'Center management',
 	'Gestión Edificios' => 'Building management',
+	'Gestión Espacios' => 'Spaces management',
 	'SEARCH' => 'SEARCH',
 	'DELETE' => 'DELETE',
 	//-------------------- model messages
