@@ -1,5 +1,5 @@
 - Fix EDITAR ESPACIO no muestra ni edita CODEDIFICIO
-- MVC :: PROFESOR, PROF_ESPACIO, PROF_TITULACION, TITULACION
+- MVC :: TITULACION
 - Mejorar MVC USUARIOS
 - Comentar
 - Strings en texto estático
