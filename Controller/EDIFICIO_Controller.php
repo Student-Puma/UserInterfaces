@@ -92,7 +92,7 @@
 					$EDIFICIO = get_data_form();
 					$datos = $EDIFICIO->SEARCH();
 
-					$lista = array('CODEDIFICIO','CODEDIFICIO','NOMBREEDIFICIO','DIRECCIONEDIFICIO','CAMPUSEDIFICIO');
+					$lista = array('CODEDIFICIO','NOMBREEDIFICIO','DIRECCIONEDIFICIO','CAMPUSEDIFICIO');
 
 					new EDIFICIO_SHOWALL($lista, $datos, '../index.php');
 				}

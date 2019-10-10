@@ -23,6 +23,12 @@
 				<a href='../Controller/ESPACIO_Controller.php'>
 					<?php echo $strings['Gestión Espacios']; ?>
 				</a>
-			</li>							
+			</li>
+
+			<li>
+				<a href='../Controller/PROFESOR_Controller.php'>
+					<?php echo 'Gestión Profesores'; ?>
+				</a>
+			</li>						
 		</ul>
 	</nav>
