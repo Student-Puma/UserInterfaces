@@ -50,7 +50,6 @@
 		'CODTitulacion'			=> 'Código Titulación',
 		'CODEdificio'			=> 'Código Edificio',
 		'CODEspacio'			=> 'Código Espacio',
-		'Type'					=> 'Tipo',
 		'Responsable'			=> 'Responsable',
 		'Address'				=> 'Dirección',
 		'Campus'				=> 'Campus',
@@ -67,12 +66,9 @@
 		'Phone'					=> 'Teléfono',
 		// Mensajes de Error
 		'ErrMySQL'				=> 'Fallo al conectar a MySQL',
-
-		'idioma' => 'Idioma',
-		'Gestión Asignatura IU' => 'Gestión Asignatura IU',
-		'Insertar usuario' => 'Insertar usuario',
+		// Mensajes de Error Predeterminados
 		'Error de gestor de base de datos' => 'Error de gestor de base de datos',
-		'Inserción fallida: el elemento ya existe' =>'Inserción fallida: el elemento ya existe',
+		'Inserción fallida: el elemento ya existe' => 'Inserción fallida: el elemento ya existe',
 		'Inserción realizada con éxito' => 'Inserción realizada con éxito',
 		'Borrado realizado con éxito' => 'Borrado realizado con éxito',
 		'Actualización realizada con éxito' => 'Actualización realizada con éxito',
