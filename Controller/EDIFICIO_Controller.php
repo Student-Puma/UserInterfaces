@@ -148,7 +148,7 @@
 			if (!$_POST)
 			{
 				// Sino, usamos los datos recibidos
-				$EDIFICIO = new EDIFICIO_Model('','','','','');
+				$EDIFICIO = new EDIFICIO_Model('','','','');
 			}
 			else
 			{
