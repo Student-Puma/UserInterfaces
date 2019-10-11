@@ -1,50 +1,75 @@
 
 <?php
+	/**
+	 * Autor: Diego Enrique Fontán Lorenzo
+	 * DNI: 77482941N
+	 */
 
-//	Clase : EDIFICIO_Model
-//	Creado el : 09-10-2017
-//	Creado por: Diego E. Fontan
-//-------------------------------------------------------
-
-class EDIFICIO_Model {
-	var $CODEdificio;
-	var $nombre;
-	var $direccion;
-	var $campus;
-
-	//	Constructor de la clase
-	//
-
-	function __construct($CODEdificio,$nombre,$direccion,$campus){
-		$this->CODEdificio = $CODEdificio;
-		$this->nombre = $nombre;
-		$this->direccion = $direccion;
-		$this->campus = $campus;
-		$this->erroresdatos = array(); 
-
-		//$this->Comprobar_atributos();
-
-		include_once '../Model/Access_DB.php';
-		$this->mysqli = ConnectDB();
-	}
-
-	//Metodo ADD
-	//Inserta en la tabla  de la bd  los valores
-	// de los atributos del objeto. Comprueba si la clave/s esta vacia y si 
-	//existe ya en la tabla
-	function ADD()
+	/**
+	 * Modelo de la entidad EDIFICIO
+	 * 
+	 * @var CODEdificio Código del edificio (PK)
+	 * @var nombre Nombre del edificio
+	 * @var direccion Dirección del edificio
+	 * @var campus Campus en el cual está situado el edificio
+	 * 
+	 * @var mysqli Conexión con la BD
+	 */
+	class EDIFICIO_Model
 	{
+		// Variables de la clase
+		var $CODEdificio;
+		var $nombre;
+		var $direccion;
+		var $campus;
+
+		/**
+		 * Constructor de la clase
+		 */
+		function __construct($CODEdificio,$nombre,$direccion,$campus){
+			$this->CODEdificio = $CODEdificio;
+			$this->nombre = $nombre;
+			$this->direccion = $direccion;
+			$this->campus = $campus;
+
+			$this->erroresdatos = array(); // FIX: ? Unused variable
+
+			// Añadimos el modelo de acceso a la base de datos
+			include_once '../Model/Access_DB.php';
+			// Nos conectamos con la base de datos
+			$this->mysqli = ConnectDB();
+		}					
+
+		/**
+		 * Destructor de la clase
+		 */
+		function __destruct()
+		{ }
+
+		/**
+		 * Inserta valores en la BD
+		 * Comprueba si la clave está vacía o si ya existe en la tabla
+		 * 
+		 * @return msg Mensaje correspondiente al resultado
+		 */
+		function ADD()
+		{
+			// Consulta SQL
 			$sql = "select * from EDIFICIO where CODEDIFICIO = '".$this->CODEdificio."'";
 
+			// Ejecuta la consulta
 			if (!$result = $this->mysqli->query($sql))
 			{
 				return 'Error de gestor de base de datos';
 			}
 
-			if ($result->num_rows == 1){  // existe el usuario
-					return 'Inserción fallida: el elemento ya existe';
-				}
+			// Comprueba si ya existe la clave
+			if ($result->num_rows == 1)
+			{
+				return 'Inserción fallida: el elemento ya existe';
+			}
 
+			// Consulta SQL
 			$sql = "INSERT INTO EDIFICIO (
 				CODEDIFICIO,
 				NOMBREEDIFICIO,
@@ -55,110 +80,131 @@ class EDIFICIO_Model {
 						'".$this->nombre."',
 						'".$this->direccion."',
 						'".$this->campus."'
-						)";
+					)";
 
-			if (!$this->mysqli->query($sql)) {
-				return 'Error de gestor de base de datos';
-			}
-			else{
-				return 'Inserción realizada con éxito'; //operacion de insertado correcta
-			}		
-	}
-		
-
-	//funcion de destrucción del objeto: se ejecuta automaticamente
-	//al finalizar el script
-	function __destruct()
-	{
-
-	}
-
-
-	//funcion SEARCH: hace una búsqueda en la tabla con
-	//los datos proporcionados. Si van vacios devuelve todos
-	function SEARCH()
-	{
-
-		$sql = "SELECT *
-				FROM EDIFICIO
-				WHERE (
-					CODEDIFICIO LIKE '%".$this->CODEdificio."%' AND
-					NOMBREEDIFICIO LIKE '%".$this->nombre."%' AND
-					DIRECCIONEDIFICIO LIKE '%".$this->direccion."%' AND
-					CAMPUSEDIFICIO LIKE '%".$this->campus."%'
-				)
-		";
-		if (!$resultado = $this->mysqli->query($sql))
+			// Ejecutamos la sentencia y devolvemos
+			// el mensaje correspondiente
+			if (!$this->mysqli->query($sql))
 			{
 				return 'Error de gestor de base de datos';
 			}
-		return $resultado;
-		
-	}
-
-	//funcion DELETE : comprueba que la tupla a borrar existe y una vez
-	// verificado la borra
-	function DELETE()
-	{
-	$sql = "DELETE FROM 
-				EDIFICIO
-			WHERE(
-				CODEDIFICIO = '$this->CODEdificio'
-			)
-			";
-
-		if ($this->mysqli->query($sql))
-		{
-			$resultado = 'Borrado realizado con éxito';
+			else
+			{
+				return 'Inserción realizada con éxito';
+			}
 		}
-		else
-		{
-			$resultado = 'Error de gestor de base de datos';
-		}
-		return $resultado;
-	}
 
-	// funcion RellenaDatos: recupera todos los atributos de una tupla a partir de su clave
-	function RellenaDatos()
-	{
-		$sql = "SELECT *
-				FROM EDIFICIO
-				WHERE (
-					(CODEDIFICIO = '$this->CODEdificio') 
+		/**
+		 * Busca valores en la BD
+		 * 
+		 * @return resultado Valores resultantes || Mensaje de error
+		 */
+		function SEARCH()
+		{
+			// Sentencia SQL
+			$sql = "SELECT *
+					FROM EDIFICIO
+					WHERE (
+						CODEDIFICIO LIKE '%".$this->CODEdificio."%' AND
+						NOMBREEDIFICIO LIKE '%".$this->nombre."%' AND
+						DIRECCIONEDIFICIO LIKE '%".$this->direccion."%' AND
+						CAMPUSEDIFICIO LIKE '%".$this->campus."%'
+					)";
+
+			// Ejecutamos la sentencia y devolvemos
+			// el valor o un mensaje de error
+			if (!$resultado = $this->mysqli->query($sql))
+			{
+				return 'Error de gestor de base de datos';
+			}
+			else
+			{
+				return $resultado;
+			}
+		}
+
+		/**
+		 * Borra valores de la BD
+		 * 
+		 * @return resultado Mensaje correspondiente al resultado
+		 */
+		function DELETE()
+		{
+			// Sentencia SQL
+			$sql = "DELETE FROM 
+					EDIFICIO
+				WHERE(
+					CODEDIFICIO = '$this->CODEdificio'
 				)";
 
-		if (!$resultado = $this->mysqli->query($sql))
-		{
-				return 'Error de gestor de base de datos';
-		}else
-		{
-			$tupla = $resultado->fetch_array();
+			// Ejecutamos la sentencia y devolvemos el mensaje correspondiente
+			if ($this->mysqli->query($sql))
+			{
+				$resultado = 'Borrado realizado con éxito';
+			}
+			else
+			{
+				$resultado = 'Error de gestor de base de datos';
+			}
+			return $resultado;
 		}
-		return $tupla;
-	}
 
-	// funcion Edit: realizar el update de una tupla despues de comprobar que existe
-	function EDIT()
-	{
-		$sql = "UPDATE EDIFICIO
-				SET
-					NOMBREEDIFICIO = '$this->nombre',
-					DIRECCIONEDIFICIO = '$this->direccion',
-					CAMPUSEDIFICIO = '$this->campus'
-				WHERE (
-					CODEDIFICIO = '$this->CODEdificio'
-				)
-				";
-		if ($this->mysqli->query($sql))
+		/**
+		 * Recupera todos los atributos de una tupla a partir de su clave
+		 * 
+		 * @return tupla Valores resultantes || Mensaje de error
+		 */
+		function RellenaDatos()
 		{
-			$resultado = 'Actualización realizada con éxito';
-		}
-		else
-		{
-			$resultado = 'Error de gestor de base de datos';
-		}
-		return $resultado;
-	}
-}
+			// Sentencia SQL
+			$sql = "SELECT *
+					FROM EDIFICIO
+					WHERE (
+						(CODEDIFICIO = '$this->CODEdificio') 
+					)";
 
+			// Ejecutamos la sentencia y devolvemos
+			// el valor o un mensaje de error
+			if (!$resultado = $this->mysqli->query($sql))
+			{
+				$tupla = 'Error de gestor de base de datos';
+			}
+			else
+			{
+				$tupla = $resultado->fetch_array();
+			}
+
+			return $tupla;
+		}
+
+		/**
+		 * Realizar el UPDATE de una tupla despues de comprobar que existe
+		 * 
+		 * @return resultado Mensaje correspondiente al resultado
+		 */
+		function EDIT()
+		{
+			// Sentencia SQL
+			$sql = "UPDATE EDIFICIO
+					SET
+						NOMBREEDIFICIO = '$this->nombre',
+						DIRECCIONEDIFICIO = '$this->direccion',
+						CAMPUSEDIFICIO = '$this->campus'
+					WHERE (
+						CODEDIFICIO = '$this->CODEdificio'
+					)";
+				
+			// Ejecutamos la sentencia y devolvemos
+			// el mensaje correspondiente
+			if ($this->mysqli->query($sql))
+			{
+				$resultado = 'Actualización realizada con éxito';
+			}
+			else
+			{
+				$resultado = 'Error de gestor de base de datos';
+			}
+			return $resultado;
+		}
+	}
 ?> 

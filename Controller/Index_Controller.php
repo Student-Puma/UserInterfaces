@@ -1,16 +1,21 @@
 <?php
-//session
-session_start();
-//incluir funcion autenticacion
-include '../Functions/Authentication.php';
-//si no esta autenticado
-if (!IsAuthenticated()){
-	header('Location: ../index.php');
-}
-//esta autenticado
-else{
-	include '../View/users_index_View.php';
-	new Index();
-}
+	/**
+	 * Autor: Diego Enrique Fontán Lorenzo
+	 * DNI: 77482941N
+	 */
 
+	// Iniciamos la sesión
+	session_start();
+
+	// Comprobamos que el usuario esté autenticado
+	if (!IsAuthenticated())
+	{
+		header('Location: ../index.php');
+	}
+	else
+	{
+		// Mostramos la vista correspondiente
+		include '../View/users_index_View.php';
+		new Index();
+	}
 ?>

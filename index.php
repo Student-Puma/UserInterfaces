@@ -1,19 +1,24 @@
 <?php
-//entrada a la aplicacion
+	/**
+	 * Autor: Diego Enrique Fontán Lorenzo
+	 * DNI: 77482941N
+	 */
 
-//se va usar la session de la conexion
-session_start();
+	// ENTRYPOINT DE LA APLICACIÓN
 
-//funcion de autenticacion
-include './Functions/Authentication.php';
+	// Iniciamos la sesión
+	session_start();
 
-//si no ha pasado por el login de forma correcta
-if (!IsAuthenticated()){
-	header('Location:./Controller/Login_Controller.php');
-}
-//si ha pasado por el login de forma correcta 
-else{
-	header('Location:./Controller/Index_Controller.php');
-}
-
+	// Comprobamos que el usuario esté autenticado
+	// Si está logueado, mostramos el Index
+	// Si no está logueado, mostramos el Login
+	include './Functions/Authentication.php';
+	if (!IsAuthenticated())
+	{
+		header('Location:./Controller/Login_Controller.php');
+	}
+	else
+	{
+		header('Location:./Controller/Index_Controller.php');
+	}
 ?>
