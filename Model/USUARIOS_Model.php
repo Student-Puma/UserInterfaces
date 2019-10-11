@@ -12,6 +12,11 @@
 	 * @var password Contraseña del usuario
 	 * @var nombre Nombre del usuario
 	 * @var email Email del usuario
+	 * @var dni DNI del usuario
+	 * @var telefono Teléfono del usuario
+	 * @var fechanac Fecha de nacimiento del usuario
+	 * @var fotopersonal Foto personal
+	 * @var sexo Sexo del usuario
 	 * 
 	 * @var mysqli Conexión con la BD
 	 */
@@ -23,17 +28,26 @@
 		var $nombre;
 		var $apellidos;
 		var $email;
-		var $mysqli;
+		var $dni;
+		var $telefono;
+		var $fechanac;
+		var $fotopersonal;
+		var $sexo;
 
 		/**
 		 * Constructor de la clase
 		 */
-		function __construct($login,$password,$nombre,$apellidos,$email){
+		function __construct($login,$password,$nombre,$apellidos,$email,$dni,$telefono,$fechanac,$fotopersonal,$sexo){
 			$this->login = $login;
 			$this->password = $password;
 			$this->nombre = $nombre;
 			$this->apellidos = $apellidos;
 			$this->email = $email;
+			$this->dni = $dni;
+			$this->telefono = $telefono;
+			$this->fechanac = $fechanac;
+			$this->fotopersonal = $fotopersonal;
+			$this->sexo = $sexo;
 
 			$this->erroresdatos = array();
 
@@ -146,13 +160,23 @@
 						password,
 						nombre,
 						apellidos,
-						email) 
+						email,
+						DNI,
+						telefono,
+						FechaNacimiento,
+						fotopersonal,
+						sexo) 
 					VALUES (
 						'".$this->login."',
 						'".$this->password."',
 						'".$this->nombre."',
 						'".$this->apellidos."',
-						'".$this->email."'
+						'".$this->email."',
+						'".$this->dni."',
+						'".$this->telefono."',
+						'".$this->fechanac."',
+						'".$this->fotopersonal."',
+						'".$this->sexo."'
 					)";
 
 			// Ejecutamos la sentencia y devolvemos
@@ -181,7 +205,12 @@
 						password LIKE '%".$this->password."%' AND
 						nombre LIKE '%".$this->nombre."%' AND
 						apellidos LIKE '%".$this->apellidos."%' AND
-						email LIKE '%".$this->email."%'
+						email LIKE '%".$this->email."%' AND
+						DNI LIKE '%".$this->dni."%' AND
+						telefono LIKE '%".$this->telefono."%' AND
+						FechaNacimiento LIKE '%".$this->fechanac."%' AND
+						fotopersonal LIKE '%".$this->fotopersonal."%' AND
+						sexo LIKE '%".$this->sexo."%'
 					)";
 
 			// Ejecutamos la sentencia y devolvemos
@@ -263,7 +292,12 @@
 						password = '$this->password',
 						nombre = '$this->nombre',
 						apellidos = '$this->apellidos',
-						email = '$this->email'
+						email = '$this->email',
+						DNI = '$this->dni',
+						telefono = '$this->telefono',
+						FechaNacimiento = '$this->fechanac',
+						fotopersonal = '$this->fotopersonal',
+						sexo = '$this->sexo'
 					WHERE (
 						login = '$this->login'
 					)";
@@ -354,13 +388,23 @@
 						password,
 						nombre,
 						apellidos,
-						email) 
+						email,
+						DNI,
+						telefono,
+						FechaNacimiento,
+						fotopersonal,
+						sexo) 
 					VALUES (
 						'".$this->login."',
 						'".$this->password."',
 						'".$this->nombre."',
 						'".$this->apellidos."',
-						'".$this->email."'
+						'".$this->email."',
+						'".$this->dni."',
+						'".$this->telefono."',
+						'".$this->fechanac."',
+						'".$this->fotopersonal."',
+						'".$this->sexo."'
 					)";
 			
 			// Ejecutamos la sentencia y devolvemos

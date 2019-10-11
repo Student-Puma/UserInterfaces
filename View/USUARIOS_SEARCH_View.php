@@ -20,6 +20,12 @@
 					<?php echo $strings['Surname']; ?> : <input type='text' name='apellidos' id='apellidos' size='50' value='' ><br>
 					<?php echo $strings['Surname']; ?> : <input type='text' name='email' id='email' size='40' value='' ><br>
 
+					<?php echo $strings['DNI']; ?> : <input type='text' name='dni' id='dni' size='9' value=''><br>
+					<?php echo $strings['Phone']; ?> : <input type='text' name='telefono' id='telefono' size='15' value='' ><br>
+					<?php echo $strings['Birth']; ?> : <input type='text' name='fechanac' id='fechanac' size='30' value=''><br>
+					<?php echo $strings['Picture']; ?> : <input type='text' name='fotopersonal' id='fotopersonal' size='50' value=''><br>
+					<?php echo $strings['Genre']; ?> : <input type='text' name='sexo' id='sexo' size='40' value=''><br>
+
 					<input type='submit' name='action' value='SEARCH'>
 
 			</form>

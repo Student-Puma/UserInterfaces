@@ -38,6 +38,12 @@
 					<?php echo $strings['Surname']; ?> : <input type='text' name='apellidos' id='apellidos' size='50' value='<?php echo $this->tupla['apellidos']; ?>' ><br>
 					<?php echo $strings['Surname']; ?> : <input type='text' name='email' id='email' size='40' value='<?php echo $this->tupla['email']; ?>' ><br>
 
+					<?php echo $strings['DNI']; ?> : <input type='text' name='dni' id='dni' size='9' value='<?php echo $this->tupla['DNI']; ?>'><br>
+					<?php echo $strings['Phone']; ?> : <input type='text' name='telefono' id='telefono' size='15' value='<?php echo $this->tupla['telefono']; ?>'><br>
+					<?php echo $strings['Birth']; ?> : <input type='text' name='fechanac' id='fechanac' size='30' value='<?php echo $this->tupla['FechaNac']; ?>'><br>
+					<?php echo $strings['Picture']; ?> : <input type='text' name='fotopersonal' id='fotopersonal' size='50' value='<?php echo $this->tupla['fotopersonal']; ?>'><br>
+					<?php echo $strings['Genre']; ?> : <input type='text' name='sexo' id='sexo' size='40' value='<?php echo $this->tupla['sexo']; ?>'><br>
+
 					<input type='submit' name='action' value='EDIT'>
 			</form>
 				

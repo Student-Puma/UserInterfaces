@@ -61,6 +61,10 @@
 		'Year'					=> 'Año Académico',
 		'Area'					=> 'Area',
 		'Department'			=> 'Departamento',
+		'Picture'				=> 'Foto personal',
+		'Birth'					=> 'Fecha nacimiento',
+		'Genre'					=> 'Sexo',
+		'Phone'					=> 'Teléfono',
 		// Mensajes de Error
 		'ErrMySQL'				=> 'Fallo al conectar a MySQL',
 

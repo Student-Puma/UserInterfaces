@@ -26,7 +26,8 @@
 
 		// Creamos una nueva instancia de la entidad
 		$usuario = new USUARIOS_Model($_REQUEST['login'],$_REQUEST['password'],$_REQUEST['nombre'],
-			$_REQUEST['apellidos'],$_REQUEST['email']);
+			$_REQUEST['apellidos'],$_REQUEST['email'],$_REQUEST['dni'],$_REQUEST['telefono'],
+			$_REQUEST['fechanac'],$_REQUEST['fotopersonal'],$_REQUEST['sexo']);
 		// Intentamos registrar dicha entidad en la BD
 		$respuesta = $usuario->Register();
 

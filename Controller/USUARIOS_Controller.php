@@ -40,10 +40,15 @@
 		$nombre = $_POST['nombre'];
 		$apellidos = $_POST['apellidos'];
 		$email = $_POST['email'];
+		$dni = $_POST['dni'];
+		$telefono = $_POST['telefono'];
+		$fechanac = $_POST['fechanac'];
+		$fotopersonal = $_POST['fotopersonal'];
+		$sexo = $_POST['sexo'];
 		$action = $_POST['action'];
 
 		// Creación de la instancia USUARIOS
-		$usuarios = new USUARIOS_Model($login,$password,$nombre,$apellidos,$email);
+		$usuarios = new USUARIOS_Model($login,$password,$nombre,$apellidos,$email,$dni,$telefono,$fechanac,$fotopersonal,$sexo);
 		return $usuarios;
 	}
 
@@ -79,7 +84,7 @@
 			if (!$_POST)
 			{
 				// Se muestra el formulario con los valores actuales
-				$USUARIOS = new USUARIOS_Model($_REQUEST['login'],'','','','');
+				$USUARIOS = new USUARIOS_Model($_REQUEST['login'],'','','','','','','','','');
 				$valores = $USUARIOS->RellenaDatos();
 				new USUARIOS_DELETE($valores);
 			}
@@ -98,7 +103,7 @@
 			if (!$_POST)
 			{
 				// Se muestra el formulario con los valores actuales
-				$USUARIOS = new USUARIOS_Model($_REQUEST['login'],'','','','');
+				$USUARIOS = new USUARIOS_Model($_REQUEST['login'],'','','','','','','','','');
 				$valores = $USUARIOS->RellenaDatos();
 				// Si no hay error, mostramos el formulario con los datos
 				if (is_array($valores))
@@ -133,7 +138,7 @@
 				$USUARIOS = get_data_form();
 				$datos = $USUARIOS->SEARCH();
 				// Claves de la tabla
-				$lista = array('login','password','email', 'nombre', 'apellidos');
+				$lista = array('login','password', 'DNI', 'nombre','apellidos', 'telefono', 'email', 'FechaNacimiento', 'fotopersonal', 'sexo');
 				// Mostramos la vista correspondiente
 				new USUARIOS_SHOWALL($lista, $datos, '../index.php');
 			}
@@ -141,7 +146,7 @@
 		// Acción: Detallar
 		case 'SHOWCURRENT':
 			// Creamos una instancia de la entidad con la clave primaria del registro que deseemos ver
-			$USUARIOS = new USUARIOS_Model($_REQUEST['login'],'','','','');
+			$USUARIOS = new USUARIOS_Model($_REQUEST['login'],'','','','','','','','','');
 			$valores = $USUARIOS->RellenaDatos();
 			// Mostramos la vista correspondiente
 			new USUARIOS_SHOWCURRENT($valores);
@@ -151,7 +156,7 @@
 			// Si no hay datos, creamos una nueva instancia de la entidad
 			if (!$_POST)
 			{
-				$USUARIOS = new USUARIOS_Model('','','','','');
+				$USUARIOS = new USUARIOS_Model('','','','','','','','','','');
 			}
 			else
 			{
@@ -160,7 +165,7 @@
 			}
 			// Obtenemos la BD
 			$datos = $USUARIOS->SEARCH();
-			$lista = array('login','password','nombre','apellidos','email');
+			$lista = array('login','password', 'DNI', 'nombre','apellidos', 'telefono', 'email', 'FechaNacimiento', 'fotopersonal', 'sexo');
 			new USUARIOS_SHOWALL($lista, $datos);
 	}
 ?>
