@@ -5,11 +5,41 @@
 	 */
 
 	$strings = array(
-		// Mensajes de
-		'Portal de Gestión' => 'Portal de Gestión',
+		// Header
+		'Title'					=> 'Portal de Gestión',
+		'User'					=> 'Usuario',
+		// Footer
+		'Back'					=> 'Volver',
+		'Today'					=> 'Hoy es',
+		// Idiomas
+		'Language'				=> 'Idioma',
+		'SPANISH'				=> 'Español',
+		'ENGLISH'				=> 'Inglés',
+		'GALLAECIAN'			=> 'Gallego',
+		// Index
+		'Welcome'				=> 'BIENVENIDO A LA ARQUITECTURA BASE DE IU',
+		// Login
+		'Login'					=> 'Login',
+		'Password'				=> 'Password',
+		// Registro
+		'Register'				=> 'Registro',
+		'Email'					=> 'Email',
+		'Name'					=> 'Nombre',
+		'Surname'				=> 'Apellidos',
+		// Mensajes de Gestión
+		'GUsuarios'				=> 'Gestión de Usuarios',
+		'GCentros'				=> 'Gestión de Centros',
+		'GEdificios'			=> 'Gestión de Edificios',
+		'GEspacios'				=> 'Gestión de Espacios',
+		'GProfesores'			=> 'Gestión de Profesores',
+		'GProfEspacios'			=> 'Gestión de Profesores/Espacios',
+		'GProfTitulaciones'		=> 'Gestión de Profesores/Titulaciones',
+		'GTitulaciones'			=> 'Gestión de Titulaciones',
+		// Mensajes de Información
+		'UserNotAuth'			=> 'Usuario no autenticado',
+	
 		'Usuario no autenticado' => 'Usuario no autenticado',
 		'Ejemplo arquitectura IU' => 'Ejemplo arquitectura IU',
-		'Login' => 'Login',
 		'idioma' => 'Idioma',
 		'Usuario' => 'Usuario',
 		'Ejemplo' => 'Ejemplo',

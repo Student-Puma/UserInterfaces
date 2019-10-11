@@ -1,9 +1,9 @@
 </article>
-</div>
-<footer>
-	Hoy es <?php echo date("d-M-Y", mktime()); ?>
-</footer>
-</body>
+	</div>
+		<footer>
+			<?php echo $strings['Today']; ?> <?php echo date("d-M-Y", mktime()); ?>
+		</footer>
+	</body>
 </html>
 
 		

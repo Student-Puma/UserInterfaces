@@ -39,18 +39,19 @@
 	<p style="text-align:center">
 		<h1>
 <?php
-			echo $strings['Portal de Gestión'];
+			echo $strings['Title'];
 ?>
 		</h1>
 	</p>
 	
 	<div width: 50%; align="left">
 		<form name='idiomaform' action="../Functions/CambioIdioma.php" method="post">
-			<?php echo $strings['idioma']; ?>
+			<?php echo $strings['Language']; ?>
 			<select name="idioma" onChange='this.form.submit()'>
 		        <option value="SPANISH"> </option>
-				<option value="ENGLISH"><?php echo $strings['INGLES']; ?></option>
-		        <option value="SPANISH"><?php echo $strings['ESPAÑOL']; ?></option>
+				<option value="ENGLISH"><?php echo $strings['ENGLISH']; ?></option>
+		        <option value="SPANISH"><?php echo $strings['SPANISH']; ?></option>
+				<option value="GALLAECIAN"><?php echo $strings['GALLAECIAN']; ?></option>
 			</select>
 		</form>
 	</div>
@@ -60,7 +61,7 @@
 ?>
 
 <?php
-		echo $strings['Usuario'] . ' : ' . $_SESSION['login'] . '<br>';
+		echo $strings['User'] . ' : ' . $_SESSION['login'] . '<br>';
 ?>			
 	<div width: 50%; align="right">
 		<a href='../Functions/Desconectar.php'>
@@ -72,7 +73,7 @@
 	
 	}
 	else{
-		echo $strings['Usuario no autenticado']; 
+		echo $strings['UserNotAuth']; 
 		/*echo 	'<form name=\'registerForm\' action=\'../Controller/Register_Controller.php\' method=\'post\'>
 					<input type=\'submit\' name=\'action\' value=\'REGISTER\'>
 				</form>';*/

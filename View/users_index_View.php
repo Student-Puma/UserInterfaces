@@ -1,22 +1,36 @@
 <?php
+	/**
+	 * Autor: Diego Enrique Fontán Lorenzo
+	 * DNI: 77482941N
+	 */
 
-class Index {
+	/**
+	 * Vista del Index
+	 */
+	class Index
+	{
+		/**
+		 * Constructor de la clase
+		 */
+		function __construct(){
+			$this->render();
+		}
 
-	function __construct(){
-		$this->render();
-	}
-
-	function render(){
-	
-		include '../Locale/Strings_SPANISH.php';
-		include '../View/Header.php';
+		/**
+		 * Renderiza la vista
+		 */
+		function render()
+		{
+			// Añadimos el idioma
+			include '../Locale/Strings_SPANISH.php';
+			// Añadimos la vista Header
+			include '../View/Header.php';
 ?>
-		<H1> BIENVENIDO A LA ARQUITECTURA BASE DE IU' </H1>
-		<BR>
+			<h1> <?php echo $strings['Welcome']; ?> </h1>
+			<br>
 <?php
-		include '../View/Footer.php';
+			// Añadimos la vista Footer
+			include '../View/Footer.php';
+		}
 	}
-
-}
-
 ?>
