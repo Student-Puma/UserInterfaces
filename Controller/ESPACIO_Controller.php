@@ -36,14 +36,14 @@
 	{
 		// Valores POST
 		$CODEspacio = $_POST['CODEspacio'];
-		$CODEdifcio = $_POST['CODEdifcio'];
+		$CODEdificio = $_POST['CODEdificio'];
 		$CODCentro = $_POST['CODCentro'];
 		$tipo = $_POST['tipo'];
 		$superficie = $_POST['superficie'];
 		$numinventario = $_POST['numinventario'];
 		
 		// Creación de la instancia ESPACIO
-		$espacio = new ESPACIO_Model($CODEspacio,$CODEdifcio,$CODCentro,$tipo,$superficie,$numinventario);
+		$espacio = new ESPACIO_Model($CODEspacio,$CODEdificio,$CODCentro,$tipo,$superficie,$numinventario);
 		return $espacio;
 	}
 

@@ -77,28 +77,34 @@ class PROFESOR_Model {
 
 	}
 
-
-	//funcion SEARCH: hace una búsqueda en la tabla con
-	//los datos proporcionados. Si van vacios devuelve todos
+	/**
+	 * Busca valores en la BD
+	 * 
+	 * @return resultado Valores resultantes || Mensaje de error
+	 */
 	function SEARCH()
 	{
-
+		// Sentencia SQL
 		$sql = "SELECT *
-				FROM EDIFICIO
+				FROM PROFESOR
 				WHERE (
 					DNI LIKE '%".$this->dni."%' AND
 					NOMBREPROFESOR LIKE '%".$this->nombre."%' AND
 					APELLIDOSPROFESOR LIKE '%".$this->apellidos."%' AND
 					AREAPROFESOR LIKE '%".$this->area."%' AND
-					DEPARTAMENTOPROFESIR LIKE '%".$this->departamento."%' AND
-				)
-		";
+					DEPARTAMENTOPROFESOR LIKE '%".$this->departamento."%'
+				)";
+
+		// Ejecutamos la sentencia y devolvemos
+		// el valor o un mensaje de error
 		if (!$resultado = $this->mysqli->query($sql))
-			{
-				return 'Error de gestor de base de datos';
-			}
-		return $resultado;
-		
+		{
+			return 'Error de gestor de base de datos';
+		}
+		else
+		{
+			return $resultado;
+		}
 	}
 
 	//funcion DELETE : comprueba que la tupla a borrar existe y una vez

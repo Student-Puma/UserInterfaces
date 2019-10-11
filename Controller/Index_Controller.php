@@ -8,6 +8,7 @@
 	session_start();
 
 	// Comprobamos que el usuario esté autenticado
+	include '../Functions/Authentication.php';
 	if (!IsAuthenticated())
 	{
 		header('Location: ../index.php');

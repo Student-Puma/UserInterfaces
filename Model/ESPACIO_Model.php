@@ -9,7 +9,7 @@
 	 * 
 	 * @var CODEspacio Código del espacio (PK)
 	 * @var CODEdificio Código del edificio (FK)
-	 * @var CODEdificio Código del edificio (FK)
+	 * @var CODCentro Código del centro (FK)
 	 * @var tipo Tipo de espacio
 	 * @var superficie Superficie asignada al espacio
 	 * @var numinventario Número de inventario del espacio
