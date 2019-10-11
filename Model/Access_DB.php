@@ -2,6 +2,7 @@
 	/**
 	 * Autor: Diego Enrique Fontán Lorenzo
 	 * DNI: 77482941N
+	 * Fecha: 11/01/2019
 	 */
 
 	// Incluímos las constantes de configuración de la BD
@@ -23,9 +24,9 @@
 		{
 			// Añadimos la vista de los mensajes
 			include '../View/MESSAGE_View.php';
+
 			// Mostramos el mensaje correspondiente
-			new MESSAGE("Fallo al conectar a MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error, './index.php');
-			
+			new MESSAGE('ErrMySQL', './index.php');
 			return false;
 		}
 		else

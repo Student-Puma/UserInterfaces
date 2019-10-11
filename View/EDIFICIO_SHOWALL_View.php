@@ -45,19 +45,19 @@
 					<a href='
 						../Controller/EDIFICIO_Controller.php?action=EDIT&CODEdificio=
 							<?php echo $fila['CODEDIFICIO']; ?>
-							'> EDITAR </a>
+							'><?php echo $strings['EDIT']; ?></a>
 				</td>
 				<td>
 					<a href='
 						../Controller/EDIFICIO_Controller.php?action=DELETE&CODEdificio=
 							<?php echo $fila['CODEDIFICIO']; ?>
-							'> BORRAR </a>
+							'><?php echo $strings['DELETE']; ?> </a>
 				</td>
 				<td>
 					<a href='
 						../Controller/EDIFICIO_Controller.php?action=SHOWCURRENT&CODEdificio=
 							<?php echo $fila['CODEDIFICIO']; ?>
-							'> DETALLE </a>
+							'><?php echo $strings['SHOWCURRENT']; ?> </a>
 				</td>
 			</tr>
 

@@ -45,19 +45,19 @@
 					<a href='
 						../Controller/ESPACIO_Controller.php?action=EDIT&CODEspacio=
 							<?php echo $fila['CODESPACIO']; ?>
-							'> EDITAR </a>
+							'><?php echo $strings['EDIT']; ?></a>
 				</td>
 				<td>
 					<a href='
 						../Controller/ESPACIO_Controller.php?action=DELETE&CODEspacio=
 							<?php echo $fila['CODESPACIO']; ?>
-							'> BORRAR </a>
+							'><?php echo $strings['DELETE']; ?> </a>
 				</td>
 				<td>
 					<a href='
 						../Controller/ESPACIO_Controller.php?action=SHOWCURRENT&CODEspacio=
 							<?php echo $fila['CODESPACIO']; ?>
-							'> DETALLE </a>
+							'><?php echo $strings['SHOWCURRENT']; ?> </a>
 				</td>
 			</tr>
 

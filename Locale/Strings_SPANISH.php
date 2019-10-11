@@ -2,12 +2,15 @@
 	/**
 	 * Autor: Diego Enrique Fontán Lorenzo
 	 * DNI: 77482941N
+	 * Fecha: 11/01/2019
 	 */
 
 	$strings = array(
 		// Header
+		'AppName'				=> 'Ejemplo arquitectura IU',
 		'Title'					=> 'Portal de Gestión',
 		'User'					=> 'Usuario',
+		'UserNotAuth'			=> 'Usuario no autenticado',
 		// Footer
 		'Back'					=> 'Volver',
 		'Today'					=> 'Hoy es',
@@ -22,7 +25,7 @@
 		'Login'					=> 'Login',
 		'Password'				=> 'Password',
 		// Registro
-		'Register'				=> 'Registro',
+		'Register'				=> 'Registrarse',
 		'Email'					=> 'Email',
 		'Name'					=> 'Nombre',
 		'Surname'				=> 'Apellidos',
@@ -35,31 +38,35 @@
 		'GProfEspacios'			=> 'Gestión de Profesores/Espacios',
 		'GProfTitulaciones'		=> 'Gestión de Profesores/Titulaciones',
 		'GTitulaciones'			=> 'Gestión de Titulaciones',
-		// Mensajes de Información
-		'UserNotAuth'			=> 'Usuario no autenticado',
-	
-		'Usuario no autenticado' => 'Usuario no autenticado',
-		'Ejemplo arquitectura IU' => 'Ejemplo arquitectura IU',
+		// Botones de Acción
+		'ADD'					=> 'Añadir',
+		'SEARCH'				=> 'Buscar',
+		'SHOWALL'				=> 'Mostrar todos',
+		'EDIT'					=> 'Editar',
+		'DELETE'				=> 'Borrar',
+		'SHOWCURRENT'			=> 'Detalle',
+		// Columnas
+		'CODCentro'				=> 'Código Centro',
+		'CODTitulacion'			=> 'Código Titulación',
+		'CODEdificio'			=> 'Código Edificio',
+		'CODEspacio'			=> 'Código Espacio',
+		'Type'					=> 'Tipo',
+		'Responsable'			=> 'Responsable',
+		'Address'				=> 'Dirección',
+		'Campus'				=> 'Campus',
+		'Type'					=> 'Tipo',
+		'Surface'				=> 'Superficie',
+		'NumInvent'				=> 'Num. Inventario',
+		'DNI'					=> 'DNI',
+		'Year'					=> 'Año Académico',
+		'Area'					=> 'Area',
+		'Department'			=> 'Departamento',
+		// Mensajes de Error
+		'ErrMySQL'				=> 'Fallo al conectar a MySQL',
+
 		'idioma' => 'Idioma',
-		'Usuario' => 'Usuario',
-		'Ejemplo' => 'Ejemplo',
-		'Otro' => 'Otro',
-		'INGLES' => 'INGLES',
-		'ESPAÑOL' => 'ESPAÑOL',
-		'Volver' => 'Volver',
-		'Registro' => 'Registro',
 		'Gestión Asignatura IU' => 'Gestión Asignatura IU',
 		'Insertar usuario' => 'Insertar usuario',
-		'ADD' => 'Añadir',
-		'SHOWALL' => 'Mostrar todos',
-		'EDIT' => 'EDITAR',
-		'Gestión Usuarios' => 'Gestión Usuarios',
-		'Gestión Centros' => 'Gestión Centros',
-		'Gestión Edificios' => 'Gestión Edificios',
-		'Gestión Espacios' => 'Gestión Espacios',
-		'SEARCH' => 'BUSCAR',
-		'DELETE' => 'BORRAR',
-		'SHOWCURRENT' => 'DETALLE',
 		'Error de gestor de base de datos' => 'Error de gestor de base de datos',
 		'Inserción fallida: el elemento ya existe' =>'Inserción fallida: el elemento ya existe',
 		'Inserción realizada con éxito' => 'Inserción realizada con éxito',

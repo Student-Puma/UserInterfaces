@@ -2,6 +2,7 @@
 	/**
 	 * Autor: Diego Enrique Fontán Lorenzo
 	 * DNI: 77482941N
+	 * Fecha: 11/01/2019
 	 */
 
 	/**
@@ -29,18 +30,18 @@
 			include '../View/Header.php';
 ?>
 			<h1><?php echo $strings['EDIT']; ?></h1>	
-			<form name = 'Form' action='../Controller/USUARIOS_Controller.php' method='post' onsubmit="return comprobar_registro();">
+			<form name='Form' action='../Controller/USUARIOS_Controller.php' method='post'>
 			
-				 	Login : <input type = 'text' name = 'login' id = 'login' placeholder = 'Utiliza tu dni' size = '9' value = '<?php echo $this->tupla['login']; ?>' onblur="esNoVacio('login')  && comprobarDni('login')" readonly><br>
-					Password : <input type = 'text' name = 'password' id = 'password' placeholder = 'letras y numeros' size = '15' value = '<?php echo $this->tupla['password']; ?>' onblur="esNoVacio('password')  && comprobarLetrasNumeros('password',15)" ><br>
-					Nombre : <input type = 'text' name = 'nombre' id = 'nombre' placeholder = 'Solo letras' size = '30' value = '<?php echo $this->tupla['nombre']; ?>' onblur="esNoVacio('nombre')  && comprobarSoloLetras('nombre',30)" ><br>
-					Apellidos : <input type = 'text' name = 'apellidos' id = 'apellidos' placeholder = 'Solo letras' size = '50' value = '<?php echo $this->tupla['apellidos']; ?>' onblur="esNoVacio('apellidos')  && comprobarSoloLetras('apellidos',50)" ><br>
-					Email : <input type = 'text' name = 'email' id = 'email' size = '40' value = '<?php echo $this->tupla['email']; ?>' onblur="esNoVacio('email')  && comprobarEmail('email')" ><br>
+				 	<?php echo $strings['Login']; ?> : <input type='text' name='login' id='login' size='9' value='<?php echo $this->tupla['login']; ?>' readonly><br>
+					<?php echo $strings['Password']; ?> : <input type='text' name='password' id='password' size='15' value='<?php echo $this->tupla['password']; ?>' ><br>
+					<?php echo $strings['Name']; ?> : <input type='text' name='nombre' id='nombre' size='30' value='<?php echo $this->tupla['nombre']; ?>' ><br>
+					<?php echo $strings['Surname']; ?> : <input type='text' name='apellidos' id='apellidos' size='50' value='<?php echo $this->tupla['apellidos']; ?>' ><br>
+					<?php echo $strings['Surname']; ?> : <input type='text' name='email' id='email' size='40' value='<?php echo $this->tupla['email']; ?>' ><br>
 
 					<input type='submit' name='action' value='EDIT'>
 			</form>
 				
-			<a href='../Controller/Index_Controller.php'>Volver </a>
+			<a href='../Controller/Index_Controller.php'><?php echo $strings['Back']; ?></a>
 <?php
 			// Añadimos la vista Footer
 			include '../View/Footer.php';

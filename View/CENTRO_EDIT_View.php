@@ -2,6 +2,7 @@
 	/**
 	 * Autor: Diego Enrique Fontán Lorenzo
 	 * DNI: 77482941N
+	 * Fecha: 11/01/2019
 	 */
 
 	/**
@@ -29,18 +30,18 @@
 			include '../View/Header.php';
 ?>
 			<h1><?php echo $strings['EDIT']; ?></h1>	
-			<form name = 'Form' action='../Controller/CENTRO_Controller.php' method='post' onsubmit="return comprobar_registro();">
+			<form name='Form' action='../Controller/CENTRO_Controller.php' method='post'>
 				
-				Codigo Centro : <input type = 'text' name = 'CODCentro' id = 'CODCentro' placeholder = 'Utiliza tu dni' size = '9' value = '<?php echo $this->tupla['CODCENTRO']; ?>' readonly><br>
-				Codigo Edificio : <input type = 'text' name = 'CODEdificio' id = 'CODEdificio' placeholder = 'letras y numeros' size = '15' value = '<?php echo $this->tupla['CODEDIFICIO']; ?>'><br>
-				Nombre : <input type = 'text' name = 'nombre' id = 'nombre' placeholder = 'Solo letras' size = '30' value = '<?php echo $this->tupla['NOMBRECENTRO']; ?>'><br>
-				Direccion : <input type = 'text' name = 'direccion' id = 'direccion' placeholder = 'Solo letras' size = '50' value = '<?php echo $this->tupla['DIRECCIONCENTRO']; ?>'><br>
-				Responsable : <input type = 'text' name = 'responsable' id = 'responsable' size = '40' value = '<?php echo $this->tupla['RESPONSABLECENTRO']; ?>'><br>
+				<?php echo $strings['CODCentro']; ?> : <input type='text' name='CODCentro' id='CODCentro' size='9' value='<?php echo $this->tupla['CODCENTRO']; ?>' readonly><br>
+				<?php echo $strings['CODEdificio']; ?> : <input type='text' name='CODEdificio' id='CODEdificio' size='15' value='<?php echo $this->tupla['CODEDIFICIO']; ?>'><br>
+				<?php echo $strings['Name']; ?> : <input type='text' name='nombre' id='nombre' size='30' value='<?php echo $this->tupla['NOMBRECENTRO']; ?>'><br>
+				<?php echo $strings['Address']; ?> : <input type='text' name='direccion' id='direccion' size='50' value='<?php echo $this->tupla['DIRECCIONCENTRO']; ?>'><br>
+				<?php echo $strings['Responsable']; ?> : <input type='text' name='responsable' id='responsable' size='40' value='<?php echo $this->tupla['RESPONSABLECENTRO']; ?>'><br>
 			
 				<input type='submit' name='action' value='EDIT'>
 			</form>
 		
-			<a href='../Controller/Index_Controller.php'>Volver </a>
+			<a href='../Controller/Index_Controller.php'><?php echo $strings['Back']; ?></a>
 <?php
 			// Añadimos la vista Footer
 			include '../View/Footer.php';

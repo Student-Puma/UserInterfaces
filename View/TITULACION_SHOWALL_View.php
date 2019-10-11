@@ -2,6 +2,7 @@
 	/**
 	 * Autor: Diego Enrique Fontán Lorenzo
 	 * DNI: 77482941N
+	 * Fecha: 11/01/2019
 	 */
 
 	/**
@@ -63,19 +64,19 @@
 						<a href='
 							../Controller/TITULACION_Controller.php?action=EDIT&CODTitulacion=
 								<?php echo $fila['CODTITULACION']; ?>
-								'> EDITAR </a>
+								'><?php echo $strings['EDIT']; ?></a>
 					</td>
 					<td>
 						<a href='
 							../Controller/TITULACION_Controller.php?action=DELETE&CODTitulacion=
 								<?php echo $fila['CODTITULACION']; ?>
-								'> BORRAR </a>
+								'><?php echo $strings['DELETE']; ?> </a>
 					</td>
 					<td>
 						<a href='
 							../Controller/TITULACION_Controller.php?action=SHOWCURRENT&CODTitulacion=
 								<?php echo $fila['CODTITULACION']; ?>
-								'> DETALLE </a>
+								'><?php echo $strings['SHOWCURRENT']; ?> </a>
 					</td>
 				</tr>
 <?php

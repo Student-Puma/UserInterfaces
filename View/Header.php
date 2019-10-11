@@ -1,20 +1,18 @@
 <?php
 	include_once '../Functions/Authentication.php';
 	if (!isset($_SESSION['idioma'])) {
-		$_SESSION['idioma'] = 'SPANISH';
-	}
-	else{
+		$_SESSION['idioma']='SPANISH';
 	}
 	include '../Locale/Strings_' . $_SESSION['idioma'] . '.php';
 ?>
 <html>
 <head>
 	<title>
-		Ejemplo arquitectura IU
+		<?php echo $strings['AppName']; ?>
 	</title>
 	<meta charset="UTF-8">
 	<title>
-		<?php echo $strings['Ejemplo arquitectura IU']; ?>
+		<?php echo $strings['AppName']; ?>
 	</title>
 	<script type="text/javascript" src="../View/js/tcal.js"></script> 
 	<script type="text/javascript" src="../View/js/md5.js"></script>
@@ -78,7 +76,7 @@
 					<input type=\'submit\' name=\'action\' value=\'REGISTER\'>
 				</form>';*/
 ?>
-		<a href='../Controller/Register_Controller.php'>Registrar</a>
+		<a href='../Controller/Register_Controller.php'><?php echo $strings['Register']; ?></a>
 <?php
 	}	
 ?>
@@ -86,7 +84,7 @@
 
 </header>
 
-<div id = 'main'>
+<div id='main'>
 <?php
 	//session_start();
 	if (IsAuthenticated()){

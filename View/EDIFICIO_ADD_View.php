@@ -2,6 +2,7 @@
 	/**
 	 * Autor: Diego Enrique Fontán Lorenzo
 	 * DNI: 77482941N
+	 * Fecha: 11/01/2019
 	 */
 
 	/**
@@ -24,17 +25,17 @@
 			include '../View/Header.php';
 ?>
 			<h1><?php echo $strings['ADD']; ?></h1>	
-			<form name = 'Form' action='../Controller/EDIFICIO_Controller.php' method='post' onsubmit="return comprobar_registro();">
+			<form name='Form' action='../Controller/EDIFICIO_Controller.php' method='post'>
 				 	
-					Codigo Edificio : <input type='text' name='CODEdificio' id='CODEdificio' placeholder='Codigo edificio' size='5' value=''><br>
-					Nombre : <input type='text' name='nombre' id='nombre' placeholder='Nombre edificio' size='30' value=''><br>
-					Direccion : <input type='text' name='direccion' id='direccion' placeholder='Direccion' size='50' value=''><br>
-					Campus : <input type = 'text' name='campus' id='campus' size='40' value=''><br>
+				<?php echo $strings['CODEdificio']; ?> : <input type='text' name='CODEdificio' id='CODEdificio' size='5' value=''><br>
+				<?php echo $strings['Name']; ?> : <input type='text' name='nombre' id='nombre' size='30' value=''><br>
+				<?php echo $strings['Address']; ?> : <input type='text' name='direccion' id='direccion' size='50' value=''><br>
+				<?php echo $strings['Campus']; ?> :<input type='text' name='campus' id='campus' size='40' value=''><br>
 
-					<input type='submit' name='action' value='ADD'>
+				<input type='submit' name='action' value='ADD'>
 			</form>
 
-			<a href='../Controller/Index_Controller.php'>Volver </a>
+			<a href='../Controller/Index_Controller.php'><?php echo $strings['Back']; ?></a>
 <?php
 			// Añadimos la vista Footer
 			include '../View/Footer.php';

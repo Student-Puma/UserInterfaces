@@ -2,6 +2,7 @@
 	/**
 	 * Autor: Diego Enrique Fontán Lorenzo
 	 * DNI: 77482941N
+	 * Fecha: 11/01/2019
 	 */
 
 	/**
@@ -25,7 +26,7 @@
 			include '../View/Header.php'; 
 ?>
 			<h1><?php echo $strings['Login']; ?></h1>	 
-			<form name='Form' action='../Controller/Login_Controller.php' method='post' onsubmit="return comprobar_login();">
+			<form name='Form' action='../Controller/Login_Controller.php' method='post'>
 		
 				 	<?php echo $strings['Login']; ?> : <input type='text' name='login' size='9' value=''><br>
 					<?php echo $strings['Password']; ?> : <input type='password' name='password' size='15' value=''><br>

@@ -46,19 +46,19 @@
 					<a href='
 						../Controller/PROF_ESPACIO_Controller.php?action=EDIT&dni=
 							<?php echo $fila['DNI']; ?>
-							'> EDITAR </a>
+							'><?php echo $strings['EDIT']; ?></a>
 				</td>
 				<td>
 					<a href='
 						../Controller/PROF_ESPACIO_Controller.php?action=DELETE&dni=
 							<?php echo $fila['DNI']; ?>
-							'> BORRAR </a>
+							'><?php echo $strings['DELETE']; ?> </a>
 				</td>
 				<td>
 					<a href='
 						../Controller/PROF_ESPACIO_Controller.php?action=SHOWCURRENT&dni=
 							<?php echo $fila['DNI']; ?>
-							'> DETALLE </a>
+							'><?php echo $strings['SHOWCURRENT']; ?> </a>
 				</td>
 			</tr>
 

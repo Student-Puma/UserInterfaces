@@ -46,19 +46,19 @@
 					<a href='
 						../Controller/USUARIOS_Controller.php?action=EDIT&login=
 							<?php echo $fila['login']; ?>
-							'> EDITAR </a>
+							'><?php echo $strings['EDIT']; ?></a>
 				</td>
 				<td>
 					<a href='
 						../Controller/USUARIOS_Controller.php?action=DELETE&login=
 							<?php echo $fila['login']; ?>
-							'> BORRAR </a>
+							'><?php echo $strings['DELETE']; ?> </a>
 				</td>
 				<td>
 					<a href='
 						../Controller/USUARIOS_Controller.php?action=SHOWCURRENT&login=
 							<?php echo $fila['login']; ?>
-							'> DETALLE </a>
+							'><?php echo $strings['SHOWCURRENT']; ?> </a>
 				</td>
 			</tr>
 

@@ -2,6 +2,7 @@
 	/**
 	 * Autor: Diego Enrique Fontán Lorenzo
 	 * DNI: 77482941N
+	 * Fecha: 11/01/2019
 	 */
 
 	/**
@@ -63,19 +64,19 @@
 						<a href='
 							../Controller/CENTRO_Controller.php?action=EDIT&CODCentro=
 								<?php echo $fila['CODCENTRO']; ?>
-								'> EDITAR </a>
+								'><?php echo $strings['EDIT']; ?></a>
 					</td>
 					<td>
 						<a href='
 							../Controller/CENTRO_Controller.php?action=DELETE&CODCentro=
 								<?php echo $fila['CODCENTRO']; ?>
-								'> BORRAR </a>
+								'><?php echo $strings['DELETE']; ?> </a>
 					</td>
 					<td>
 						<a href='
 							../Controller/CENTRO_Controller.php?action=SHOWCURRENT&CODCentro=
 								<?php echo $fila['CODCENTRO']; ?>
-								'> DETALLE </a>
+								'><?php echo $strings['SHOWCURRENT']; ?> </a>
 					</td>
 				</tr>
 <?php
