@@ -80,7 +80,7 @@
 					</td>
 				</tr>
 <?php
-		}
+			}
 ?>
 			</table>		
 <?php

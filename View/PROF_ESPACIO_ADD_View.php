@@ -25,7 +25,7 @@
 		{
 			// Añadimos la vista Header
 			include '../View/Header.php';
-		?>
+?>
 			<h1><?php echo $strings['ADD']; ?></h1>	
 			<form name='Form' action='../Controller/PROF_ESPACIO_Controller.php' method='post'>
 					

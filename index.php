@@ -5,7 +5,9 @@
 	 * Fecha: 11/01/2019
 	 */
 
-	// ENTRYPOINT DE LA APLICACIÓN
+	/**
+	 * ENTRYPOINT DE LA APLICACIÓN
+	 */
 
 	// Iniciamos la sesión
 	session_start();

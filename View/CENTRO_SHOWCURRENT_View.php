@@ -1,17 +1,30 @@
 <?php
+	/**
+	 * Autor: Diego Enrique Fontán Lorenzo
+	 * DNI: 77482941N
+	 * Fecha: 11/01/2019
+	 */
 
-	class CENTRO_SHOWCURRENT{
-
-
+	/**
+	 * Vista de la función SHOWCURRENT de la entidad
+	 */
+	class CENTRO_SHOWCURRENT
+	{
+		/**
+		 * Constructor de la clase
+		 */
 		function __construct($tupla){	
 			$this->tupla = $tupla;
 			$this->render();
 		}
 
+		/**
+		 * Renderiza la vista
+		 */
 		function render(){
-
-			include '../View/Header.php'; //header necesita los strings
-		?>
+			// Añadimos la vista Header
+			include '../View/Header.php';
+?>
 			<h1><?php echo $strings['SHOWCURRENT']; ?></h1>	
 			<form name='Form' action='../Controller/CENTRO_Controller.php' method='post'>
 			
@@ -24,13 +37,11 @@
 			</form>
 				
 			<a href='../Controller/CENTRO_Controller.php'><?php echo $strings['Back']; ?></a>
-		
-		<?php
+<?php
+			// Añadimos la vista Footer
 			include '../View/Footer.php';
-		} //fin metodo render
-
-	} //fin REGISTER
-
+		}
+	}
 ?>
 
 	
