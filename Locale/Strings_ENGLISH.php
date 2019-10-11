@@ -5,6 +5,10 @@
 	 * Fecha: 11/01/2019
 	 */
 
+	/**
+	 * Traducción al Inglés
+	 */
+
 	$strings = array(
 		// Header
 		'AppName'				=> 'IU Example Architecture',

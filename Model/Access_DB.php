@@ -5,6 +5,10 @@
 	 * Fecha: 11/01/2019
 	 */
 
+	/**
+	 * Acceso y configuración de la base de datos
+	 */
+
 	// Incluímos las constantes de configuración de la BD
 	include_once '../Model/config.php';
 

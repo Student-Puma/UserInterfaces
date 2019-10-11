@@ -5,6 +5,10 @@
 	 * Fecha: 11/01/2019
 	 */
 
+    /**
+     * Cierra la sesión de un usuario
+     */
+
 	// Iniciamos la sesión
     session_start();
     // Destruimos la sesión

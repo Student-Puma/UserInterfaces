@@ -15,7 +15,8 @@
 		/**
 		 * Constructor de la clase
 		 */
-		function __construct($lista,$datos){
+		function __construct($lista,$datos)
+		{
 			$this->datos = $datos;
 			$this->lista = $lista;	
 			$this->render();
@@ -24,7 +25,8 @@
 		/**
 		 * Renderiza la vista
 		 */
-		function render(){
+		function render()
+		{
 			// Añadimos la vista Header
 			include '../View/Header.php';
 ?>

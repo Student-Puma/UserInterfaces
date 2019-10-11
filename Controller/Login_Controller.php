@@ -5,6 +5,10 @@
 	 * Fecha: 11/01/2019
 	 */
 
+	/**
+	 * Controlador del Login
+	 */
+
 	// Iniciamos la sesión
 	session_start();
 

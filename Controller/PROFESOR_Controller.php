@@ -5,6 +5,10 @@
 	 * Fecha: 11/01/2019
 	 */
 
+	/**
+	 * Controlador de la entidad
+	 */
+	
 	// Iniciamos la sesión
 	session_start();
 	

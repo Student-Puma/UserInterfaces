@@ -5,6 +5,10 @@
 	 * Fecha: 11/01/2019
 	 */
 
+    /**
+     * Cambia el idioma de la aplicación
+     */
+
 	// Iniciamos la sesión
     session_start();
 

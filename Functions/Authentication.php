@@ -6,6 +6,10 @@
 	 */
 
 	/**
+	 * Comprueba si un usuario está autenticado
+	 */
+
+	/**
 	 * Valida si existe la variable de sesión 'login'
 	 * @return resultado Devuelve si el usuario está autenticado
 	 */
