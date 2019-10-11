@@ -1,8 +1,6 @@
-- MVC :: TITULACION
 - Locale: GALLEGO
 - Mejorar MVC USUARIOS
-- Comentar Modelos PROFESOR USUARIOS
-- Comentar Vistas DELETE EDIT SEARCH SHOWALL SHOWCURRENT
+- Comentar Vistas SEARCH SHOWALL SHOWCURRENT
 - Comentar Vistas Register MenuLateral Index
 - Strings en texto estático
 - Value Len : el mismo para el mismo campo en diferentes vistas

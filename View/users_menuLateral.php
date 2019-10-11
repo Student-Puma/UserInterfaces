@@ -42,5 +42,11 @@
 					<?php echo 'Gestión Profesores/Titulaciones'; ?>
 				</a>
 			</li>
+
+			<li>
+				<a href='../Controller/TITULACION_Controller.php'>
+					<?php echo 'Gestión Titulaciones'; ?>
+				</a>
+			</li>
 		</ul>
 	</nav>

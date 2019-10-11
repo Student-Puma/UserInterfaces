@@ -181,7 +181,7 @@
 		 * @return resultado Mensaje correspondiente al resultado
 		 */
 		function EDIT()
-		{
+		{	
 			// Sentencia SQL
 			$sql = "UPDATE EDIFICIO
 					SET

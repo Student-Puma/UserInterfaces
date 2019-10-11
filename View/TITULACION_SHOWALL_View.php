@@ -9,7 +9,7 @@
 	 * @var lista Columnas de la entidad
 	 * @var datos Datos de la entidad
 	 */
-	class CENTRO_SHOWALL
+	class TITULACION_SHOWALL
 	{
 		/**
 		 * Constructor de la clase
@@ -30,9 +30,9 @@
 			<h1><?php echo $strings['SHOWALL']; ?></h1>	
 			<br>
 			<br>
-			<a href='../Controller/CENTRO_Controller.php?action=ADD'><?php echo $strings['ADD']; ?></a>
+			<a href='../Controller/TITULACION_Controller.php?action=ADD'><?php echo $strings['ADD']; ?></a>
 			<br>
-			<a href='../Controller/CENTRO_Controller.php?action=SEARCH'><?php echo $strings['SEARCH']; ?></a>
+			<a href='../Controller/TITULACION_Controller.php?action=SEARCH'><?php echo $strings['SEARCH']; ?></a>
 			
 			<table>
 				<tr>
@@ -61,20 +61,20 @@
 ?>
 					<td>
 						<a href='
-							../Controller/CENTRO_Controller.php?action=EDIT&CODCentro=
-								<?php echo $fila['CODCENTRO']; ?>
+							../Controller/TITULACION_Controller.php?action=EDIT&CODTitulacion=
+								<?php echo $fila['CODTITULACION']; ?>
 								'> EDITAR </a>
 					</td>
 					<td>
 						<a href='
-							../Controller/CENTRO_Controller.php?action=DELETE&CODCentro=
-								<?php echo $fila['CODCENTRO']; ?>
+							../Controller/TITULACION_Controller.php?action=DELETE&CODTitulacion=
+								<?php echo $fila['CODTITULACION']; ?>
 								'> BORRAR </a>
 					</td>
 					<td>
 						<a href='
-							../Controller/CENTRO_Controller.php?action=SHOWCURRENT&CODCentro=
-								<?php echo $fila['CODCENTRO']; ?>
+							../Controller/TITULACION_Controller.php?action=SHOWCURRENT&CODTitulacion=
+								<?php echo $fila['CODTITULACION']; ?>
 								'> DETALLE </a>
 					</td>
 				</tr>
