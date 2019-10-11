@@ -38,7 +38,7 @@
 				<input type='submit' name='action' value='DELETE'>
 			</form>				
 		
-			<a href='../Controller/Index_Controller.php'><?php echo $strings['Back']; ?>cho $strings['Back']; ?></a>
+			<a href='../Controller/Index_Controller.php'><?php echo $strings['Back']; ?></a>
 		
 <?php
 			// Añadimos la vista Footer

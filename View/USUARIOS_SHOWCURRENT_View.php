@@ -36,7 +36,7 @@
 		
 				<?php echo $strings['DNI']; ?> : <input type='text' name='dni' id='dni' size='9' value='<?php echo $this->tupla['DNI']; ?>' readonly><br>
 				<?php echo $strings['Phone']; ?> : <input type='text' name='telefono' id='telefono' size='11' value='<?php echo $this->tupla['telefono']; ?>' readonly><br>
-				<?php echo $strings['Birth']; ?> : <input type='text' name='fechanac' id='fechanac' size='20' value='<?php echo $this->tupla['FechaNac']; ?>' readonly><br>
+				<?php echo $strings['Birth']; ?> : <input type='text' name='fechanac' id='fechanac' size='20' value='<?php echo $this->tupla['FechaNacimiento']; ?>' readonly><br>
 				<?php echo $strings['Picture']; ?> : <input type='text' name='fotopersonal' id='fotopersonal' size='50' value='<?php echo $this->tupla['fotopersonal']; ?>' readonly><br>
 				<?php echo $strings['Genre']; ?> : <input type='text' name='sexo' id='sexo' size='6' value='<?php echo $this->tupla['sexo']; ?>' readonly><br>
 

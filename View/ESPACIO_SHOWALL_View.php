@@ -10,7 +10,7 @@
 	 * @var lista Columnas de la entidad
 	 * @var datos Datos de la entidad
 	 */
-	class ESPACIO_SHOWALLL
+	class ESPACIO_SHOWALL
 	{
 		/**
 		 * Constructor de la clase
