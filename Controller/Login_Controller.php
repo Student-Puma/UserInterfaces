@@ -22,7 +22,7 @@
 		include '../Model/USUARIOS_Model.php';
 
 		// Creamos una nueva instancia de la entidad
-		$usuario = new USUARIOS_Model($_REQUEST['login'],$_REQUEST['password'],'','','','','','','');
+		$usuario = new USUARIOS_Model($_REQUEST['login'],$_REQUEST['password'],'','','','','','','','');
 		// Intentamos loguearnos
 		$respuesta = $usuario->login();
 
