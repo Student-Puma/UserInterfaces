@@ -15,13 +15,13 @@
 	}
 
 	// Añadimos el modelo y las vistas pertenecientes a la entidad
-	include '../Model/EDIFICIO_Model.php';
-	include '../View/EDIFICIO_ADD_View.php';
-	include '../View/EDIFICIO_EDIT_View.php';
-	include '../View/EDIFICIO_DELETE_View.php';
-	include '../View/EDIFICIO_SEARCH_View.php';
-	include '../View/EDIFICIO_SHOWALL_View.php';
-	include '../View/EDIFICIO_SHOWCURRENT_View.php';
+	include '../Model/TITULACION_Model.php';
+	include '../View/TITULACION_ADD_View.php';
+	include '../View/TITULACION_EDIT_View.php';
+	include '../View/TITULACION_DELETE_View.php';
+	include '../View/TITULACION_SEARCH_View.php';
+	include '../View/TITULACION_SHOWALL_View.php';
+	include '../View/TITULACION_SHOWCURRENT_View.php';
 
 	// Añadimos la vista de los mensajes
 	include '../View/MESSAGE_View.php';
@@ -29,20 +29,20 @@
 	/**
 	 * Recoge los valores POST y crea una instancia de la entidad
 	 * 
-	 * @return edificio Instancia de la entidad
+	 * @return titulacion Instancia de la entidad
 	 */
 	function get_data_form()
 	{
 		// Valores POST
-		$CODEdificio = $_POST['CODEdificio'];
+		$CODTitulacion = $_POST['CODTitulacion'];
+		$CODCentro = $_POST['CODCentro'];
 		$nombre = $_POST['nombre'];
-		$direccion = $_POST['direccion'];
-		$campus = $_POST['campus'];
+		$responsable = $_POST['responsable'];
 		$action = $_POST['action'];
 		
-		// Creación de la instancia EDIFICIO
-		$edificio = new EDIFICIO_Model($CODEdificio,$nombre,$direccion,$campus);
-		return $edificio;
+		// Creación de la instancia TITULACION
+		$titulacion = new TITULACION_Model($CODTitulacion,$CODCentro,$nombre,$responsable);
+		return $titulacion;
 	}
 
 	// Comprobamos que exista la el valor 'action'
@@ -59,15 +59,15 @@
 			// Si no hay datos, mostramos el formulario correspondiente
 			if (!$_POST)
 			{
-				new EDIFICIO_ADD();
+				new TITULACION_ADD();
 			}
 			else
 			{
 				// Recogemos los datos del formulario y los añadimos a la BD
-				$EDIFICIO = get_data_form();
-				$respuesta = $EDIFICIO->ADD();
+				$TITULACION = get_data_form();
+				$respuesta = $TITULACION->ADD();
 				// Mostramos un mensaje con la respuesta
-				new MESSAGE($respuesta, '../Controller/EDIFICIO_Controller.php');
+				new MESSAGE($respuesta, '../Controller/TITULACION_Controller.php');
 			}
 			break;
 		// Acción: Borrar
@@ -75,17 +75,17 @@
 			// Si no hay datos, mostramos el formulario correspondiente
 			if (!$_POST)
 			{
-				$EDIFICIO = new EDIFICIO_Model($_REQUEST['CODEdificio'],'','','');
-				$valores = $EDIFICIO->RellenaDatos();
-				new EDIFICIO_DELETE($valores);
+				$TITULACION = new TITULACION_Model($_REQUEST['CODTitulacion'],'','','');
+				$valores = $TITULACION->RellenaDatos();
+				new TITULACION_DELETE($valores);
 			}
 			else
 			{
 				// Se muestra el formulario con los valores actuales
-				$EDIFICIO = get_data_form();
-				$respuesta = $EDIFICIO->DELETE();
+				$TITULACION = get_data_form();
+				$respuesta = $TITULACION->DELETE();
 				// Mostramos un mensaje con la respuesta
-				new MESSAGE($respuesta, '../Controller/EDIFICIO_Controller.php');
+				new MESSAGE($respuesta, '../Controller/TITULACION_Controller.php');
 			}
 			break;
 		// Acción: Editar
@@ -94,26 +94,26 @@
 			if (!$_POST)
 			{
 				// Se muestra el formulario con los valores actuales
-				$EDIFICIO = new EDIFICIO_Model($_REQUEST['CODEdificio'],'','','');
-				$valores = $EDIFICIO->RellenaDatos();
+				$TITULACION = new TITULACION_Model($_REQUEST['CODTitulacion'],'','','');
+				$valores = $TITULACION->RellenaDatos();
 				// Si no hay error, mostramos el formulario con los datos
 				if (is_array($valores))
 				{
-					new EDIFICIO_EDIT($valores);
+					new TITULACION_EDIT($valores);
 				}
 				else
 				{
 					// Sino, mostramos un mensaje de error
-					new MESSAGE($valores, '../Controller/EDIFICIO_Controller.php');
+					new MESSAGE($valores, '../Controller/TITULACION_Controller.php');
 				}
 			}
 			else
 			{
 				// Editamos los datos de la BD
-				$EDIFICIO = get_data_form();
-				$respuesta = $EDIFICIO->EDIT();
+				$TITULACION = get_data_form();
+				$respuesta = $TITULACION->EDIT();
 				// Mostramos un mensaje con la respuesta
-				new MESSAGE($respuesta, '../Controller/EDIFICIO_Controller.php');
+				new MESSAGE($respuesta, '../Controller/TITULACION_Controller.php');
 			}
 			break;
 		// Acción: Buscar
@@ -121,26 +121,26 @@
 			// Si no hay datos, mostramos el formulario correspondiente
 			if (!$_POST)
 			{
-				new EDIFICIO_SEARCH();
+				new TITULACION_SEARCH();
 			}
 			else
 			{
 				// Filtramos los resultados de la BD
-				$EDIFICIO = get_data_form();
-				$datos = $EDIFICIO->SEARCH();
+				$TITULACION = get_data_form();
+				$datos = $TITULACION->SEARCH();
 				// Claves de la tabla
-				$lista = array('CODEDIFICIO','NOMBREEDIFICIO','DIRECCIONEDIFICIO','CAMPUSEDIFICIO');
+				$lista = array('CODTITULACION','CODCENTRO','NOMBRETITULACION','RESPONSABLETITULACION');
 				// Mostramos la vista correspondiente
-				new EDIFICIO_SHOWALL($lista, $datos, '../index.php');
+				new TITULACION_SHOWALL($lista, $datos, '../index.php');
 			}
 			break;
 		// Acción: Detallar
 		case 'SHOWCURRENT':
 			// Creamos una instancia de la entidad con la clave primaria del registro que deseemos ver
-			$EDIFICIO = new EDIFICIO_Model($_REQUEST['CODEdificio'],'','','');
-			$valores = $EDIFICIO->RellenaDatos();
+			$TITULACION = new TITULACION_Model($_REQUEST['CODTitulacion'],'','','');
+			$valores = $TITULACION->RellenaDatos();
 			// Mostramos la vista correspondiente
-			new EDIFICIO_SHOWCURRENT($valores);
+			new TITULACION_SHOWCURRENT($valores);
 			break;
 		// Acción: Mostrar todos
 		default:
@@ -148,15 +148,15 @@
 			if (!$_POST)
 			{
 				// Sino, usamos los datos recibidos
-				$EDIFICIO = new EDIFICIO_Model('','','','','');
+				$TITULACION = new TITULACION_Model('','','','');
 			}
 			else
 			{
-				$EDIFICIO = get_data_form();
+				$TITULACION = get_data_form();
 			}
 			// Obtenemos la BD
-			$datos = $EDIFICIO->SEARCH();
-			$lista = array('CODEDIFICIO','NOMBREEDIFICIO','DIRECCIONEDIFICIO','CAMPUSEDIFICIO');
-			new EDIFICIO_SHOWALL($lista, $datos);
+			$datos = $TITULACION->SEARCH();
+			$lista = array('CODTITULACION','CODCENTRO','NOMBRETITULACION','RESPONSABLETITULACION');
+			new TITULACION_SHOWALL($lista, $datos);
 	}
 ?>
