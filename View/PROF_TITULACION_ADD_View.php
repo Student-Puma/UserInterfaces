@@ -6,8 +6,6 @@
 
 	/**
 	 * Vista de la función ADD de la entidad
-	 * 
-	 * @var render Renderizado de la vista
 	 */
 	class PROF_TITULACION_ADD
 	{
