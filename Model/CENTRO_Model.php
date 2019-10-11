@@ -1,112 +1,77 @@
-
 <?php
+	/**
+	 * Autor: Diego Enrique Fontán Lorenzo
+	 * DNI: 77482941N
+	 */
 
-//	Clase : CENTRO_Model
-//	Creado el : 09-10-2017
-//	Creado por: Diego E. Fontan
-//-------------------------------------------------------
-
-class CENTRO_Model {
-	var $CODCentro;
-	var $CODEdificio;
-	var $nombre;
-	var $direccion;
-	var $responsable;
-
-	//	Constructor de la clase
-	//
-
-	function __construct($CODCentro,$CODEdificio,$nombre,$direccion,$responsable){
-		$this->CODCentro = $CODCentro;
-		$this->CODEdificio = $CODEdificio;
-		$this->nombre = $nombre;
-		$this->direccion = $direccion;
-		$this->responsable = $responsable;
-		$this->erroresdatos = array(); 
-
-		//$this->Comprobar_atributos();
-
-		include_once '../Model/Access_DB.php';
-		$this->mysqli = ConnectDB();
-	}
-
-	// function Comprobar_atributos
-	// si todas las funciones de comprobacion de atributos individuales son true devuelve true
-	// si alguna es false, devuelve el array de errores de datos
-	function Comprobar_atributos()
+	/**
+	 * Modelo de la entidad CENTRO
+	 * 
+	 * @var CODCentro Código del centro (PK)
+	 * @var CODEdificio Código del edificio (FK)
+	 * @var nombre Nombre del edificio
+	 * @var direccion Dirección del edificio
+	 * @var responsable Responsable del centro (FK?)
+	 * 
+	 * @var mysqli Conexión con la BD
+	 */
+	class CENTRO_Model
 	{
-		if ($this->Comprobar_login &
-			$this->Comprobar_nombre)
+		// Variables de la clase
+		var $CODCentro;
+		var $CODEdificio;
+		var $nombre;
+		var $direccion;
+		var $responsable;
+
+		/**
+		 * Constructor de la clase
+		 */
+		function __construct($CODCentro,$CODEdificio,$nombre,$direccion,$responsable){
+			$this->CODCentro = $CODCentro;
+			$this->CODEdificio = $CODEdificio;
+			$this->nombre = $nombre;
+			$this->direccion = $direccion;
+			$this->responsable = $responsable;
+			
+			$this->erroresdatos = array(); // FIX: ? Unused variable
+
+			// Añadimos el modelo de acceso a la base de datos
+			include_once '../Model/Access_DB.php';
+			// Nos conectamos con la base de datos
+			$this->mysqli = ConnectDB();
+		}
+
+		/**
+		 * Destructor de la clase
+		 */
+		function __destruct()
+		{ }
+
+		/**
+		 * Inserta valores en la BD
+		 * Comprueba si la clave está vacía o si ya existe en la tabla
+		 * 
+		 * @return msg Mensaje correspondiente al resultado
+		 */
+		function ADD()
 		{
-			return true;
-		}
-		else
-			{
-				return $this->erroresdatos;
-			}
-	}
-
-	// function Comprobar_login()
-	// Comprueba el formato del login 
-	//	alfanumerico
-	//	mayor o igual a 5
-	// 	menor o igual a 15
-	//	no vacio
-	// devuelve un true o un false y rellena en caso de error el array de errores de datos
-	function Comprobar_login()
-	{
-		// TODO: DELETE
-	}
-
-	// function Comprobar_login()
-	// Comprueba el formato del login 
-	//	alfanumerico
-	//	mayor o igual a 5
-	// 	menor o igual a 15
-	//	no vacio
-	// devuelve un true o un false y rellena en caso de error el array de errores de datos
-	function Comprobar_nombre()
-	{
-		$correcto = true;
-
-		if (strlen($this->nombre)<3)
-		{
-			$error = 'Error en nombre: longitud menor que 3';
-			array_push($this->erroresdatos, $error);
-			$correcto = false;
-		}
-		if (strlen($this->nombre)>30)
-		{
-			$error = 'Error en nombre: longitud mayor de 30';
-			array_push($this->erroresdatos, $error);
-			$correcto = false;
-		}
-		if (!preg_match("^([a-zA-Z])^",$this->nombre)){
-			$error = 'Error en nombre: Solo se admiten alfabéticos';
-			array_push($this->erroresdatos, $error);
-			$correcto = false;
-		}
-		
-		return $correcto;
-	}
-
-	//Metodo ADD
-	//Inserta en la tabla  de la bd  los valores
-	// de los atributos del objeto. Comprueba si la clave/s esta vacia y si 
-	//existe ya en la tabla
-	function ADD()
-	{
+			// Consulta SQL
 			$sql = "select * from CENTRO where CODCENTRO = '".$this->CODCentro."'";
 
+			// Ejecuta la consulta
 			if (!$result = $this->mysqli->query($sql))
 			{
 				return 'Error de gestor de base de datos';
 			}
 
-			if ($result->num_rows == 1){  // existe el usuario
-					return 'Inserción fallida: el elemento ya existe';
-				}
+			// Comprueba si ya existe la clave
+			if ($result->num_rows == 1)
+			{
+				return 'Inserción fallida: el elemento ya existe';
+			}
 
+			// Consulta SQL
 			$sql = "INSERT INTO CENTRO (
 				CODCENTRO,
 				CODEDIFICIO,
@@ -119,112 +84,131 @@ class CENTRO_Model {
 						'".$this->nombre."',
 						'".$this->direccion."',
 						'".$this->responsable."'
-						)";
+					)";
 
+			// Ejecutamos la sentencia y devolvemos
+			// el mensaje correspondiente
 			if (!$this->mysqli->query($sql)) {
 				return 'Error de gestor de base de datos';
 			}
-			else{
-				return 'Inserción realizada con éxito'; //operacion de insertado correcta
-			}		
-	}
-		
+			else
+			{
+				return 'Inserción realizada con éxito';
+			}
+		}
 
-	//funcion de destrucción del objeto: se ejecuta automaticamente
-	//al finalizar el script
-	function __destruct()
-	{
-
-	}
-
-
-	//funcion SEARCH: hace una búsqueda en la tabla con
-	//los datos proporcionados. Si van vacios devuelve todos
-	function SEARCH()
-	{
-
-		$sql = "SELECT *
-				FROM CENTRO
-				WHERE (
-					CODCENTRO LIKE '%".$this->CODCentro."%' AND
-					CODEDIFICIO LIKE '%".$this->CODEdificio."%' AND
-					NOMBRECENTRO LIKE '%".$this->nombre."%' AND
-					DIRECCIONCENTRO LIKE '%".$this->direccion."%' AND
-					RESPONSABLECENTRO LIKE '%".$this->responsable."%'
-				)
-		";
-		if (!$resultado = $this->mysqli->query($sql))
+		/**
+		 * Busca valores en la BD
+		 * 
+		 * @return resultado Valores resultantes || Mensaje de error
+		 */
+		function SEARCH()
+		{
+			// Sentencia SQL
+			$sql = "SELECT *
+					FROM CENTRO
+					WHERE (
+						CODCENTRO LIKE '%".$this->CODCentro."%' AND
+						CODEDIFICIO LIKE '%".$this->CODEdificio."%' AND
+						NOMBRECENTRO LIKE '%".$this->nombre."%' AND
+						DIRECCIONCENTRO LIKE '%".$this->direccion."%' AND
+						RESPONSABLECENTRO LIKE '%".$this->responsable."%'
+					)";
+			
+			// Ejecutamos la sentencia y devolvemos
+			// el valor o un mensaje de error
+			if (!$resultado = $this->mysqli->query($sql))
 			{
 				return 'Error de gestor de base de datos';
 			}
-		return $resultado;
-		
-	}
-
-	//funcion DELETE : comprueba que la tupla a borrar existe y una vez
-	// verificado la borra
-	function DELETE()
-	{
-	$sql = "	DELETE FROM 
-					CENTRO
-				WHERE(
-					CODCENTRO = '$this->CODCentro'
-				)
-				";
-
-		if ($this->mysqli->query($sql))
-		{
-			$resultado = 'Borrado realizado con éxito';
+			else
+			{
+				return $resultado;
+			}
 		}
-		else
+
+		/**
+		 * Borra valores de la BD
+		 * 
+		 * @return resultado Mensaje correspondiente al resultado
+		 */
+		function DELETE()
 		{
-			$resultado = 'Error de gestor de base de datos';
+			// Sentencia SQL
+			$sql = "DELETE FROM 
+						CENTRO
+					WHERE(
+						CODCENTRO = '$this->CODCentro'
+					)";
+
+			// Ejecutamos la sentencia y devolvemos el mensaje correspondiente
+			if ($this->mysqli->query($sql))
+			{
+				$resultado = 'Borrado realizado con éxito';
+			}
+			else
+			{
+				$resultado = 'Error de gestor de base de datos';
+			}
+			return $resultado;
 		}
-		return $resultado;
-	}
 
-	// funcion RellenaDatos: recupera todos los atributos de una tupla a partir de su clave
-	function RellenaDatos()
-	{
-		$sql = "SELECT *
-				FROM CENTRO
-				WHERE (
-					(CODCENTRO = '$this->CODCentro') 
-				)";
-
-		if (!$resultado = $this->mysqli->query($sql))
+		/**
+		 * Recupera todos los atributos de una tupla a partir de su clave
+		 * 
+		 * @return tupla Valores resultantes || Mensaje de error
+		 */
+		function RellenaDatos()
 		{
+			// Sentencia SQL
+			$sql = "SELECT *
+					FROM CENTRO
+					WHERE (
+						(CODCENTRO = '$this->CODCentro') 
+					)";
+
+			// Ejecutamos la sentencia y devolvemos
+			// el valor o un mensaje de error
+			if (!$resultado = $this->mysqli->query($sql))
+			{
 				return 'Error de gestor de base de datos';
-		}else
-		{
-			$tupla = $resultado->fetch_array();
+			}
+			else
+			{
+				$tupla = $resultado->fetch_array();
+			}
+			return $tupla;
 		}
-		return $tupla;
-	}
 
-	// funcion Edit: realizar el update de una tupla despues de comprobar que existe
-	function EDIT()
-	{
-		$sql = "UPDATE CENTRO
-				SET 
-					CODEDIFICIO = '$this->CODEdificio',
-					NOMBRECENTRO = '$this->nombre',
-					DIRECCIONCENTRO = '$this->direccion',
-					RESPONSABLECENTRO = '$this->responsable'
-				WHERE (
-					CODCENTRO = '$this->CODCentro'
-				)
-				";
-		if ($this->mysqli->query($sql))
+		/**
+		 * Realizar el UPDATE de una tupla despues de comprobar que existe
+		 * 
+		 * @return resultado Mensaje correspondiente al resultado
+		 */
+		function EDIT()
 		{
-			$resultado = 'Actualización realizada con éxito';
-		}
-		else
-		{
-			$resultado = 'Error de gestor de base de datos';
-		}
-		return $resultado;
-	}
-}
+			// Sentencia SQL
+			$sql = "UPDATE CENTRO
+					SET 
+						CODEDIFICIO = '$this->CODEdificio',
+						NOMBRECENTRO = '$this->nombre',
+						DIRECCIONCENTRO = '$this->direccion',
+						RESPONSABLECENTRO = '$this->responsable'
+					WHERE (
+						CODCENTRO = '$this->CODCentro'
+					)";
 
+			// Ejecutamos la sentencia y devolvemos
+			// el mensaje correspondiente
+			if ($this->mysqli->query($sql))
+			{
+				$resultado = 'Actualización realizada con éxito';
+			}
+			else
+			{
+				$resultado = 'Error de gestor de base de datos';
+			}
+			return $resultado;
+		}
+	}
 ?> 

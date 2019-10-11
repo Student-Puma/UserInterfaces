@@ -1,14 +1,21 @@
 
 <?php
+	/**
+	 * Autor: Diego Enrique Fontán Lorenzo
+	 * DNI: 77482941N
+	 */
 
-	session_start(); //solicito trabajar con la session
+	// Iniciamos la sesión
+	session_start();
 
+	// Comprobamos que el usuario esté autenticado
 	include '../Functions/Authentication.php';
-
-	if (!IsAuthenticated()){
+	if (!IsAuthenticated())
+	{
 		header('Location:../index.php');
 	}
 
+	// Añadimos el modelo y las vistas pertenecientes a la entidad
 	include '../Model/USUARIOS_Model.php';
 	include '../View/USUARIOS_SHOWALL_View.php';
 	include '../View/USUARIOS_SEARCH_View.php';
@@ -16,11 +23,18 @@
 	include '../View/USUARIOS_EDIT_View.php';
 	include '../View/USUARIOS_DELETE_View.php';
 	include '../View/USUARIOS_SHOWCURRENT_View.php';
+
+	// Añadimos la vista de los mensajes
 	include '../View/MESSAGE_View.php';
 
-// la función get_data_form() recoge los valores que vienen del formulario por medio de post y la action a realizar, crea una instancia USUARIOS y la devuelve
-	function get_data_form(){
-
+	/**
+	 * Recoge los valores POST y crea una instancia de la entidad
+	 * 
+	 * @return usuarios Instancia de la entidad
+	 */
+	function get_data_form()
+	{
+		// Valores POST
 		$login = $_POST['login'];
 		$password = $_POST['password'];
 		$nombre = $_POST['nombre'];
@@ -28,93 +42,125 @@
 		$email = $_POST['email'];
 		$action = $_POST['action'];
 
-		
+		// Creación de la instancia USUARIOS
 		$usuarios = new USUARIOS_Model($login,$password,$nombre,$apellidos,$email);
 		return $usuarios;
 	}
 
 	
-// sino existe la variable action la crea vacia para no tener error de undefined index
-
-	if (!isset($_REQUEST['action'])){
+	// Comprobamos que exista la el valor 'action'
+	if (!isset($_REQUEST['action']))
+	{
 		$_REQUEST['action'] = '';
 	}
 
-// En funcion del action realizamos las acciones necesarias
-
-		Switch ($_REQUEST['action']){
-			case 'ADD':
-				if (!$_POST){ // se incoca la vista de add de usuarios
-					new USUARIOS_ADD();
-				}
-				else{
-					$USUARIOS = get_data_form(); //se recogen los datos del formulario
-					$respuesta = $USUARIOS->ADD();
-					new MESSAGE($respuesta, '../Controller/USUARIOS_Controller.php');
-				}
-				break;
-			case 'DELETE':
-				if (!$_POST){ //nos llega el id a eliminar por get
-					$USUARIOS = new USUARIOS_Model($_REQUEST['login'],'','','','');
-					$valores = $USUARIOS->RellenaDatos();
-					new USUARIOS_DELETE($valores); //se le muestra al usuario los valores de la tupla para que confirme el borrado mediante un form que no permite modificar las variables 
-				}
-				else{ // llegan los datos confirmados por post y se eliminan
-					$USUARIOS = get_data_form();
-					$respuesta = $USUARIOS->DELETE();
-					new MESSAGE($respuesta, '../Controller/USUARIOS_Controller.php');
-				}
-				break;
-			case 'EDIT':
-				if (!$_POST){ //nos llega el usuario a editar por get
-					$USUARIOS = new USUARIOS_Model($_REQUEST['login'],'','','',''); // Creo el objeto
-					$valores = $USUARIOS->RellenaDatos(); // obtengo todos los datos de la tupla
-					if (is_array($valores))
-					{
-						new USUARIOS_EDIT($valores); //invoco la vista de edit con los datos 
-							//precargados
-					}else
-					{
-						new MESSAGE($valores, '../Controller/USUARIOS_Controller.php');
-					}
-				}
-				else{
-
-					$USUARIOS = get_data_form(); //recojo los valores del formulario
-
-					$respuesta = $USUARIOS->EDIT(); // update en la bd en la bd
-					new MESSAGE($respuesta, '../Controller/USUARIOS_Controller.php');
-				}
-
-				break;
-			case 'SEARCH':
-				if (!$_POST){
-					new USUARIOS_SEARCH();
-				}
-				else{
-					$USUARIOS = get_data_form();
-					$datos = $USUARIOS->SEARCH();
-
-					$lista = array('login','password','email', 'nombre', 'apellidos');
-
-					new USUARIOS_SHOWALL($lista, $datos, '../index.php');
-				}
-				break;
-			case 'SHOWCURRENT':
+	// Ejecutamos la acción deseada
+	Switch ($_REQUEST['action'])
+	{
+		// Acción: Añadir
+		case 'ADD':
+			// Si no hay datos, mostramos el formulario correspondiente
+			if (!$_POST)
+			{
+				new USUARIOS_ADD();
+			}
+			else
+			{
+				// Recogemos los datos del formulario y los añadimos a la BD
+				$USUARIOS = get_data_form();
+				$respuesta = $USUARIOS->ADD();
+				// Mostramos un mensaje con la respuesta
+				new MESSAGE($respuesta, '../Controller/USUARIOS_Controller.php');
+			}
+			break;
+		// Acción: Borrar
+		case 'DELETE':
+			// Si no hay datos, mostramos el formulario correspondiente
+			if (!$_POST)
+			{
+				// Se muestra el formulario con los valores actuales
 				$USUARIOS = new USUARIOS_Model($_REQUEST['login'],'','','','');
 				$valores = $USUARIOS->RellenaDatos();
-				new USUARIOS_SHOWCURRENT($valores);
-				break;
-			default:
-				if (!$_POST){
-					$USUARIOS = new USUARIOS_Model('','','','','');
+				new USUARIOS_DELETE($valores);
+			}
+			else
+			{
+				// Eliminamos los datos de la BD
+				$USUARIOS = get_data_form();
+				$respuesta = $USUARIOS->DELETE();
+				// Mostramos un mensaje con la respuesta
+				new MESSAGE($respuesta, '../Controller/USUARIOS_Controller.php');
+			}
+			break;
+		// Acción: Editar
+		case 'EDIT':
+			// Si no hay datos, mostramos el formulario correspondiente
+			if (!$_POST)
+			{
+				// Se muestra el formulario con los valores actuales
+				$USUARIOS = new USUARIOS_Model($_REQUEST['login'],'','','','');
+				$valores = $USUARIOS->RellenaDatos();
+				// Si no hay error, mostramos el formulario con los datos
+				if (is_array($valores))
+				{
+					new USUARIOS_EDIT($valores);
 				}
-				else{
-					$USUARIOS = get_data_form();
+				else
+				{
+					// Sino, mostramos un mensaje de error
+					new MESSAGE($valores, '../Controller/USUARIOS_Controller.php');
 				}
+			}
+			else
+			{
+				// Editamos los datos de la BD
+				$USUARIOS = get_data_form();
+				// Mostramos un mensaje con la respuesta
+				$respuesta = $USUARIOS->EDIT();
+				new MESSAGE($respuesta, '../Controller/USUARIOS_Controller.php');
+			}
+			break;
+		// Acción: Buscar
+		case 'SEARCH':
+			// Si no hay datos, mostramos el formulario correspondiente
+			if (!$_POST)
+			{
+				new USUARIOS_SEARCH();
+			}
+			else
+			{
+				// Filtramos los resultados de la BD
+				$USUARIOS = get_data_form();
 				$datos = $USUARIOS->SEARCH();
-				$lista = array('login','password','nombre','apellidos','email');
-				new USUARIOS_SHOWALL($lista, $datos);
-		}
-
+				// Claves de la tabla
+				$lista = array('login','password','email', 'nombre', 'apellidos');
+				// Mostramos la vista correspondiente
+				new USUARIOS_SHOWALL($lista, $datos, '../index.php');
+			}
+			break;
+		// Acción: Detallar
+		case 'SHOWCURRENT':
+			// Creamos una instancia de la entidad con la clave primaria del registro que deseemos ver
+			$USUARIOS = new USUARIOS_Model($_REQUEST['login'],'','','','');
+			$valores = $USUARIOS->RellenaDatos();
+			// Mostramos la vista correspondiente
+			new USUARIOS_SHOWCURRENT($valores);
+			break;
+		// Acción: Mostrar todos
+		default:
+			// Si no hay datos, creamos una nueva instancia de la entidad
+			if (!$_POST)
+			{
+				$USUARIOS = new USUARIOS_Model('','','','','');
+			}
+			else
+			{
+				// Sino, usamos los datos recibidos
+				$USUARIOS = get_data_form();
+			}
+			// Obtenemos la BD
+			$datos = $USUARIOS->SEARCH();
+			$lista = array('login','password','nombre','apellidos','email');
+			new USUARIOS_SHOWALL($lista, $datos);
+	}
 ?>

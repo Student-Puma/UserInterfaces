@@ -1,4 +1,3 @@
-
 <?php
 	/**
 	 * Autor: Diego Enrique Fontán Lorenzo
@@ -71,10 +70,10 @@
 
 			// Consulta SQL
 			$sql = "INSERT INTO EDIFICIO (
-				CODEDIFICIO,
-				NOMBREEDIFICIO,
-				DIRECCIONEDIFICIO,
-				CAMPUSEDIFICIO) 
+						CODEDIFICIO,
+						NOMBREEDIFICIO,
+						DIRECCIONEDIFICIO,
+						CAMPUSEDIFICIO) 
 					VALUES (
 						'".$this->CODEdificio."',
 						'".$this->nombre."',
@@ -173,7 +172,6 @@
 			{
 				$tupla = $resultado->fetch_array();
 			}
-
 			return $tupla;
 		}
 
