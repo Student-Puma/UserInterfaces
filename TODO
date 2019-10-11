@@ -1,7 +1,4 @@
-- Locale: GALLEGO
 - Comentar Vistas SEARCH SHOWALL SHOWCURRENT
-- Comentar Vistas Register MenuLateral Index
-- Strings en texto estático
 - Value Len : el mismo para el mismo campo en diferentes vistas
 - Comprobar datos?
 - Mejorar mensajes comprobación Comprobar_login
