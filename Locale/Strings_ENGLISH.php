@@ -15,6 +15,7 @@
 		'Title'					=> 'Management Portal',
 		'User'					=> 'User',
 		'UserNotAuth'			=> 'User not found',
+		'Disconnect'			=> 'Disconnect',
 		// Footer
 		'Back'					=> 'Back',
 		'Today'					=> 'Today is',
