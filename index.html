@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<head>
+    <style>
+        a { text-decoration: none; }
+        li { list-style-type: none; }
+
+        html { height: 100vh; }
+        body { margin: 0; min-height: 100vh; overflow: hidden; }
+
+        .main { margin: 0 auto; width: 80vw; height: 100vh;
+            display: flex; flex-direction: column; }
+
+        .title { float: left; color: #FFF; font-size: 18px; margin-left: 15px; font-weight: 100; font-family: Georgia, 'Times New Roman', Times, serif; }
+        .menu-superior { order: 0; padding: 5px; margin: 20px 0px; background-size: 100% 100%;
+            background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAcCAIAAAAvP0KbAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAGNJREFUGFdjqN/2iAGEq7c8Yijf+IChaN19hpzV9xhSl99liFtymyF8/k0G/9k3GNynX2NwmHSFwbz3MoN+5wUGjdbzDAqNZxmkas8wCFeeYuArO8nAUXyCgaXgOAND3jFcGACrGivmf6Ri3gAAAABJRU5ErkJggg==") repeat-x left center; }
+        .menu-superior a { float:right; margin-right: 7px; }
+        .menu-superior a.logout { margin-left: 35px; }
+
+        .contenido { order: 1; display: flex; flex-direction: row; }
+
+        .menu-lateral { order: 0; display:flex; flex-direction: column; margin-right: 40px; border: 1px solid #CCC; background-color:#EEE; width: 250px; padding: 0; }
+        .menu-lateral li { margin: 0; padding: 2px 15px; height: 20px; text-align: left; border: 1px solid #CCC; }
+        .contenido .menu-lateral .title { padding: 0; font-size: 16px; text-align: center; color: #fff; border-top: 2px solid #CCC;
+            background: linear-gradient( #EEE, #AAA, #999, #888); }
+        .menu-lateral li a { color: #555; }
+
+        .contenido-principal { order: 1; width: 100%; display:flex; flex-direction: column; background: linear-gradient(#888, #FFF); }
+        .contenido-principal .title { height: 30px; line-height: 30px; font-family: Verdana, Geneva, Tahoma, sans-serif; font-weight: bolder; font-size: 12px; text-transform: uppercase; }
+        .contenido-principal .workspace { margin: 2px; background: #FFF; height: calc(100% - 30px);}
+        .contenido-principal .workspace .datos { margin: 15px; border: 1px solid #CCC; height: calc(100% - 30px); }
+
+        .footer { order: 2; margin-top: 20px; padding: 10px 0; }
+        .footer p { border-top: 1px solid #BBB; padding-top: 10px; font-size: 12px; text-align: center; font-weight: bold;}
+        .footer p .author { color: #0067E2; }
+        .footer p .today { font-weight: normal; }
+        .footer p span { margin: auto 2px; }
+
+
+
+
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="menu-superior">
+            <span class="title">Portal de Gestión</span>
+            <a href="#" class="logout"><span>🚪</span></a>
+            <a href="#"><img src="./public/media/gl.gif" alt="GL"></a>
+            <a href="#"><img src="./public/media/es.gif" alt="ES"></a>
+            <a href="#"><img src="./public/media/en.gif" alt="EN"></a>
+        </div>
+        <div class="contenido">
+            <ul class="menu-lateral">
+                <li class="title">Menú Lateral</li>
+                <li><a href="#">Gestion 1</a></li>
+                <li><a href="#">Gestion 2</a></li>
+                <li><a href="#">Gestion 3</a></li>
+                <li><a href="#">Gestion 4</a></li>
+            </ul>
+            <div class="contenido-principal">
+                <span class="title">Contenido</span>
+                <div class="workspace">
+                    <div class="datos">
+                        <span>Tablas</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <p><span class="author">a3dwdoa_2p</span><span> | </span><span class="today">Hoy es 26/10/2019</span></p>
+        </div>
+    </div>
+</body>
