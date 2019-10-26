@@ -1,17 +1,34 @@
 <?php
+	/**
+	 * Autor: Diego Enrique Fontán Lorenzo
+	 * DNI: 77482941N
+	 * Fecha: 11/01/2019
+	 */
 
-	class USUARIOS_SHOWALL{
-
-
-		function __construct($lista,$datos){
+	/**
+	 * Vista de la función SHOWALL de la entidad
+	 * @var lista Columnas de la entidad
+	 * @var datos Datos de la entidad
+	 */
+	class USUARIOS_SHOWALL
+	{
+		/**
+		 * Constructor de la clase
+		 */
+		function __construct($lista,$datos)
+		{
 			$this->datos = $datos;
 			$this->lista = $lista;	
 			$this->render();
 		}
 
-		function render(){
-
-			include '../View/Header.php'; //header necesita los strings
+		/**
+		 * Renderiza la vista
+		 */
+		function render()
+		{
+			// Añadimos la vista Header
+			include '../View/Header.php';
 ?>
 			<h1><?php echo $strings['SHOWALL']; ?></h1>	
 			<br>
@@ -20,63 +37,57 @@
 			<br>
 			<a href='../Controller/USUARIOS_Controller.php?action=SEARCH'><?php echo $strings['SEARCH']; ?></a>
 			
-		<table>
-			<tr>
+			<table>
+				<tr>
 <?php
-		foreach ($this->lista as $titulo) {
+			// Recorremos titulos
+			foreach ($this->lista as $titulo) {
 ?>
-				<th><?php echo $titulo; ?></th>
-<?php
-		}
-?>
-			</tr>
-<?php
-		foreach($this->datos as $fila)
-		{
-?>
-			<tr>
-<?php
-			foreach ($this->lista as $columna) {			
-?>
-				<td><?php echo $fila[$columna]; ?></td>
+					<th><?php echo $titulo; ?></th>
 <?php
 			}
 ?>
-				<td>
-					<a href='
-						../Controller/USUARIOS_Controller.php?action=EDIT&login=
-							<?php echo $fila['login']; ?>
-							'> EDITAR </a>
-				</td>
-				<td>
-					<a href='
-						../Controller/USUARIOS_Controller.php?action=DELETE&login=
-							<?php echo $fila['login']; ?>
-							'> BORRAR </a>
-				</td>
-				<td>
-					<a href='
-						../Controller/USUARIOS_Controller.php?action=SHOWCURRENT&login=
-							<?php echo $fila['login']; ?>
-							'> DETALLE </a>
-				</td>
-			</tr>
-
+				</tr>
 <?php
-
-		}
+			// Recorremos filas
+			foreach($this->datos as $fila)
+			{
 ?>
-
-
-		</table>		
-		
-					
+				<tr>
 <?php
+				// Recorremos columnas
+				foreach ($this->lista as $columna) {			
+?>
+					<td><?php echo $fila[$columna]; ?></td>
+<?php
+				}
+?>
+					<td>
+						<a href='
+							../Controller/USUARIOS_Controller.php?action=EDIT&login=
+								<?php echo $fila['login']; ?>
+								'><?php echo $strings['EDIT']; ?></a>
+					</td>
+					<td>
+						<a href='
+							../Controller/USUARIOS_Controller.php?action=DELETE&login=
+								<?php echo $fila['login']; ?>
+								'><?php echo $strings['DELETE']; ?> </a>
+					</td>
+					<td>
+						<a href='
+							../Controller/USUARIOS_Controller.php?action=SHOWCURRENT&login=
+								<?php echo $fila['login']; ?>
+								'><?php echo $strings['SHOWCURRENT']; ?> </a>
+					</td>
+				</tr>
+<?php
+			}
+?>
+			</table>					
+<?php
+			// Añadimos la vista Footer
 			include '../View/Footer.php';
-		} //fin metodo render
-
-	} //fin REGISTER
-
+		}
+	}
 ?>
-
-	
