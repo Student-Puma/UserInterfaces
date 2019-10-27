@@ -26,10 +26,12 @@
 		'GALLAECIAN'			=> 'Galego',
 		// Index
 		'Welcome'				=> 'BENVIDO Á ARQUITECTURA BASE DE IU',
+		'Content'				=> 'Contidos',
 		// Login
 		'LoginTitle'			=> 'Identificarse',
 		'Login'					=> 'Login',
-		'Password'				=> 'Password',
+		'Password'				=> 'Contrasinal',
+		'GoIn'					=> 'Acceder',
 		// Registro
 		'Register'				=> 'Rexistrarse',
 		'Email'					=> 'Email',

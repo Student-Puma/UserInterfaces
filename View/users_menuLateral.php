@@ -39,11 +39,14 @@
 	else
 	{
 ?>
-		<li class="title"><?php echo $strings['LoginTitle']; ?></li>
 		<form name='Form' action='../Controller/Login_Controller.php' method='post'>
-			<?php echo $strings['Login']; ?> : <input placeholder="<?php echo $strings['Login']; ?>" type='text' name='login' size='9' value=''><br>
-			<?php echo $strings['Password']; ?> : <input type='password' name='password' size='9' value=''><br>
-		</form>
+			<label for="login"><?php echo $strings['Login']; ?></label>
+			<input type='text' name='login' size='9' value=''><br>
+			<label for="password"><?php echo $strings['Password']; ?></label>
+			<input type='password' name='password' size='9' value=''><br>
+
+			<input type='submit' name='action' value='<?php echo $strings['GoIn']; ?>'>
+		</form>		
 <?php
 	}
 ?>

@@ -23,18 +23,13 @@
 		function render()
 		{
 			// Añadimos la vista Header
-			include '../View/Header.php'; 
-?>
-			<h1><?php echo $strings['Login']; ?></h1>	 
-			<form name='Form' action='../Controller/Login_Controller.php' method='post'>
-		
-				 	<label for="login"><?php echo $strings['Login']; ?></label>
-					<input type='text' name='login' size='9' value=''><br>
-					<label for="password"><?php echo $strings['Password']; ?></label>
-					<input type='password' name='password' size='15' value=''><br>
+			include '../View/Header.php';
 
-					<input type='submit' name='action' value='<?php echo $strings['Login']; ?>'>
-			</form>		
+?>
+			<div class="datos">
+				<h2><?php echo $strings['Welcome']; ?></h2>
+				<h4><?php echo $strings['UserNotAuth']; ?>. <a href="#"><?php echo $strings['Register']; ?></a></h4>
+			</div> <!-- datos -->
 <?php
 			// Añadimos la vista Footer
 			include '../View/Footer.php';

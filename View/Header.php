@@ -51,20 +51,26 @@
 
         .contenido { order: 30; display: flex; flex-direction: row; align-items: flex-start; }
 
-          .menu-lateral { order: 31; display:flex; flex-direction: column; margin: 0; margin-right: 40px; border: 1px solid #CCC; background-color:#EEE; width: 190px; padding: 0; }
+          .menu-lateral { order: 31; display:flex; flex-direction: column; margin: 0; margin-right: 40px; border: 1px solid #CCC; background-color:#EEE; width: 210px; padding: 0; }
             .menu-lateral li, form { margin: 0; padding: 2px 15px; height: 20px; text-align: left; border: 1px solid #CCC; background-color:#EEE; }
             .menu-lateral li:hover { background-color:#AAA; }
 			.contenido .menu-lateral .title { padding: 0; font-size: 16px; text-align: center; color: #fff; border-top: 2px solid #CCC;
               background: linear-gradient(#EEE, #AAA, #999, #888); }
             .menu-lateral a li { color: #555; }
 
-			.menu-lateral form { height: 100%; }
-			.menu-lateral form input { float: right; }
+			.menu-lateral form { height: 100%; display:flex; flex-direction: column; flex-wrap: wrap; justify-content: center; padding: 10px; }
+			.menu-lateral form label { margin-top: 5px; font-size: 12px; color: #666;}
+			.menu-lateral form input { border: 1px solid #999; padding: 2px 5px; color: #333; }
+			.menu-lateral form input[type=submit] { color: #FFF; border: 1px solid #3B9CD9; text-transform: uppercase; margin-top: 13px; margin-bottom: 5px; height: 25px;
+			  background: linear-gradient(#59A8D9, #7FB6E2, #59A8D9, #0477BF); }
 
           .contenido-principal { order: 32; width: 100%; display:flex; flex-direction: column; background: linear-gradient(#888, #FFF); }
             .contenido-principal .title { height: 30px; line-height: 30px; font-family: Verdana, Geneva, Tahoma, sans-serif; font-weight: bolder; font-size: 12px; text-transform: uppercase; }
             .contenido-principal .workspace { margin: 2px; background: #FFF; height: calc(100% - 30px);}
             .contenido-principal .workspace .datos { margin: 15px; border: 1px solid #CCC; height: calc(100% - 30px); }
+
+			.contenido-principal .workspace .datos h2,h4 { width: 100%; text-align: center; color: #333; }
+			.contenido-principal .workspace .datos a { color: #0067E2; }
 
         .footer { order: 40; margin-top: 20px; padding: 10px 0; }
           .footer p { border-top: 1px solid #BBB; padding-top: 10px; font-size: 12px; text-align: center; font-weight: bold;}
@@ -100,40 +106,9 @@
 		<div class="contenido">
 <?php
 
-		include '../View/users_menuLateral.php';
-?>
-
-		</div> <!-- contenido -->
-	</div> <!-- main -->
-
-
-
-
-
-
-
-
-
-<?php
-		/*
-		}
-		else
-		{
-			echo $strings['UserNotAuth']; 
-?>
-			<a href='../Controller/Register_Controller.php'><?php echo $strings['Register']; ?></a>
-<?php
-		}
-?>
-	</header>
-	<div id='main'>
-<?php
-		// Mostramos el Menú Lateral si está autenticado
-		if (IsAuthenticated()){
 			include '../View/users_menuLateral.php';
-		}
-		<article>
-		
-		-->
-		*/
 ?>
+			
+			<div class="contenido-principal">
+                <span class="title"><?php echo $strings['Content']; ?></span>
+                <div class="workspace">

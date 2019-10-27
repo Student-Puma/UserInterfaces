@@ -26,10 +26,12 @@
 		'GALLAECIAN'			=> 'Galician',
 		// Index
 		'Welcome'				=> 'WELCOME TO THE IU BASE ARCHITECTURE',
+		'Content'				=> 'Content',
 		// Login
 		'LoginTitle'			=> 'Login',
 		'Login'					=> 'Login',
 		'Password'				=> 'Password',
+		'GoIn'					=> 'Login',
 		// Registro
 		'Register'				=> 'Register',
 		'Email'					=> 'Email',

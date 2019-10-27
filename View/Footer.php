@@ -9,12 +9,15 @@
 	 * Vista del Footer
 	 */
 ?>
-</article>
-	</div>
-		<footer>
-			<?php echo $strings['Today']; ?> <?php echo date("d-M-Y", mktime()); ?>
-		</footer>
-	</body>
-</html>
+                </div> <!-- workspace -->
+            </div> <!-- contenido-principal -->
+		</div> <!-- contenido -->
+	
+		<div class="footer">
+			<p><span class="author">pwuw4e</span><span> | </span><span class="today"><?php echo ($strings['Today'] . ' ' . date("d-M-Y", mktime())); ?></span></p>
+		</div> <!-- footer -->
 
+	</div> <!-- main -->
+</body> <!-- body -->
+</html> <!-- html -->
 		
