@@ -19,7 +19,7 @@
 	if(!isset($_POST['login']))
 	{
 		include '../View/Register_View.php';
-		$register = new Register();	// FIX: ? Variable register sin uso
+		new Register();
 	}
 	else
 	{

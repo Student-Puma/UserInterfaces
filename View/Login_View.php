@@ -26,10 +26,8 @@
 			include '../View/Header.php';
 
 ?>
-			<div class="datos">
-				<h2><?php echo $strings['Welcome']; ?></h2>
-				<h4><?php echo $strings['UserNotAuth']; ?>. <a href="#"><?php echo $strings['Register']; ?></a></h4>
-			</div> <!-- datos -->
+			<h2><?php echo $strings['Welcome']; ?></h2>
+			<h4><?php echo $strings['UserNotAuth']; ?>. <a href="../Controller/Register_Controller.php"><?php echo $strings['Register']; ?></a></h4>
 <?php
 			// Añadimos la vista Footer
 			include '../View/Footer.php';

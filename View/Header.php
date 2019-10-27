@@ -16,7 +16,7 @@
 	if (!isset($_SESSION['idioma'])) {
 		$_SESSION['idioma'] = 'SPANISH';
 	}
-	include_once '../Locale/Strings_' . $_SESSION['idioma'] . '.php';
+	include '../Locale/Strings_' . $_SESSION['idioma'] . '.php';
 ?>
 
 <!-- ¡HTML CODE! -->
@@ -29,7 +29,7 @@
 	<meta charset="UTF-8">
 
 	<!-- FaiTIC stylesheet by Kike Fontán -->
-	<style>
+	<style type="text/css">
         a { text-decoration: none; }
         li { list-style-type: none; }
 
@@ -52,7 +52,7 @@
         .contenido { order: 30; display: flex; flex-direction: row; align-items: flex-start; }
 
           .menu-lateral { order: 31; display:flex; flex-direction: column; margin: 0; margin-right: 40px; border: 1px solid #CCC; background-color:#EEE; width: 210px; padding: 0; }
-            .menu-lateral li, form { margin: 0; padding: 2px 15px; height: 20px; text-align: left; border: 1px solid #CCC; background-color:#EEE; }
+            .menu-lateral li, .menu-lateral form { margin: 0; padding: 2px 15px; height: 20px; text-align: left; border: 1px solid #CCC; background-color:#EEE; }
             .menu-lateral li:hover { background-color:#AAA; }
 			.contenido .menu-lateral .title { padding: 0; font-size: 16px; text-align: center; color: #fff; border-top: 2px solid #CCC;
               background: linear-gradient(#EEE, #AAA, #999, #888); }
@@ -67,10 +67,24 @@
           .contenido-principal { order: 32; width: 100%; display:flex; flex-direction: column; background: linear-gradient(#888, #FFF); }
             .contenido-principal .title { height: 30px; line-height: 30px; font-family: Verdana, Geneva, Tahoma, sans-serif; font-weight: bolder; font-size: 12px; text-transform: uppercase; }
             .contenido-principal .workspace { margin: 2px; background: #FFF; height: calc(100% - 30px);}
-            .contenido-principal .workspace .datos { margin: 15px; border: 1px solid #CCC; height: calc(100% - 30px); }
+            .contenido-principal .workspace .datos { margin: 15px; border: 1px solid #CCC; height: calc(100% - 30px); padding: 10px; }
 
-			.contenido-principal .workspace .datos h2,h4 { width: 100%; text-align: center; color: #333; }
+			.contenido-principal .workspace .datos h2, .datos h4 { width: 100%; text-align: center; color: #333; }
 			.contenido-principal .workspace .datos a { color: #0067E2; }
+
+			.contenido-principal .workspace .datos form { height: 100%; background-color: transparent; border: none; }
+			
+			.form-style { height: calc(100% - 10px); margin: 5px auto; max-width: 400px; padding: 20px 12px 10px 20px; }
+			.form-style li { padding: 0; display: block; list-style: none; margin: 10px 0 0 0; }
+			.form-style label { color: #444; margin: 0 0 3px 0; padding: 0; display: block; font-weight: bold; }
+			.form-style input, .form-style select { color: #666; box-sizing: border-box; -webkit-box-sizing: border-box; -moz-box-sizing: border-box;
+				border: 1px solid #BEBEBE; padding: 7px; margin: 0px; outline: none; }
+			.form-style input[type="date"] { text-align: center; }
+			.form-style input[type="submit"] { border: none; color: #FFF; padding: 8px 15px;
+				background: linear-gradient(#59A8D9, #7FB6E2, #59A8D9, #0477BF); }
+			.form-style .requerido { color: red; }
+			.form-style .campo-largo { width:100%; }
+			.form-style .campo-dividido { width: 49%; }
 
         .footer { order: 40; margin-top: 20px; padding: 10px 0; }
           .footer p { border-top: 1px solid #BBB; padding-top: 10px; font-size: 12px; text-align: center; font-weight: bold;}
@@ -112,3 +126,4 @@
 			<div class="contenido-principal">
                 <span class="title"><?php echo $strings['Content']; ?></span>
                 <div class="workspace">
+					<div class="datos">

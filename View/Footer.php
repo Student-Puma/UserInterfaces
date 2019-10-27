@@ -9,8 +9,9 @@
 	 * Vista del Footer
 	 */
 ?>
-                </div> <!-- workspace -->
-            </div> <!-- contenido-principal -->
+		</div> <!-- datos -->
+        </div> <!-- workspace -->
+        </div> <!-- contenido-principal -->
 		</div> <!-- contenido -->
 	
 		<div class="footer">

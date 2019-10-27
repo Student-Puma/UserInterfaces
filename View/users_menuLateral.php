@@ -16,7 +16,7 @@
 	if (!isset($_SESSION['idioma'])) {
 		$_SESSION['idioma'] = 'SPANISH';
 	}
-	include_once '../Locale/Strings_' . $_SESSION['idioma'] . '.php';
+	include '../Locale/Strings_' . $_SESSION['idioma'] . '.php';
 ?>
 	<ul class="menu-lateral">
 <?php
