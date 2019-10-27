@@ -27,6 +27,7 @@
 		// Index
 		'Welcome'				=> 'BIENVENIDO A LA ARQUITECTURA BASE DE IU',
 		// Login
+		'LoginTitle'			=> 'Identificarse',
 		'Login'					=> 'Login',
 		'Password'				=> 'Password',
 		// Registro
@@ -35,14 +36,15 @@
 		'Name'					=> 'Nombre',
 		'Surname'				=> 'Apellidos',
 		// Mensajes de Gestión
-		'GUsuarios'				=> 'Gestión de Usuarios',
-		'GCentros'				=> 'Gestión de Centros',
-		'GEdificios'			=> 'Gestión de Edificios',
-		'GEspacios'				=> 'Gestión de Espacios',
-		'GProfesores'			=> 'Gestión de Profesores',
-		'GProfEspacios'			=> 'Gestión de Profesores/Espacios',
-		'GProfTitulaciones'		=> 'Gestión de Profesores/Titulaciones',
-		'GTitulaciones'			=> 'Gestión de Titulaciones',
+		'Management'			=> 'Gestión',
+		'GUsuarios'				=> 'Usuarios',
+		'GEdificios'			=> 'Edificios',
+		'GCentros'				=> 'Centros',
+		'GEspacios'				=> 'Espacios',
+		'GProfesores'			=> 'Profesores',
+		'GTitulaciones'			=> 'Titulaciones',
+		'GProfEspacios'			=> 'Profesores/Espacios',
+		'GProfTitulaciones'		=> 'Profesores/Titulaciones',
 		// Botones de Acción
 		'ADD'					=> 'Añadir',
 		'SEARCH'				=> 'Buscar',

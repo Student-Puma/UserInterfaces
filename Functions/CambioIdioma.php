@@ -13,7 +13,7 @@
     session_start();
 
     // Recogemos el idioma del post y los guardamos en la sesión
-    $idioma = $_POST['idioma'];
+    $idioma = $_GET['idioma'];
     $_SESSION['idioma'] = $idioma;
 
     // Redirigimos a la página rederencia

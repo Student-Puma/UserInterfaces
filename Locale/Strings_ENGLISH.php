@@ -27,6 +27,7 @@
 		// Index
 		'Welcome'				=> 'WELCOME TO THE IU BASE ARCHITECTURE',
 		// Login
+		'LoginTitle'			=> 'Login',
 		'Login'					=> 'Login',
 		'Password'				=> 'Password',
 		// Registro
@@ -35,14 +36,15 @@
 		'Name'					=> 'Name',
 		'Surname'				=> 'Surname',
 		// Mensajes de Gestión
-		'GUsuarios'				=> 'Users Management',
-		'GCentros'				=> 'Center Management',
-		'GEdificios'			=> 'Building Management',
-		'GEspacios'				=> 'Space Management',
-		'GProfesores'			=> 'Teacher Management',
-		'GProfEspacios'			=> 'Teacher/Space Management',
-		'GProfTitulaciones'		=> 'Teachers/Degree Management',
-		'GTitulaciones'			=> 'Degree Management',
+		'Management'			=> 'Management',
+		'GUsuarios'				=> 'Users',
+		'GEdificios'			=> 'Buildings',
+		'GCentros'				=> 'Centers',
+		'GEspacios'				=> 'Spaces',
+		'GProfesores'			=> 'Teachers',
+		'GTitulaciones'			=> 'Degrees',
+		'GProfEspacios'			=> 'Teachers/Spaces',
+		'GProfTitulaciones'		=> 'Teachers/Degrees',
 		// Botones de Acción
 		'ADD'					=> 'Add',
 		'SEARCH'				=> 'Search',
