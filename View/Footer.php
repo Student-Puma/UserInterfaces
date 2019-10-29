@@ -15,7 +15,7 @@
 		</div> <!-- contenido -->
 	
 		<div class="footer">
-			<p><span class="author">pwuw4e</span><span> | </span><span class="today"><?php echo ($strings['Today'] . ' ' . date("d-M-Y", mktime())); ?></span></p>
+			<p><span class="blue">6j7vi2</span><span> | </span><span class="today"><?php echo ($strings['Today'] . ' ' . date("d-M-Y", mktime())); ?></span></p>
 		</div> <!-- footer -->
 
 	</div> <!-- main -->

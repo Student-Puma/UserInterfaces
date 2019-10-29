@@ -27,8 +27,10 @@
 			// Añadimos la vista Header
 			include '../View/Header.php';
 ?>
-			<h1> <?php echo $strings['Welcome']; ?> </h1>
-			<br>
+			<h2><?php echo $strings['Welcome']; ?></h2>
+			<h4><?php echo $strings['ActualUser'] . ': '; ?>
+				<span class="blue"><?php echo $_SESSION['login']; ?></span>
+			</h4>
 <?php
 			// Añadimos la vista Footer
 			include '../View/Footer.php';

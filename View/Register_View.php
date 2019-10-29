@@ -23,7 +23,7 @@
 		function render()
 		{			
 			// Añadimos el idioma
-			include_once '../Locale/Strings_SPANISH.php';
+			include_once '../Locale/Strings_'.$_SESSION['idioma'].'.php';
 			// Añadimos la vista Header
 			include '../View/Header.php'; 
 ?>

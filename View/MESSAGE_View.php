@@ -34,22 +34,13 @@
 			// Añadimos la vista Header
 			include '../View/Header.php';
 ?>
-			<br>
-			<br>
-			<br>
-			<p>
-			<h3>
-<?php		
-			echo $strings[$this->string];
-?>
-			</h3>
-			</p>
-			<br>
-			<br>
-			<br>
+			<div class="centrado">
+				<span class="msg"><?php echo $strings[$this->string]; ?></span>
+			</div>
+
+			<a href="<?php echo $this->volver; ?>" class="return"><?php echo $strings['Back']; ?></a>
 
 <?php
-			echo '<a href=\'' . $this->volver . "'>" . $strings['Back'] . " </a>";
 			// Añadimos la vista Footer
 			include '../View/Footer.php';
 		}

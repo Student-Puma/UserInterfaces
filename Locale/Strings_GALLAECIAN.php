@@ -15,6 +15,7 @@
 		'Title'					=> 'Portal de Xestión',
 		'User'					=> 'Usuario',
 		'UserNotAuth'			=> 'Usuario non autenticado',
+		'ActualUser'			=> 'Usuario actual',
 		'Disconnect'			=> 'Desconectarse',
 		// Footer
 		'Back'					=> 'Voltar',
