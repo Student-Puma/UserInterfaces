@@ -26,6 +26,7 @@
 	<title>
 		<?php echo $strings['AppName']; ?>
 	</title>
+	
 	<meta charset="UTF-8">
 
 	<!-- FaiTIC stylesheet by Kike Fontán -->
@@ -82,11 +83,16 @@
 			.form-style input[type="date"] { text-align: center; }
 			.form-style input[type="submit"] { border: none; color: #FFF; padding: 8px 15px;
 				background: linear-gradient(#59A8D9, #7FB6E2, #59A8D9, #0477BF); }
+			.form-style input[type="file"] { display: none; }
+			.form-style .file-upload { border: 1px solid #BEBEBE; text-align: center; height: 16px; line-height: 16px; padding: 7px; color: #999; font-weight: normal; }
 			.form-style .requerido { color: red; }
 			.form-style .campo-largo { width:100%; }
 			.form-style .campo-dividido { width: 49%; }
 
-        .footer { order: 40; margin-top: 20px; padding: 10px 0; }
+			.contenido-principal .workspace .datos .return { color: #0067E2; float: right; color: #FFF; padding: 2px 10px; font-size: 14px;
+				background: linear-gradient(#59A8D9, #7FB6E2, #59A8D9, #0477BF); }
+
+        .footer { order: 40; margin-top: 20px; margin-top: 40px; padding: 10px 0; }
           .footer p { border-top: 1px solid #BBB; padding-top: 10px; font-size: 12px; text-align: center; font-weight: bold;}
           .footer p .author { color: #0067E2; }
           .footer p .today { font-weight: normal; }
