@@ -44,7 +44,7 @@ body { margin: 0; min-height: 100vh; overflow: hidden; }
     .contenido-principal .workspace .datos h2, .datos h4 { width: 100%; text-align: center; color: #333; }
     .contenido-principal .workspace .datos a { color: #0067E2; }
 
-    .contenido-principal .workspace .datos form { height: 100%; background-color: transparent; border: none; }
+    .contenido-principal .workspace .datos form {  background-color: transparent; border: none; }
     
     .form-style { height: calc(100% - 10px); margin: 5px auto; max-width: 400px; padding: 20px 12px 10px 20px; }
     .form-style li { padding: 0; display: block; list-style: none; margin: 10px 0 0 0; }
