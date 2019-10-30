@@ -68,8 +68,8 @@
 				<li>
 					<label><?php echo $strings['Genre']; ?></label>
 					<select disabled class="campo-dividido" id="sexo" name="sexo" value='<?php echo $this->tupla['sexo']; ?>' required>
-						<option value="hombre" selected><?php echo $strings['Male']; ?></option>
-						<option value="mujer"><?php echo $strings['Female']; ?></option>
+						<option value="hombre" <?php if($this->tupla['sexo'] == "hombre") { echo "selected"; } ?>><?php echo $strings['Male']; ?></option>
+						<option value="mujer"  <?php if($this->tupla['sexo'] == "mujer") { echo "selected"; } ?>><?php echo $strings['Female']; ?></option>
 					</select>
 
 					<input type="submit" class="campo-dividido" name="action" value="DELETE">
