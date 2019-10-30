@@ -67,6 +67,8 @@
 		'DELETE'				=> 'Borrar',
 		'SHOWCURRENT'			=> 'Detalle',
 		// Columnas
+		'Code'					=> 'Código',
+		'Codes'					=> 'Códigos',
 		'CODCentro'				=> 'Código Centro',
 		'CODTitulacion'			=> 'Código Titulación',
 		'CODEdificio'			=> 'Código Edificio',

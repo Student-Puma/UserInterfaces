@@ -26,25 +26,44 @@
 		 */
 		function render()
 		{
+			// Añadimos el idioma
+			include_once '../Locale/Strings_'.$_SESSION['idioma'].'.php';
 			// Añadimos la vista Header
 			include '../View/Header.php';
 ?>
-			<h1><?php echo $strings['DELETE']; ?></h1>	
-			<form name='Form' action='../Controller/EDIFICIO_Controller.php' method='post'>
-				<?php echo $strings['CODEdificio']; ?> : <input type='text' name='CODEdificio' id='CODEdificio' size='5' value='<?php echo $this->tupla['CODEDIFICIO']; ?>' readonly><br>
-				<?php echo $strings['Name']; ?> : <input type='text' name='nombre' id='nombre' size='30' value='<?php echo $this->tupla['NOMBREEDIFICIO']; ?>' readonly><br>
-				<?php echo $strings['Address']; ?> : <input type='text' name='direccion' id='direccion' size='50' value='<?php echo $this->tupla['DIRECCIONEDIFICIO']; ?>' readonly><br>
-				<?php echo $strings['Campus']; ?> :<input type='text' name='campus' id='campus' size='40' value='<?php echo $this->tupla['CAMPUSEDIFICIO']; ?>' readonly><br>
+		<div class="centrado">
+			<h2><?php echo $strings['DELETE']; ?></h2>
+		</div>
 
-				<input type='submit' name='action' value='DELETE'>
-			</form>
-		
-			<a href='../Controller/Index_Controller.php'><?php echo $strings['Back']; ?></a>
+		<form name="Form" action="../Controller/EDIFICIO_Controller.php" method="post">
+			<ul class="form-style">
+				
+				<li>
+					<label><?php echo $strings['Name']; ?></label>
+					<input type="text" readonly pattern="[A-Za-z][A-Za-z0-9 -]{,49}" class="campo-largo" id="nombre" name="nombre" placeholder="<?php echo $strings['Name']; ?>" value='<?php echo $this->tupla['NOMBREEDIFICIO']; ?>' required>
+				</li>
+				<li>
+				<label><?php echo $strings['Address']; ?></label>
+					<input type="text" readonly pattern="[A-Za-z][A-Za-z0-9 ,.ºª\\-]{2,149}" class="campo-largo" id="direccion" name="direccion" placeholder="<?php echo $strings['Address']; ?>" value='<?php echo $this->tupla['DIRECCIONEDIFICIO']; ?>' required>
+				</li>
+				<li>
+				<label><?php echo $strings['Campus']; ?></label>
+					<input type="text" readonly pattern="[A-Za-z0-9][A-Za-z0-9 ,.ºª\\-]{0,9}" class="campo-largo" id="campus" name="campus" placeholder="<?php echo $strings['Campus']; ?>" value='<?php echo $this->tupla['CAMPUSEDIFICIO']; ?>' required>
+				</li>
+				<li>
+					<label><?php echo $strings['Code']; ?></label>
+					<input type="text" readonly pattern="[A-Za-z0-9][A-Za-z0-9_-]{0,9}" class="campo-dividido" id="CODEdificio" name="CODEdificio" placeholder="<?php echo $strings['CODEdificio']; ?>" value='<?php echo $this->tupla['CODEDIFICIO']; ?>' required>
+
+					<input type="submit" readonly class="campo-dividido" name="action" value="DELETE">
+				</li>
+			</ul>
+		</form>
+
+
+		<a href="../Controller/EDIFICIO_Controller.php" class="return"><?php echo $strings['Back']; ?></a>
 <?php
-			// Añadimos la vista Footer
-			include '../View/Footer.php';
-		}
+		// Añadimos la vista Footer
+		include '../View/Footer.php';
 	}
+}
 ?>
-
-	
