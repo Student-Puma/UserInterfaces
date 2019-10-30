@@ -34,6 +34,7 @@
 
 	<!-- FaiTIC stylesheet by Kike Fontán -->
 	<link rel="stylesheet" type="text/css" href="../View/public/css/faketic.css">
+	<link rel="icon" type="image/vnd.microsoft.icon" href="../View/public/img/favicon.ico">
 </head>
 <body>
 	<div class="main">

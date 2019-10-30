@@ -7,6 +7,7 @@
 
 	/**
 	 * Vista de la función SHOWALL de la entidad
+	 * @var maxindex Número máximo de columnas
 	 * @var lista Columnas de la entidad
 	 * @var datos Datos de la entidad
 	 */
@@ -17,6 +18,7 @@
 		 */
 		function __construct($lista,$datos)
 		{
+			$this->maxindex = 3;
 			$this->datos = $datos;
 			$this->lista = $lista;	
 			$this->render();
@@ -29,62 +31,67 @@
 		{
 			// Añadimos la vista Header
 			include '../View/Header.php';
+			
+			// Añadimos los iconos
+			include '../Locale/Icons.php';
 ?>
-			<h1><?php echo $strings['SHOWALL']; ?></h1>	
-			<br>
-			<br>
-			<a href='../Controller/PROF_ESPACIO_Controller.php?action=ADD'><?php echo $strings['ADD']; ?></a>
-			<br>
-			<a href='../Controller/PROF_ESPACIO_Controller.php?action=SEARCH'><?php echo $strings['SEARCH']; ?></a>
+			<div class="centrado">
+				<h2><?php echo $strings['GProfEspacios']; ?></h2>
+			</div>
 			
 			<table>
-				<tr>
+				<thead>
+					<tr>
 <?php
-			// Recorremos titulos
-			foreach ($this->lista as $titulo) {
+					// Recorremos titulos
+					foreach ($this->lista as $index=>$titulo) {
 ?>
-					<th><?php echo $titulo; ?></th>
+						<th><?php echo $titulo; ?></th>
 <?php
-			}
+						if($index >= $this->maxindex - 1) { break; }
+					}
 ?>
-				</tr>
+						<th class="addnsearch">
+							<a href='../Controller/PROF_ESPACIO_Controller.php?action=ADD'><img height="16" src="<?php echo $icons['add']; ?>"></a>
+							<a href='../Controller/PROF_ESPACIO_Controller.php?action=SEARCH'><img height="16" src="<?php echo $icons['search']; ?>"></a>
+						</th>
+					</tr>
+				</thead>
+				<tbody>
 <?php
 			// Recorremos filas
 			foreach($this->datos as $fila)
 			{
 ?>
-				<tr>
+					<tr>
 <?php
-				// Recorremos columnas
-				foreach ($this->lista as $columna) {			
+					// Recorremos columnas
+					foreach ($this->lista as $index=>$columna) {			
 ?>
-					<td><?php echo $fila[$columna]; ?></td>
+						<td><?php echo $fila[$columna]; ?></td>
 <?php
-				}
+						if($index >= $this->maxindex - 1) { break; }
+					}
 ?>
-					<td>
-						<a href='
-							../Controller/PROF_ESPACIO_Controller.php?action=EDIT&dni=
-								<?php echo $fila['DNI']; ?>
-								'><?php echo $strings['EDIT']; ?></a>
-					</td>
-					<td>
-						<a href='
-							../Controller/PROF_ESPACIO_Controller.php?action=DELETE&dni=
-								<?php echo $fila['DNI']; ?>
-								'><?php echo $strings['DELETE']; ?> </a>
-					</td>
-					<td>
-						<a href='
-							../Controller/PROF_ESPACIO_Controller.php?action=SHOWCURRENT&dni=
-								<?php echo $fila['DNI']; ?>
-								'><?php echo $strings['SHOWCURRENT']; ?> </a>
-					</td>
-				</tr>
+						<td class="buttons">
+							<a href='../Controller/PROF_ESPACIO_Controller.php?action=EDIT&dni=<?php echo $fila['DNI']; ?>'>
+								<img height="16" src="<?php echo $icons['edit']; ?>">
+							</a>
+							<a href='../Controller/PROF_ESPACIO_Controller.php?action=DELETE&dni=<?php echo $fila['DNI']; ?>'>
+								<img height="16" src="<?php echo $icons['delete']; ?>">
+							</a>
+							<a href='../Controller/PROF_ESPACIO_Controller.php?action=SHOWCURRENT&dni=<?php echo $fila['DNI']; ?>'>
+								<img height="16" src="<?php echo $icons['view']; ?>">
+							</a>
+						</td>
+					</tr>
 <?php
 			}
 ?>
-			</table>		
+				</tbody>
+			</table>
+			
+			<a href="../Controller/Index_Controller.php" class="return"><?php echo $strings['Back']; ?></a>
 <?php
 			// Añadimos la vista Footer
 			include '../View/Footer.php';
