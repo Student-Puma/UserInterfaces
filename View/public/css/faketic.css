@@ -68,6 +68,8 @@ body { margin: 0; min-height: 100vh; overflow: hidden; }
     .datos table thead th.addnsearch { border: 0 !important; background:#FFF !important; }
     .datos table tbody td.buttons, thead th.addnsearch { width: 60px; text-align: center; }
 
+    .readonly, input[readonly] { background: #E8E8E8; }
+
     .contenido-principal .workspace .datos .return { color: #0067E2; float: right; color: #FFF; padding: 2px 10px; font-size: 14px;
         background: linear-gradient(#59A8D9, #7FB6E2, #59A8D9, #0477BF); }
 

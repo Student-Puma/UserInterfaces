@@ -19,6 +19,8 @@
 		</div> <!-- footer -->
 
 	</div> <!-- main -->
+
+	<script src="../View/public/js/functions.js"></script>
 </body> <!-- body -->
 </html> <!-- html -->
 		

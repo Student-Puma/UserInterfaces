@@ -32,14 +32,14 @@
 			include '../View/Header.php';
 ?>
 		<div class="centrado">
-			<h2><?php echo $strings['ADD']; ?></h2>
+			<h2><?php echo $strings['EDIT']; ?></h2>
 		</div>
 
 		<form name="Form" action="../Controller/USUARIOS_Controller.php" method="post">
 			<ul class="form-style">
 				<li>
 					<label><?php echo $strings['AccountData']; ?> <span class="requerido">*</span></label>
-					<input type="text" class="campo-dividido" id="login" name="login" placeholder="<?php echo $strings['Login']; ?>" value="<?php echo $this->tupla['login']; ?>" required>
+					<input type="text" readonly class="campo-dividido" id="login" name="login" placeholder="<?php echo $strings['Login']; ?>" value="<?php echo $this->tupla['login']; ?>" required>
 					<input type="password" class="campo-dividido" id="password" name="password" placeholder="<?php echo $strings['Password']; ?>" value="<?php echo $this->tupla['password']; ?>" required>
 				</li>
 				<li>
@@ -72,7 +72,7 @@
 						<option value="mujer"><?php echo $strings['Female']; ?></option>
 					</select>
 
-					<input type="submit" class="campo-dividido" name="action" value="ADD">
+					<input type="submit" class="campo-dividido" name="action" value="EDIT">
 				</li>
 			</ul>
 		</form>
