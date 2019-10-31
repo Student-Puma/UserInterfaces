@@ -90,6 +90,7 @@
 		// Mensajes de Error
 		'Error'					=> 'Error',
 		'Error-Photo'			=> 'Necesita subir una foto válida',
+		'Error-Email'			=> 'El email necesita ser más corto',
 		'ErrMySQL'				=> 'Fallo al conectar a MySQL',
 		// Mensajes de Error Predeterminados
 		'Error de gestor de base de datos' => 'Error de gestor de base de datos',

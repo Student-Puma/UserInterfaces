@@ -285,6 +285,7 @@ function showModal(msg)
     switch(msg)
     {
         case 'foto': document.getElementById('modal-msg-photo').style.display = "block"; break;
+        case 'email': document.getElementById('modal-msg-email').style.display = "block"; break;
         default: break;
     }
     document.getElementById('modal').style.display = "flex";
@@ -298,5 +299,6 @@ function closeModal(e)
     e.preventDefault();
     document.getElementById('modal').style.display = "none";
     document.getElementById('modal-msg-photo').style.display = "none"
+    document.getElementById('modal-msg-email').style.display = "none"
     return false;
 }
