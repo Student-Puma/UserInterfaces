@@ -65,7 +65,8 @@
 				<li>
 					<label><?php echo $strings['Genre']; ?></label>
 					<select class="campo-dividido" id="sexo" name="sexo">
-						<option value="hombre" selected><?php echo $strings['Male']; ?></option>
+						<option selected value=""><?php echo $strings['OptionNone']; ?></option>
+						<option value="hombre"><?php echo $strings['Male']; ?></option>
 						<option value="mujer"><?php echo $strings['Female']; ?></option>
 					</select>
 
