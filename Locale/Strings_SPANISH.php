@@ -82,6 +82,11 @@
 		'Year'					=> 'Año Académico',
 		'Area'					=> 'Area',
 		'Department'			=> 'Departamento',
+		'DESPACHO'				=> 'DESPACHO',
+		'LABORATORIO'			=> 'LABORATORIO',
+		'PAS'					=> 'PAS',
+		'Details'				=> 'Detalles',
+		'OptionNone'			=> '-- Sin seleccionar -- ',
 		// Mensajes de Error
 		'ErrMySQL'				=> 'Fallo al conectar a MySQL',
 		// Mensajes de Error Predeterminados

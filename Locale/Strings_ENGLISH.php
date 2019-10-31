@@ -87,6 +87,11 @@
 		'Birth'					=> 'Birthday',
 		'Genre'					=> 'Genre',
 		'Phone'					=> 'Phone',
+		'DESPACHO'				=> 'OFFICE',
+		'LABORATORIO'			=> 'LABORATORY',
+		'PAS'					=> 'ASP',
+		'Details'				=> 'Details',
+		'OptionNone'			=> '-- No option -- ',
 		// Mensajes de Error
 		'ErrMySQL'				=> 'Failed to connect to MySQL',
 		// Mensajes de Error Predeterminados

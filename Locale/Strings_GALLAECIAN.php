@@ -85,9 +85,13 @@
 		'Area'					=> 'Area',
 		'Department'			=> 'Departamento',
 		'Picture'				=> 'Foto persoal',
-		'Birth'					=> 'Data nacemento',
 		'Genre'					=> 'Sexo',
 		'Phone'					=> 'Teléfono',
+		'DESPACHO'				=> 'DESPACHO',
+		'LABORATORIO'			=> 'LABORATORIO',
+		'PAS'					=> 'PAS',
+		'Details'				=> 'Detalles',
+		'OptionNone'			=> '-- Sen seleccionar -- ',
 		// Mensajes de Error
 		'ErrMySQL'				=> 'Fallo ó conectar a MySQL',
 		// Mensajes de Error Predeterminados

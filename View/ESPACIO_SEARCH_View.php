@@ -23,26 +23,49 @@
 		 */
 		function render()
 		{
+			// Añadimos el idioma
+			include_once '../Locale/Strings_'.$_SESSION['idioma'].'.php';
 			// Añadimos la vista Header
 			include '../View/Header.php';
 ?>
-			<h1><?php echo $strings['SEARCH']; ?></h1>	
-			<form name='Form' action='../Controller/ESPACIO_Controller.php' method='post'>
-				
-				<?php echo $strings['CODEspacio']; ?> : <input type='text' name='CODEspacio' id='CODEspacio' size='5' value=''><br>
-				<?php echo $strings['CODEdificio']; ?> : <input type='text' name='CODEdificio' id='CODEdificio' size='5' value=''><br>
-				<?php echo $strings['CODCentro']; ?> : <input type='text' name='CODCentro' id='CODCentro' size='5' value=''><br>
-				<?php echo $strings['Type']; ?> : <input type='text' name='tipo' id='tipo' size='50' value=''><br>
-				<?php echo $strings['Surface']; ?> : <input type='text' name='superficie' id='superficie' size='50' value=''><br>
-				<?php echo $strings['NumInvent']; ?> : <input type='text' name='numinventario' id='numinventario' size='40' value=''><br>
+		<div class="centrado">
+			<h2><?php echo $strings['SEARCH']; ?></h2>
+		</div>
 
-				<input type='submit' name='action' value='SEARCH'>
-			</form>
+		<form name="Form" action="../Controller/ESPACIO_Controller.php" method="post">
+			<ul class="form-style">
+				<li>
+					<label><?php echo $strings['Type']; ?></label>
+					<select class="campo-largo" id="tipo" name="tipo">
+						<option selected value=""><?php echo $strings['OptionNone']; ?></option>
+						<option value="DESPACHO"><?php echo $strings['DESPACHO']; ?></option>
+						<option value="LABORATORIO"><?php echo $strings['LABORATORIO']; ?></option>
+						<option value="PAS"><?php echo $strings['PAS']; ?></option>
+					</select>
+				</li>
+				<li>
+					<label><?php echo $strings['Details']; ?></label>
+					<input type="text" pattern="[0-9]{1,4}" class="campo-dividido" id="superficie" name="superficie" placeholder="<?php echo $strings['Surface']; ?>">
+					<input type="text" pattern="[0-9]{1,8}" class="campo-dividido" id="numinventario" name="numinventario" placeholder="<?php echo $strings['NumInvent']; ?>">
+				</li>
+				<li>
+					<label><?php echo $strings['Codes']; ?></label>
+					<input type="text" pattern="[A-Za-z0-9_-]{1,10}" class="campo-dividido" id="CODEdificio" name="CODEdificio" placeholder="<?php echo $strings['CODEdificio']; ?>">
+					<input type="text" pattern="[A-Za-z0-9_-]{1,10}" class="campo-dividido" id="CODCentro" name="CODCentro" placeholder="<?php echo $strings['CODCentro']; ?>">
+				</li>
+				<li>
+					<input type="text" pattern="[A-Za-z0-9_-]{1,10}" class="campo-dividido" id="CODEspacio" name="CODEspacio" placeholder="<?php echo $strings['CODEspacio']; ?>">
 
-			<a href='../Controller/Index_Controller.php'><?php echo $strings['Back']; ?></a>
+					<input type="submit" class="campo-dividido" name="action" value="SEARCH">
+				</li>
+			</ul>
+		</form>
+
+
+		<a href="../Controller/ESPACIO_Controller.php" class="return"><?php echo $strings['Back']; ?></a>
 <?php
-			// Añadimos la vista Footer
-			include '../View/Footer.php';
-		}
+		// Añadimos la vista Footer
+		include '../View/Footer.php';
 	}
+}
 ?>
