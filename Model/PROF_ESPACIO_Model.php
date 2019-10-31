@@ -49,7 +49,7 @@
 		function ADD()
 		{
 			// Consulta SQL
-			$sql = "select * from PROF_ESPACIO where DNI = '".$this->dni."'";
+			$sql = "select * from PROF_ESPACIO where (DNI = '".$this->dni."' AND CODESPACIO = '".$this->CODEspacio."')";
 
 			// Ejecuta la consulta
 			if (!$result = $this->mysqli->query($sql))
@@ -121,7 +121,8 @@
 			$sql = "DELETE FROM 
 						PROF_ESPACIO
 					WHERE(
-						DNI = '$this->dni'
+						DNI = '$this->dni' AND
+						CODESPACIO = '$this->CODEspacio'
 					)";
 
 			// Ejecutamos la sentencia y devolvemos el mensaje correspondiente
@@ -147,7 +148,8 @@
 			$sql = "SELECT *
 					FROM PROF_ESPACIO
 					WHERE (
-						(DNI = '$this->dni') 
+						(DNI = '$this->dni' AND
+						CODESPACIO = '$this->CODEspacio') 
 					)";
 
 			// Ejecutamos la sentencia y devolvemos
@@ -165,6 +167,7 @@
 
 		/**
 		 * Realizar el UPDATE de una tupla despues de comprobar que existe
+		 * FIXME: Este código jamás se llegará a ejecutar
 		 * 
 		 * @return resultado Mensaje correspondiente al resultado
 		 */

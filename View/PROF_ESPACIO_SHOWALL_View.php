@@ -74,13 +74,13 @@
 					}
 ?>
 						<td class="buttons">
-							<a href='../Controller/PROF_ESPACIO_Controller.php?action=EDIT&dni=<?php echo $fila['DNI']; ?>'>
+							<a href='../Controller/PROF_ESPACIO_Controller.php?action=EDIT&dni=<?php echo $fila['DNI']; ?>&CODEspacio=<?php echo $fila['CODESPACIO']; ?>''>
 								<img height="16" src="<?php echo $icons['edit']; ?>">
 							</a>
-							<a href='../Controller/PROF_ESPACIO_Controller.php?action=DELETE&dni=<?php echo $fila['DNI']; ?>'>
+							<a href='../Controller/PROF_ESPACIO_Controller.php?action=DELETE&dni=<?php echo $fila['DNI']; ?>&CODEspacio=<?php echo $fila['CODESPACIO']; ?>''>
 								<img height="16" src="<?php echo $icons['delete']; ?>">
 							</a>
-							<a href='../Controller/PROF_ESPACIO_Controller.php?action=SHOWCURRENT&dni=<?php echo $fila['DNI']; ?>'>
+							<a href='../Controller/PROF_ESPACIO_Controller.php?action=SHOWCURRENT&dni=<?php echo $fila['DNI']; ?>&CODEspacio=<?php echo $fila['CODESPACIO']; ?>''>
 								<img height="16" src="<?php echo $icons['view']; ?>">
 							</a>
 						</td>

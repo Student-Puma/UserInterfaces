@@ -51,7 +51,7 @@
 		function ADD()
 		{
 			// Consulta SQL
-			$sql = "select * from PROF_TITULACION where DNI = '".$this->dni."'";
+			$sql = "select * from PROF_TITULACION where (DNI = '".$this->dni."' AND CODTITULACION = '".$this->CODTitulacion."')";
 
 			// Ejecuta la consulta
 			if (!$result = $this->mysqli->query($sql))
@@ -127,7 +127,8 @@
 			$sql = "DELETE FROM 
 						PROF_TITULACION
 					WHERE(
-						DNI = '$this->dni'
+						DNI = '$this->dni' AND
+						CODTITULACION = '$this->CODTitulacion'
 					)";
 
 			// Ejecutamos la sentencia y devolvemos el mensaje correspondiente
@@ -153,7 +154,8 @@
 			$sql = "SELECT *
 					FROM PROF_TITULACION
 					WHERE (
-						(DNI = '$this->dni') 
+						(DNI = '$this->dni' AND
+						CODTITULACION = '$this->CODTitulacion') 
 					)";
 
 			// Ejecutamos la sentencia y devolvemos
@@ -179,10 +181,10 @@
 			// Sentencia SQL
 			$sql = "UPDATE PROF_TITULACION
 					SET
-						CODTITULACION = '$this->CODTitulacion',
-						ANHO = '$this->anho'
+						ANHOACADEMICO = '$this->anho'
 					WHERE (
-						DNI = '$this->dni'
+						DNI = '$this->dni' AND
+						CODTITULACION = '$this->CODTitulacion'
 					)";
 
 			// Ejecutamos la sentencia y devolvemos

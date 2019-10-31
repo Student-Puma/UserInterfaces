@@ -79,7 +79,7 @@
 			if (!$_POST)
 			{
 				// Se muestra el formulario con los valores actuales
-				$prof_titulacion = new PROF_TITULACION_Model($_REQUEST['dni'],'','');
+				$prof_titulacion = new PROF_TITULACION_Model($_REQUEST['dni'],$_REQUEST['CODTitulacion'],'');
 				$valores = $prof_titulacion->RellenaDatos();
 				new PROF_TITULACION_DELETE($valores);
 			}
@@ -98,7 +98,7 @@
 			if (!$_POST)
 			{
 				// Se muestra el formulario con los valores actuales
-				$prof_titulacion = new PROF_TITULACION_Model($_REQUEST['dni'],'','');
+				$prof_titulacion = new PROF_TITULACION_Model($_REQUEST['dni'],$_REQUEST['CODTitulacion'],'');
 				$valores = $prof_titulacion->RellenaDatos();
 				// Si no hay error, mostramos el formulario con los datos
 				if (is_array($valores))
@@ -140,7 +140,7 @@
 		// Acción: Detallar
 		case 'SHOWCURRENT':
 			// Creamos una instancia de la entidad con la clave primaria del registro que deseemos ver
-			$prof_titulacion = new PROF_TITULACION_Model($_REQUEST['dni'],'','');
+			$prof_titulacion = new PROF_TITULACION_Model($_REQUEST['dni'],$_REQUEST['CODTitulacion'],'');
 			$valores = $prof_titulacion->RellenaDatos();
 			// Mostramos la vista correspondiente
 			new PROF_TITULACION_SHOWCURRENT($valores);
