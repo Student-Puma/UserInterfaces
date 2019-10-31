@@ -26,24 +26,41 @@
 		 */
 		function render()
 		{
+			// Añadimos el idioma
+			include_once '../Locale/Strings_'.$_SESSION['idioma'].'.php';
 			// Añadimos la vista Header
 			include '../View/Header.php';
 ?>
-			<h1><?php echo $strings['EDIT']; ?></h1>	
-			<form name='Form' action='../Controller/TITULACION_Controller.php' method='post'>			
-				
-				<?php echo $strings['CODTitulacion']; ?> : <input type='text' name='CODTitulacion' id='CODTitulacion' size='15' value='<?php echo $this->tupla['CODTITULACION']; ?>' readonly><br>
-				<?php echo $strings['CODCentro']; ?> : <input type='text' name='CODCentro' id='CODCentro' size='9' value='<?php echo $this->tupla['CODCENTRO']; ?>'><br>
-				<?php echo $strings['Name']; ?> : <input type='text' name='nombre' id='nombre' size='30' value='<?php echo $this->tupla['NOMBRETITULACION']; ?>'><br>
-				<?php echo $strings['Responsable']; ?> : <input type='text' name='responsable' id='responsable' size='50' value='<?php echo $this->tupla['RESPONSABLETITULACION']; ?>'><br>
-				
-				<input type='submit' name='action' value='EDIT'>
-			</form>
-		
-			<a href='../Controller/Index_Controller.php'><?php echo $strings['Back']; ?></a>
+		<div class="centrado">
+			<h2><?php echo $strings['EDIT']; ?></h2>
+		</div>
+
+		<form name="Form" action="../Controller/TITULACION_Controller.php" method="post">
+			<ul class="form-style">
+				<li>
+					<label><?php echo $strings['Codes']; ?> <span class="requerido">*</span></label>
+					<input type="text" readonly pattern="[A-Za-z0-9][A-Za-z0-9_-]{0,9}" class="campo-dividido" id="CODTitulacion" name="CODTitulacion" placeholder="<?php echo $strings['CODTitulacion']; ?>" value="<?php echo $this->tupla['CODTITULACION']; ?>" required>
+					<input type="text" pattern="[A-Za-z0-9][A-Za-z0-9_-]{0,9}" class="campo-dividido" id="CODCentro" name="CODCentro" placeholder="<?php echo $strings['CODCentro']; ?>" value="<?php echo $this->tupla['CODCENTRO']; ?>" required>
+				</li>
+				<li>
+					<label><?php echo $strings['Name']; ?> <span class="requerido">*</span></label>
+					<input type="text" pattern="[A-Za-z][A-Za-z -]{1,49}" class="campo-largo" id="nombre" name="nombre" placeholder="<?php echo $strings['Name']; ?>" value="<?php echo $this->tupla['NOMBRETITULACION']; ?>" required>
+				</li>
+				<li>
+					<label><?php echo $strings['Responsable']; ?> <span class="requerido">*</span></label>
+					<input type="text" pattern="[A-Za-z][A-Za-z -]{2,59}" class="campo-largo" id="responsable" name="responsable" placeholder="<?php echo $strings['Responsable']; ?>" value="<?php echo $this->tupla['RESPONSABLETITULACION']; ?>" required>
+				</li>
+				<li>
+					<input type="submit" class="campo-largo" name="action" value="EDIT">
+				</li>
+			</ul>
+		</form>
+
+
+		<a href="../Controller/TITULACION_Controller.php" class="return"><?php echo $strings['Back']; ?></a>
 <?php
-			// Añadimos la vista Footer
-			include '../View/Footer.php';
-		}
+		// Añadimos la vista Footer
+		include '../View/Footer.php';
 	}
+}
 ?>
