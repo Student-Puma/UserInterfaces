@@ -35,7 +35,7 @@
 			<h2><?php echo $strings['EDIT']; ?></h2>
 		</div>
 
-		<form name="Form" action="../Controller/CENTRO_Controller.php" method="post">
+		<form name="Form" action="../Controller/CENTRO_Controller.php" method="post" onsubmit="submitCentro(this);">
 			<ul class="form-style">
 				<li>
 					<label><?php echo $strings['Codes']; ?> <span class="requerido">*</span></label>

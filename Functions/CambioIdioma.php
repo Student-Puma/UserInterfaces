@@ -16,6 +16,6 @@
     $idioma = $_GET['idioma'];
     $_SESSION['idioma'] = $idioma;
 
-    // Redirigimos a la página rederencia
+    // Redirigimos a la página referencia
     header('Location:' . $_SERVER["HTTP_REFERER"]);
 ?>

@@ -35,7 +35,7 @@
 			<h2><?php echo $strings['EDIT']; ?></h2>
 		</div>
 
-		<form name="Form" action="../Controller/PROFESOR_Controller.php" method="post">
+		<form name="Form" action="../Controller/PROFESOR_Controller.php" method="post" onsubmit="submitProfesor(this);">
 			<ul class="form-style">
 				
 				<li>

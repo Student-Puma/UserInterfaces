@@ -47,7 +47,7 @@
 					</li>
 					<li>
 						<label><?php echo $strings['Year']; ?> <span class="requerido">*</span></label>
-						<input type="text" pattern="20[0-2][0-9]-20[0-2][0-9]" value="<?php echo $this->tupla['ANHOACADEMICO']; ?>" class="campo-largo" id="anho" name="anho" placeholder="<?php echo $strings['Year']; ?>" required>
+						<input type="text" pattern="20[0-2][0-9]-20[0-2][0-9]" value="<?php echo $this->tupla['ANHOACADEMICO']; ?>" class="campo-largo" id="anho" name="anho" placeholder="<?php echo $strings['Year']; ?>" onblur="comprobarAnho(this);" required>
 					</li>
 					<li>
 						<input type="submit" class="campo-largo" name="action" value="EDIT">

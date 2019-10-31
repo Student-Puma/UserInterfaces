@@ -32,7 +32,7 @@
 			<h2><?php echo $strings['ADD']; ?></h2>
 		</div>
 
-		<form name="Form" action="../Controller/EDIFICIO_Controller.php" method="post">
+		<form name="Form" action="../Controller/EDIFICIO_Controller.php" method="post" onsubmit="submitEdificio(this);">
 			<ul class="form-style">
 				
 				<li>

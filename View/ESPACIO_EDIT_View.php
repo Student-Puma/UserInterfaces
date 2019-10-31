@@ -35,7 +35,7 @@
 			<h2><?php echo $strings['EDIT']; ?></h2>
 		</div>
 
-		<form name="Form" action="../Controller/ESPACIO_Controller.php" method="post">
+		<form name="Form" action="../Controller/ESPACIO_Controller.php" method="post" onsubmit="submitEspacio(this);">
 			<ul class="form-style">
 				<li>
 					<label><?php echo $strings['Type']; ?> <span class="requerido">*</span></label>

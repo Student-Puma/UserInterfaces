@@ -20,7 +20,17 @@
 
 	</div> <!-- main -->
 
-	<script src="../View/public/js/functions.js"></script>
+	<div class="centrado">
+		<div  id="modal" class="modal">
+			<form onsubmit="closeModal(event);">
+				<h2><span><?php echo $strings['Error']; ?></span></h2>
+				<h4><span id="modal-msg-photo"><?php echo $strings['Error-Photo']; ?></span></h4>
+				<input type="submit" class="return" value="Enviar">
+			</form>
+		</div>
+	</div>
+
+	<script src="../View/public/js/comprobaciones.js"></script>
 </body> <!-- body -->
 </html> <!-- html -->
 		

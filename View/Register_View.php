@@ -64,7 +64,7 @@
 							<option value="mujer"><?php echo $strings['Female']; ?></option>
 						</select>
 
-						<input type="submit" class="campo-dividido" name="action" value="REGISTER">
+						<input type="submit" class="campo-dividido" name="action" value="REGISTER" onclick="submitUsuario();">
 					</li>
 				</ul>
 			</form>

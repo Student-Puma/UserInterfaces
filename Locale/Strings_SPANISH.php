@@ -88,6 +88,8 @@
 		'Details'				=> 'Detalles',
 		'OptionNone'			=> '-- Sin seleccionar -- ',
 		// Mensajes de Error
+		'Error'					=> 'Error',
+		'Error-Photo'			=> 'Necesita subir una foto válida',
 		'ErrMySQL'				=> 'Fallo al conectar a MySQL',
 		// Mensajes de Error Predeterminados
 		'Error de gestor de base de datos' => 'Error de gestor de base de datos',
