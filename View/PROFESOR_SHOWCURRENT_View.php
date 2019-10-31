@@ -22,24 +22,43 @@
 		 * Renderiza la vista
 		 */
 		function render(){
+			// Añadimos el idioma
+			include_once '../Locale/Strings_'.$_SESSION['idioma'].'.php';
 			// Añadimos la vista Header
 			include '../View/Header.php';
 ?>
-			<h1><?php echo $strings['SHOWCURRENT']; ?></h1>	
-			<form name='Form' action='../Controller/PROFESOR_Controller.php' method='post'>
+		<div class="centrado">
+			<h2><?php echo $strings['SHOWCURRENT']; ?></h2>
+		</div>
 
-				<?php echo $strings['DNI']; ?> : <input type='text' name='dni' id='dni' size='9' value='<?php echo $this->tupla['DNI']; ?>' readonly><br>
-				<?php echo $strings['Name']; ?> : <input type='text' name='nombre' id='nombre' size='30' value='<?php echo $this->tupla['NOMBREPROFESOR']; ?>' readonly><br>
-				<?php echo $strings['Surname']; ?> : <input type='text' name='apellidos' id='apellidos' size='60' value='<?php echo $this->tupla['APELLIDOSPROFESOR']; ?>' readonly><br>
-				<?php echo $strings['Area']; ?> :<input type='text' name='area' id='area' size='40' value='<?php echo $this->tupla['AREAPROFESOR']; ?>' readonly><br>
-				<?php echo $strings['Department']; ?> :<input type='text' name='departamento' id='departamento' size='40' value='<?php echo $this->tupla['DEPARTAMENTOPROFESOR']; ?>' readonly><br>
-			
-			</form>
+		<form name="Form" action="../Controller/PROFESOR_Controller.php" method="post">
+			<ul class="form-style">
+				
+				<li>
+					<label><?php echo $strings['FullName']; ?></label>
+					<input type="text" readonly pattern="[A-Za-z][A-Za-z0-9 -]{2,14}" class="campo-dividido" id="nombre" name="nombre" placeholder="<?php echo $strings['Name']; ?>" value="<?php echo $this->tupla['NOMBREPROFESOR']; ?>">
+					<input type="text" readonly pattern="[A-Za-z][A-Za-z0-9 -]{2,14}" class="campo-dividido" id="apellidos" name="apellidos" placeholder="<?php echo $strings['Surname']; ?>" value="<?php echo $this->tupla['APELLIDOSPROFESOR']; ?>">
+				</li>
+				<li>
+				<label><?php echo $strings['Area']; ?></label>
+					<input type="text" readonly pattern="[A-Za-z][A-Za-z0-9 -]{2,59}" class="campo-largo" id="area" name="area" placeholder="<?php echo $strings['Area']; ?>" value="<?php echo $this->tupla['AREAPROFESOR']; ?>">
+				</li>
+				<li>
+				<label><?php echo $strings['Department']; ?></label>
+					<input type="text" readonly pattern="[A-Za-z][A-Za-z0-9 -]{2,59}" class="campo-largo" id="departamento" name="departamento" placeholder="<?php echo $strings['Department']; ?>" value="<?php echo $this->tupla['DEPARTAMENTOPROFESOR']; ?>">
+				</li>
+				<li>
+					<label><?php echo $strings['DNI']; ?></label>
+					<input type="text" readonly pattern="[0-9]{8}[A-NO-Za-no-z]" class="campo-largo" id="dni" name="dni" placeholder="<?php echo $strings['DNI']; ?>" value="<?php echo $this->tupla['DNI']; ?>">
+				</li>
+			</ul>
+		</form>
 
-			<a href='../Controller/PROFESOR_Controller.php'><?php echo $strings['Back']; ?></a>
+
+		<a href="../Controller/PROFESOR_Controller.php" class="return"><?php echo $strings['Back']; ?></a>
 <?php
-			// Añadimos la vista Footer
-			include '../View/Footer.php';
-		}
+		// Añadimos la vista Footer
+		include '../View/Footer.php';
 	}
+}
 ?>
