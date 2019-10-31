@@ -40,16 +40,16 @@
 				
 				<li>
 					<label><?php echo $strings['FullName']; ?></label>
-					<input type="text" readonly pattern="[A-Za-z][A-Za-z0-9 -]{2,14}" class="campo-dividido" id="nombre" name="nombre" placeholder="<?php echo $strings['Name']; ?>" value="<?php echo $this->tupla['NOMBREPROFESOR']; ?>">
-					<input type="text" readonly pattern="[A-Za-z][A-Za-z0-9 -]{2,14}" class="campo-dividido" id="apellidos" name="apellidos" placeholder="<?php echo $strings['Surname']; ?>" value="<?php echo $this->tupla['APELLIDOSPROFESOR']; ?>">
+					<input type="text" readonly pattern="[A-Za-z][A-Za-z -]{2,14}" class="campo-dividido" id="nombre" name="nombre" placeholder="<?php echo $strings['Name']; ?>" value="<?php echo $this->tupla['NOMBREPROFESOR']; ?>">
+					<input type="text" readonly pattern="[A-Za-z][A-Za-z -]{2,14}" class="campo-dividido" id="apellidos" name="apellidos" placeholder="<?php echo $strings['Surname']; ?>" value="<?php echo $this->tupla['APELLIDOSPROFESOR']; ?>">
 				</li>
 				<li>
 				<label><?php echo $strings['Area']; ?></label>
-					<input type="text" readonly pattern="[A-Za-z][A-Za-z0-9 -]{2,59}" class="campo-largo" id="area" name="area" placeholder="<?php echo $strings['Area']; ?>" value="<?php echo $this->tupla['AREAPROFESOR']; ?>">
+					<input type="text" readonly pattern="[A-Za-z][A-Za-z -]{2,59}" class="campo-largo" id="area" name="area" placeholder="<?php echo $strings['Area']; ?>" value="<?php echo $this->tupla['AREAPROFESOR']; ?>">
 				</li>
 				<li>
 				<label><?php echo $strings['Department']; ?></label>
-					<input type="text" readonly pattern="[A-Za-z][A-Za-z0-9 -]{2,59}" class="campo-largo" id="departamento" name="departamento" placeholder="<?php echo $strings['Department']; ?>" value="<?php echo $this->tupla['DEPARTAMENTOPROFESOR']; ?>">
+					<input type="text" readonly pattern="[A-Za-z][A-Za-z -]{2,59}" class="campo-largo" id="departamento" name="departamento" placeholder="<?php echo $strings['Department']; ?>" value="<?php echo $this->tupla['DEPARTAMENTOPROFESOR']; ?>">
 				</li>
 				<li>
 					<label><?php echo $strings['DNI']; ?></label>

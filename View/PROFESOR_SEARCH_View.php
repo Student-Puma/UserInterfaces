@@ -37,16 +37,16 @@
 				
 				<li>
 					<label><?php echo $strings['FullName']; ?></span></label>
-					<input type="text" pattern="[A-Za-z0-9 -]{1,15}" class="campo-dividido" id="nombre" name="nombre" placeholder="<?php echo $strings['Name']; ?>">
-					<input type="text" pattern="[A-Za-z0-9 -]{1,30}" class="campo-dividido" id="apellidos" name="apellidos" placeholder="<?php echo $strings['Surname']; ?>">
+					<input type="text" pattern="[A-Za-z -]{1,15}" class="campo-dividido" id="nombre" name="nombre" placeholder="<?php echo $strings['Name']; ?>">
+					<input type="text" pattern="[A-Za-z -]{1,30}" class="campo-dividido" id="apellidos" name="apellidos" placeholder="<?php echo $strings['Surname']; ?>">
 				</li>
 				<li>
 				<label><?php echo $strings['Area']; ?></span></label>
-					<input type="text" pattern="[A-Za-z0-9 -]{1,60}" class="campo-largo" id="area" name="area" placeholder="<?php echo $strings['Area']; ?>">
+					<input type="text" pattern="[A-Za-z -]{1,60}" class="campo-largo" id="area" name="area" placeholder="<?php echo $strings['Area']; ?>">
 				</li>
 				<li>
 				<label><?php echo $strings['Department']; ?></span></label>
-					<input type="text" pattern="[A-Za-z0-9 -]{1,60}" class="campo-largo" id="departamento" name="departamento" placeholder="<?php echo $strings['Department']; ?>">
+					<input type="text" pattern="[A-Za-z -]{1,60}" class="campo-largo" id="departamento" name="departamento" placeholder="<?php echo $strings['Department']; ?>">
 				</li>
 				<li>
 					<label><?php echo $strings['DNI']; ?></span></label>

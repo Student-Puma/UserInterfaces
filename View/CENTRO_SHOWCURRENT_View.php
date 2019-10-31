@@ -40,7 +40,7 @@
 				</li>
 				<li>
 					<label><?php echo $strings['Name']; ?></span></label>
-					<input type="text" readonly pattern="[A-Za-z][A-Za-z0-9 -]{1,49}" class="campo-largo" id="nombre" name="nombre" placeholder="<?php echo $strings['Name']; ?>" value='<?php echo $this->tupla['NOMBRECENTRO']; ?>'>
+					<input type="text" readonly pattern="[A-Za-z][A-Za-z -]{1,49}" class="campo-largo" id="nombre" name="nombre" placeholder="<?php echo $strings['Name']; ?>" value='<?php echo $this->tupla['NOMBRECENTRO']; ?>'>
 				</li>
 				<li>
 				<label><?php echo $strings['Address']; ?></span></label>

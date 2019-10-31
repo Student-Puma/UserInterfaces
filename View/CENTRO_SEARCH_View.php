@@ -41,7 +41,7 @@
 				</li>
 				<li>
 					<label><?php echo $strings['Name']; ?></label>
-					<input type="text" pattern="[A-Za-z0-9 -]{1,50}" class="campo-largo" id="nombre" name="nombre" placeholder="<?php echo $strings['Name']; ?>">
+					<input type="text" pattern="[A-Za-z -]{1,50}" class="campo-largo" id="nombre" name="nombre" placeholder="<?php echo $strings['Name']; ?>">
 				</li>
 				<li>
 				<label><?php echo $strings['Address']; ?></label>

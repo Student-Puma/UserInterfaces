@@ -40,16 +40,16 @@
 				
 				<li>
 					<label><?php echo $strings['FullName']; ?> <span class="requerido">*</span></label>
-					<input type="text" pattern="[A-Za-z][A-Za-z0-9 -]{2,14}" class="campo-dividido" id="nombre" name="nombre" placeholder="<?php echo $strings['Name']; ?>" value="<?php echo $this->tupla['NOMBREPROFESOR']; ?>" required>
-					<input type="text" pattern="[A-Za-z][A-Za-z0-9 -]{2,29}" class="campo-dividido" id="apellidos" name="apellidos" placeholder="<?php echo $strings['Surname']; ?>" value="<?php echo $this->tupla['APELLIDOSPROFESOR']; ?>" required>
+					<input type="text" pattern="[A-Za-z][A-Za-z -]{2,14}" class="campo-dividido" id="nombre" name="nombre" placeholder="<?php echo $strings['Name']; ?>" value="<?php echo $this->tupla['NOMBREPROFESOR']; ?>" required>
+					<input type="text" pattern="[A-Za-z][A-Za-z -]{2,29}" class="campo-dividido" id="apellidos" name="apellidos" placeholder="<?php echo $strings['Surname']; ?>" value="<?php echo $this->tupla['APELLIDOSPROFESOR']; ?>" required>
 				</li>
 				<li>
 				<label><?php echo $strings['Area']; ?> <span class="requerido">*</span></label>
-					<input type="text" pattern="[A-Za-z][A-Za-z0-9 -]{2,59}" class="campo-largo" id="area" name="area" placeholder="<?php echo $strings['Area']; ?>" value="<?php echo $this->tupla['AREAPROFESOR']; ?>" required>
+					<input type="text" pattern="[A-Za-z][A-Za-z -]{2,59}" class="campo-largo" id="area" name="area" placeholder="<?php echo $strings['Area']; ?>" value="<?php echo $this->tupla['AREAPROFESOR']; ?>" required>
 				</li>
 				<li>
 				<label><?php echo $strings['Department']; ?> <span class="requerido">*</span></label>
-					<input type="text" pattern="[A-Za-z][A-Za-z0-9 -]{2,59}" class="campo-largo" id="departamento" name="departamento" placeholder="<?php echo $strings['Department']; ?>" value="<?php echo $this->tupla['DEPARTAMENTOPROFESOR']; ?>" required>
+					<input type="text" pattern="[A-Za-z][A-Za-z -]{2,59}" class="campo-largo" id="departamento" name="departamento" placeholder="<?php echo $strings['Department']; ?>" value="<?php echo $this->tupla['DEPARTAMENTOPROFESOR']; ?>" required>
 				</li>
 				<li>
 					<label><?php echo $strings['DNI']; ?> <span class="requerido">*</span></label>
