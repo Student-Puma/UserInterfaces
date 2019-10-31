@@ -41,12 +41,12 @@
 				</li>
 				<li>
 					<label><?php echo $strings['FullName']; ?></label>
-					<input type="text" pattern="[A-Za-z][A-Za-z -]{2,29}" class="campo-dividido" id="nombre" name="nombre" placeholder="<?php echo $strings['Name']; ?>">
-					<input type="text" pattern="[A-Za-z][A-Za-z -]{2,49}" class="campo-dividido" id="apellidos" name="apellidos" placeholder="<?php echo $strings['Surname']; ?>">
+					<input type="text" pattern="[A-Za-z -]{1,30}" class="campo-dividido" id="nombre" name="nombre" placeholder="<?php echo $strings['Name']; ?>">
+					<input type="text" pattern="[A-Za-z -]{1,50}" class="campo-dividido" id="apellidos" name="apellidos" placeholder="<?php echo $strings['Surname']; ?>">
 				</li>
 				<li>
 					<label><?php echo $strings['Email']; ?></label>
-					<input type="email" pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}" class="campo-largo" id="email" name="email" placeholder="<?php echo $strings['Email']; ?>">
+					<input type="email" pattern="[A-Za-z0-9._%+-@]+" class="campo-largo" id="email" name="email" placeholder="<?php echo $strings['Email']; ?>">
 				</li>
 				<li>
 					<label><?php echo $strings['Birth']; ?></label>
@@ -59,8 +59,8 @@
 				</li>
 				<li>
 					<label><?php echo $strings['PersonalData']; ?></label>
-					<input type="tel" pattern="[0-9]{8}[A-NO-Za-no-z]" class="campo-dividido" id="dni" name="dni" placeholder="<?php echo $strings['DNI']; ?>">
-					<input type="tel" pattern="[9|6|7][0-9]{8}" class="campo-dividido" id="telefono" name="telefono" placeholder="<?php echo $strings['Phone']; ?>">
+					<input type="tel" pattern="[A-NO-Za-no-z0-9]{1,9}" class="campo-dividido" id="dni" name="dni" placeholder="<?php echo $strings['DNI']; ?>">
+					<input type="tel" pattern="[0-9]{1,9}" class="campo-dividido" id="telefono" name="telefono" placeholder="<?php echo $strings['Phone']; ?>">
 				</li>
 				<li>
 					<label><?php echo $strings['Genre']; ?></label>

@@ -44,7 +44,7 @@
 				</li>
 				<li>
 					<label><?php echo $strings['Name']; ?> <span class="requerido">*</span></label>
-					<input type="text" pattern="[A-Za-z][A-Za-z0-9 -]{,49}" class="campo-largo" id="nombre" name="nombre" placeholder="<?php echo $strings['Name']; ?>" value='<?php echo $this->tupla['NOMBRECENTRO']; ?>' required>
+					<input type="text" pattern="[A-Za-z][A-Za-z0-9 -]{1,49}" class="campo-largo" id="nombre" name="nombre" placeholder="<?php echo $strings['Name']; ?>" value='<?php echo $this->tupla['NOMBRECENTRO']; ?>' required>
 				</li>
 				<li>
 				<label><?php echo $strings['Address']; ?> <span class="requerido">*</span></label>
