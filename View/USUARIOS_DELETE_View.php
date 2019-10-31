@@ -39,8 +39,8 @@
 			<ul class="form-style">
 				<li>
 					<label><?php echo $strings['AccountData']; ?></label>
-					<input type="text" readonly class="campo-dividido" id="login" name="login" placeholder="<?php echo $strings['Login']; ?>" value="<?php echo $this->tupla['login']; ?>" required>
-					<input type="password" readonly class="campo-dividido" id="password" name="password" placeholder="<?php echo $strings['Password']; ?>" value="<?php echo $this->tupla['password']; ?>" required>
+					<input type="text" readonly pattern=".{4,15}" class="campo-dividido" id="login" name="login" placeholder="<?php echo $strings['Login']; ?>" value="<?php echo $this->tupla['login']; ?>" required>
+					<input type="password" readonly pattern=".{4,60}" class="campo-dividido" id="password" name="password" placeholder="<?php echo $strings['Password']; ?>" value="<?php echo $this->tupla['password']; ?>" required>
 				</li>
 				<li>
 					<label><?php echo $strings['FullName']; ?></label>

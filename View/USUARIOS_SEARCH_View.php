@@ -36,13 +36,13 @@
 			<ul class="form-style">
 				<li>
 					<label><?php echo $strings['AccountData']; ?></label>
-					<input type="text" class="campo-dividido" id="login" name="login" placeholder="<?php echo $strings['Login']; ?>">
-					<input type="password" class="campo-dividido" id="password" name="password" placeholder="<?php echo $strings['Password']; ?>">
+					<input type="text" pattern=".{0,15}" class="campo-dividido" id="login" name="login" placeholder="<?php echo $strings['Login']; ?>">
+					<input type="password" pattern=".{0,60}" class="campo-dividido" id="password" name="password" placeholder="<?php echo $strings['Password']; ?>">
 				</li>
 				<li>
 					<label><?php echo $strings['FullName']; ?></label>
-					<input type="text" pattern="[A-Za-z -]{1,30}" class="campo-dividido" id="nombre" name="nombre" placeholder="<?php echo $strings['Name']; ?>">
-					<input type="text" pattern="[A-Za-z -]{1,50}" class="campo-dividido" id="apellidos" name="apellidos" placeholder="<?php echo $strings['Surname']; ?>">
+					<input type="text" pattern="[A-Za-z -]{0,30}" class="campo-dividido" id="nombre" name="nombre" placeholder="<?php echo $strings['Name']; ?>">
+					<input type="text" pattern="[A-Za-z -]{0,50}" class="campo-dividido" id="apellidos" name="apellidos" placeholder="<?php echo $strings['Surname']; ?>">
 				</li>
 				<li>
 					<label><?php echo $strings['Email']; ?></label>
@@ -59,8 +59,8 @@
 				</li>
 				<li>
 					<label><?php echo $strings['PersonalData']; ?></label>
-					<input type="tel" pattern="[A-NO-Za-no-z0-9]{1,9}" class="campo-dividido" id="dni" name="dni" placeholder="<?php echo $strings['DNI']; ?>">
-					<input type="tel" pattern="[0-9]{1,9}" class="campo-dividido" id="telefono" name="telefono" placeholder="<?php echo $strings['Phone']; ?>">
+					<input type="tel" pattern="[A-NO-Za-no-z0-9]{0,9}" class="campo-dividido" id="dni" name="dni" placeholder="<?php echo $strings['DNI']; ?>">
+					<input type="tel" pattern="[0-9]{0,9}" class="campo-dividido" id="telefono" name="telefono" placeholder="<?php echo $strings['Phone']; ?>">
 				</li>
 				<li>
 					<label><?php echo $strings['Genre']; ?></label>

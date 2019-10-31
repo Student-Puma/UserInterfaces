@@ -36,8 +36,8 @@
 			<ul class="form-style">
 				<li>
 					<label><?php echo $strings['AccountData']; ?> <span class="requerido">*</span></label>
-					<input type="text" class="campo-dividido" id="login" name="login" placeholder="<?php echo $strings['Login']; ?>" required>
-					<input type="password" class="campo-dividido" id="password" name="password" placeholder="<?php echo $strings['Password']; ?>" required>
+					<input type="text" pattern=".{4,15}" class="campo-dividido" id="login" name="login" placeholder="<?php echo $strings['Login']; ?>" required>
+					<input type="password" pattern=".{4,60}" class="campo-dividido" id="password" name="password" placeholder="<?php echo $strings['Password']; ?>" required>
 				</li>
 				<li>
 					<label><?php echo $strings['FullName']; ?> <span class="requerido">*</span></label>
