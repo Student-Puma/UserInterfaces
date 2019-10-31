@@ -26,25 +26,40 @@
 		 */
 		function render()
 		{
+			// Añadimos el idioma
+			include_once '../Locale/Strings_'.$_SESSION['idioma'].'.php';
 			// Añadimos la vista Header
 			include '../View/Header.php';
 ?>
-			<h1><?php echo $strings['DELETE']; ?></h1>	
-			<form name='Form' action='../Controller/PROF_TITULACION_Controller.php' method='post'>
-				
-				<?php echo $strings['DNI']; ?> : <input type='text' name='dni' id='dni' size='9' value='<?php echo $this->tupla['DNI']; ?>' readonly><br>
-				<?php echo $strings['CODTitulacion']; ?> : <input type='text' name='CODTitulacion' id='CODTitulacion' size='9' value='<?php echo $this->tupla['CODTITULACION']; ?>' readonly><br>
-				<?php echo $strings['Year']; ?> : <input type='text' name='anho' id='anho' size='4' value='<?php echo $this->tupla['ANHOACADEMICO']; ?>' readonly><br>
+			<div class="centrado">
+				<h2><?php echo $strings['DELETE']; ?></h2>
+			</div>
 
-				<input type='submit' name='action' value='DELETE'>
+			<form name="Form" action="../Controller/PROF_TITULACION_Controller.php" method="post">
+				<ul class="form-style">
+					<li>
+						<label><?php echo $strings['DNI']; ?></label>
+						<input type="text" readonly pattern="[0-9]{8}[A-NO-Za-no-z]" class="campo-largo" id="dni" name="dni" placeholder="<?php echo $strings['DNI']; ?>" value="<?php echo $this->tupla['DNI']; ?>">						
+					</li>
+					<li>
+						<label><?php echo $strings['Code']; ?></label>
+						<input type="text" readonly pattern="[A-Za-z0-9][A-Za-z0-9_-]{0,9}" class="campo-largo" id="CODTitulacion" name="CODTitulacion" placeholder="<?php echo $strings['CODTitulacion']; ?>" value="<?php echo $this->tupla['CODTITULACION']; ?>">
+					</li>
+					<li>
+						<label><?php echo $strings['Year']; ?></label>
+						<input type="text" readonly pattern="20[0-2][0-9]-20[0-2][0-9]" value="<?php echo $this->tupla['ANHOACADEMICO']; ?>" class="campo-largo" id="anho" name="anho" placeholder="<?php echo $strings['Year']; ?>">
+					</li>
+					<li>
+						<input type="submit" class="campo-largo" name="action" value="DELETE">
+					</li>
+				</ul>
 			</form>
-		
-			<a href='../Controller/Index_Controller.php'><?php echo $strings['Back']; ?></a>
+
+
+			<a href="../Controller/PROF_TITULACION_Controller.php" class="return"><?php echo $strings['Back']; ?></a>		
 <?php
 			// Añadimos la vista Footer
 			include '../View/Footer.php';
 		}
 	}
 ?>
-
-	
