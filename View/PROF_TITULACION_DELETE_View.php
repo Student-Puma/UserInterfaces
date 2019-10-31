@@ -45,7 +45,9 @@
 					</li>
 					<li>
 						<label><?php echo $strings['Code']; ?></label>
-						<input type="text" readonly pattern="[A-Za-z0-9][A-Za-z0-9_-]{0,9}" class="campo-largo" id="CODTitulacion" name="CODTitulacion" placeholder="<?php echo $strings['CODTitulacion']; ?>" value="<?php echo $this->tupla['CODTITULACION']; ?>">
+						<a class="weak" href="../Functions/ShowWeak.php?entity=TITULACION&key=<?php echo $this->tupla['CODTITULACION']; ?>">
+							<input type="text" readonly pattern="[A-Za-z0-9][A-Za-z0-9_-]{0,9}" class="campo-largo" id="CODTitulacion" name="CODTitulacion" placeholder="<?php echo $strings['CODTitulacion']; ?>" value="<?php echo $this->tupla['CODTITULACION']; ?>">
+						</a>
 					</li>
 					<li>
 						<label><?php echo $strings['Year']; ?></label>

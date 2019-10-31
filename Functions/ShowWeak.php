@@ -40,7 +40,31 @@
 			$valores = $EDIFICIO->RellenaDatos();
 			// Mostramos la vista correspondiente
 			new EDIFICIO_SHOWCURRENT($valores);
-			break;
+            break;
+        // CENTRO
+		case 'CENTRO':
+            // Creamos una instancia de la entidad con la clave primaria del registro que deseemos ver
+            $CENTRO = new CENTRO_Model($key,'','','','');
+            $valores = $CENTRO->RellenaDatos();
+            // Mostramos la vista correspondiente
+            new CENTRO_SHOWCURRENT($valores);
+            break;
+        // ESPACIO
+		case 'ESPACIO':
+            // Creamos una instancia de la entidad con la clave primaria del registro que deseemos ver
+            $ESPACIO = new ESPACIO_Model($key,'','','','','');
+            $valores = $ESPACIO->RellenaDatos();
+            // Mostramos la vista correspondiente
+            new ESPACIO_SHOWCURRENT($valores);
+            break;
+        // TITULACION
+		case 'TITULACION':
+            // Creamos una instancia de la entidad con la clave primaria del registro que deseemos ver
+            $TITULACION = new TITULACION_Model($key,'','','');
+            $valores = $TITULACION->RellenaDatos();
+            // Mostramos la vista correspondiente
+            new TITULACION_SHOWCURRENT($valores);
+            break;
         // Si no existe, volvemos al inicio
         default:
             // Redirigimos a la página referencia

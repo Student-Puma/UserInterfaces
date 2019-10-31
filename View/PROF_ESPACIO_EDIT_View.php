@@ -45,7 +45,9 @@
 					</li>
 					<li>
 						<label><?php echo $strings['Code']; ?> <span class="requerido">*</span></label>
-						<input type="text" readonly pattern="[A-Za-z0-9][A-Za-z0-9_-]{0,9}" class="campo-largo" id="CODEspacio" name="CODEspacio" placeholder="<?php echo $strings['CODEspacio']; ?>" value="<?php echo $this->tupla['CODESPACIO']; ?>" required>
+						<a class="weak" href="../Functions/ShowWeak.php?entity=ESPACIO&key=<?php echo $this->tupla['CODESPACIO']; ?>">
+							<input type="text" readonly pattern="[A-Za-z0-9][A-Za-z0-9_-]{0,9}" class="campo-largo" id="CODEspacio" name="CODEspacio" placeholder="<?php echo $strings['CODEspacio']; ?>" value="<?php echo $this->tupla['CODESPACIO']; ?>" required>
+						</a>
 					</li>
 					<li>
 						<input type="submit" class="campo-largo" name="action" value="EDIT">
