@@ -94,6 +94,7 @@
 		'OptionNone'			=> '-- No option -- ',
 		// Mensajes de Error
 		'Error'					=> 'Error',
+		'Upload-Error'			=> 'Upload error: File already exists',
 		'Error-Photo'			=> 'Need to upload a valid photo',
 		'Error-Email'			=> 'Email needs to be shorter',
 		'ErrMySQL'				=> 'Failed to connect to MySQL',

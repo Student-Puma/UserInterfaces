@@ -89,6 +89,7 @@
 		'OptionNone'			=> '-- Sin seleccionar -- ',
 		// Mensajes de Error
 		'Error'					=> 'Error',
+		'Upload-Error'			=> 'Error de subida: Archivo ya existente',
 		'Error-Photo'			=> 'Necesita subir una foto válida',
 		'Error-Email'			=> 'El email necesita ser más corto',
 		'ErrMySQL'				=> 'Fallo al conectar a MySQL',
