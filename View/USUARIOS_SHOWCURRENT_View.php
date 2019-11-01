@@ -53,7 +53,7 @@
 				</li>
 				<li>
 					<label ><?php echo $strings['Picture']; ?></label>
-					<label class="file-upload readonly" id="fileuploader" for="fotopersonal"><?php echo ($this->tupla['fotopersonal'] == '' ? $strings['UploadFile'] : $this->tupla['fotopersonal']); ?></label>
+					<label class="file-upload readonly" id="fileuploader" for="fotopersonal"><a class="photo" href="../Files/<?php echo $this->tupla['fotopersonal']; ?>"><?php echo ($this->tupla['fotopersonal'] == '' ? $strings['UploadFile'] : $this->tupla['fotopersonal']); ?></a></label>
 					<input disabled type="file" class="campo-largo" accept="image/*" name="fotopersonal" id="fotopersonal" required>
 				</li>
 				<li>

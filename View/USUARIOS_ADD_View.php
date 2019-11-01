@@ -32,7 +32,7 @@
 			<h2><?php echo $strings['ADD']; ?></h2>
 		</div>
 
-		<form name="Form" action="../Controller/USUARIOS_Controller.php" method="post">
+		<form name="Form" action="../Functions/UploadFile.php" enctype="multipart/form-data" method="post">
 			<ul class="form-style">
 				<li>
 					<label><?php echo $strings['AccountData']; ?> <span class="requerido">*</span></label>

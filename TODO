@@ -1,7 +1,1 @@
-- Implementar subida de archivos
-- Implementar modelo de alerta
-- Comprobar longitud email
-- Comprobar fotos
-- Entidades Débiles
-
-- Minimize CSS
+- Arreglar mensajes Register (redirige automaticamente a Index, WTF!)

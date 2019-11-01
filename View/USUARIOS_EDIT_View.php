@@ -55,11 +55,17 @@
 					<label><?php echo $strings['Birth']; ?> <span class="requerido">*</span></label>
 					<input type="date" class="campo-largo" name="fechanac" id="fechanac" max="2018-12-31" placeholder="<?php echo $strings['Birth']; ?>" value="<?php echo $this->tupla['FechaNacimiento']; ?>" required>
 				</li>
+
+				<!-- TEMP FIX -->
+				<input type="text" style="display:none" name="fotopersonal" id ="fotopersonal" value="<?php echo $this->tupla['fotopersonal']; ?>">
+				<!--
 				<li>
 					<label><?php echo $strings['Picture']; ?> <span class="requerido">*</span></label>
 					<label class="file-upload" id="fileuploader" for="fotopersonal"><?php echo ($this->tupla['fotopersonal'] == '' ? $strings['UploadFile'] : $this->tupla['fotopersonal']); ?></label>
 					<input type="file" class="campo-largo" accept="image/*" name="fotopersonal" id="fotopersonal" required>
 				</li>
+				-->
+
 				<li>
 					<label><?php echo $strings['PersonalData']; ?> <span class="requerido">*</span></label>
 					<input type="tel" pattern="[0-9]{8}[A-NO-Za-no-z]" class="campo-dividido" id="dni" name="dni" placeholder="<?php echo $strings['DNI']; ?>" value='<?php echo $this->tupla['DNI']; ?>' required>
@@ -78,14 +84,6 @@
 		</form>
 
 		<a href="../Controller/USUARIOS_Controller.php" class="return"><?php echo $strings['Back']; ?></a>
-
-		<script>
-			document.getElementById('fotopersonal').addEventListener('change', function(event)
-			{
-				var files = document.getElementById('fotopersonal').files;
-				document.getElementById('fileuploader').innerText = files.length > 0 ? files[0].name : "<?php echo $strings['UploadFile']; ?>";
-			});
-		</script>
 <?php
 		// Añadimos la vista Footer
 		include '../View/Footer.php';

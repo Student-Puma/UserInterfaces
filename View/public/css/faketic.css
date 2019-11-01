@@ -20,11 +20,12 @@ body { margin: 0; min-height: 100vh; overflow: hidden; overflow-y: auto; }
 .centrado { width: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; }
 .title { float: left; color: #FFF; font-size: 18px; margin-left: 15px; font-weight: 100; font-family: Georgia, 'Times New Roman', Times, serif; }
 .weak > input { cursor: help; border: 1px solid #77B3D9 !important; }
+.photo { color: #7FB6E2 !important; }
 
 /* Modal */
 .modal { position: absolute; background: #FFF; border: 2px groove #CCC; margin: 0 auto; top: 250px; padding: 10px 50px; color: #333;
     display: none; flex-direction: column; justify-content: center; align-items: center; }
-.modal h4 > span { font-weight: normal; }
+.modal h4 > span { font-weight: normal; display: none; }
 .modal input { align-self: right; border: none; }
 
 /* Main page */
