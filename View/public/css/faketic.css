@@ -57,7 +57,7 @@ body { margin: 0; min-height: 100vh; overflow: hidden; overflow-y: auto; }
 /* Login menu */
     .menu-lateral form { height: 100%; display:flex; flex-direction: column; flex-wrap: wrap; justify-content: center; padding: 10px; }
     .menu-lateral form label { margin-top: 5px; font-size: 12px; color: #666;}
-    .menu-lateral form input { border: 1px solid #999; padding: 2px 5px; color: #333; }
+    .menu-lateral form input { border: 1px solid #999; padding: 2px 5px; color: #333; width: 100%; }
     .menu-lateral form input[type=submit] { color: #FFF; border: 1px solid #3B9CD9; text-transform: uppercase; margin-top: 13px; margin-bottom: 5px; height: 25px;
         background: linear-gradient(#59A8D9, #7FB6E2, #59A8D9, #0477BF); }
 
@@ -65,7 +65,7 @@ body { margin: 0; min-height: 100vh; overflow: hidden; overflow-y: auto; }
     .contenido-principal { order: 32; width: 100%; display:flex; flex-direction: column; background: linear-gradient(#888, #FFF); }
     .contenido-principal .title { height: 30px; line-height: 30px; font-family: Verdana, Geneva, Tahoma, sans-serif; font-weight: bolder; font-size: 12px; text-transform: uppercase; }
     .contenido-principal .workspace { margin: 2px; background: #FFF; height: calc(100% - 30px);}
-    .contenido-principal .workspace .datos { margin: 15px; border: 1px solid #CCC; height: calc(100% - 30px); padding: 10px; }
+    .contenido-principal .workspace .datos { margin: 15px; height: calc(100% - 30px); padding: 10px; }
 
 /* Current content messages and titles */
     .contenido-principal .workspace .datos .msg { color: #333; font-size: 20px; padding: 20px; }
