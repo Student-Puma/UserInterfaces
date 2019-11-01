@@ -18,7 +18,7 @@
     $_POST['fotopersonal'] = $_FILES['fotopersonal']['name'];
 
     // Añadimos Controladores y Vistas
-    include '../Controller/USUARIOS_Controller.php';
+    include '../Model/USUARIOS_Model.php';
     include_once '../View/MESSAGE_View.php';
 
     // Si no existe el archivo, lo intentamos subir
