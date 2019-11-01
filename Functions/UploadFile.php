@@ -18,7 +18,7 @@
     $_POST['fotopersonal'] = $_FILES['fotopersonal']['name'];
     
     // Movemos el archivo a su destino
-    if(move_uploaded_file($_FILES['fotopersonal']['tmp_name'], $file))
+    if(@move_uploaded_file($_FILES['fotopersonal']['tmp_name'], $file))
     {
         // Según donde estuviéramos, realizamos una acción u otra
         switch ($_POST['action'])
@@ -74,6 +74,6 @@
     {
         // Añadimos la vista de mensajes    
         include '../View/MESSAGE_View.php';
-        new MESSAGE("UploadError", '../Controller/USUARIOS_Controller.php');
+        new MESSAGE("Upload-Error", '../Controller/USUARIOS_Controller.php');
     }
 ?>

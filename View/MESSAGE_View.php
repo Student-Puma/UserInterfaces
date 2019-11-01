@@ -28,9 +28,8 @@
 		/**
 		 * Renderizado de la vista
 		 */
-		function render(){
-			// Añadimos el idioma
-			include '../Locale/Strings_'.$_SESSION['idioma'].'.php';
+		function render()
+		{
 			// Añadimos la vista Header
 			include '../View/Header.php';
 ?>
