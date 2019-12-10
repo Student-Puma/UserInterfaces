@@ -25,7 +25,6 @@
         {
             // Añadiendo usuarios
             case 'ADD':
-                echo "add";
                 // Incluimos el controller
                 include '../Controller/USUARIOS_Controller.php';
                 // Añadimos la vista de mensajes    
