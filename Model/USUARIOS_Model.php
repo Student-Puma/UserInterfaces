@@ -33,6 +33,7 @@
 		var $fechanac;
 		var $fotopersonal;
 		var $sexo;
+		var $md5pass;
 
 		/**
 		 * Constructor de la clase
@@ -48,6 +49,8 @@
 			$this->fechanac = $fechanac;
 			$this->fotopersonal = $fotopersonal;
 			$this->sexo = $sexo;
+
+			$this->md5pass = empty($this->password) ? '' : md5($this->password);
 
 			$this->erroresdatos = array();
 
@@ -100,7 +103,7 @@
 						sexo) 
 					VALUES (
 						'".$this->login."',
-						'".$this->password."',
+						'".$this->md5pass."',
 						'".$this->nombre."',
 						'".$this->apellidos."',
 						'".$this->email."',
@@ -134,7 +137,7 @@
 					FROM USUARIOS
 					WHERE (
 						login LIKE '%".$this->login."%' AND
-						password LIKE '%".$this->password."%' AND
+						password LIKE '%".$this->md5pass."%' AND
 						nombre LIKE '%".$this->nombre."%' AND
 						apellidos LIKE '%".$this->apellidos."%' AND
 						email LIKE '%".$this->email."%' AND
@@ -221,7 +224,7 @@
 			// Sentencia SQL
 			$sql = "UPDATE USUARIOS
 					SET 
-						password = '$this->password',
+						password = '$this->md5pass',
 						nombre = '$this->nombre',
 						apellidos = '$this->apellidos',
 						email = '$this->email',
@@ -273,7 +276,7 @@
 			{
 				// Obtenemos y comprobamos la contraseña
 				$tupla = $resultado->fetch_array();
-				if ($tupla['password'] == $this->password)
+				if ($tupla['password'] == $this->md5pass)
 				{
 					return true;
 				}
@@ -328,7 +331,7 @@
 						sexo) 
 					VALUES (
 						'".$this->login."',
-						'".$this->password."',
+						'".$this->md5pass."',
 						'".$this->nombre."',
 						'".$this->apellidos."',
 						'".$this->email."',
