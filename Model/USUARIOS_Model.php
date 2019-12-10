@@ -38,7 +38,7 @@
 		/**
 		 * Constructor de la clase
 		 */
-		function __construct($login,$password,$nombre,$apellidos,$email,$dni,$telefono,$fechanac,$fotopersonal,$sexo){
+		function __construct($login,$password,$dni,$nombre,$apellidos,$email,$telefono,$fechanac,$fotopersonal,$sexo){
 			$this->login = $login;
 			$this->password = $password;
 			$this->nombre = $nombre;

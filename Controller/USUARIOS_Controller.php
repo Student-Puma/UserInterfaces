@@ -52,7 +52,7 @@
 		$action = $_POST['action'];
 
 		// Creación de la instancia USUARIOS
-		$usuarios = new USUARIOS_Model($login,$password,$nombre,$apellidos,$email,$dni,$telefono,$fechanac,$fotopersonal,$sexo);
+		$usuarios = new USUARIOS_Model($login,$password,$dni,$nombre,$apellidos,$email,$telefono,$fechanac,$fotopersonal,$sexo);
 		return $usuarios;
 	}
 
