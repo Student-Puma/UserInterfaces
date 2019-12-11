@@ -23,7 +23,8 @@
     function RelationDB($db)
     {
 		// Pedimos los datos de la sesión
-		@session_start();
+		if(!isset($_SESSION)) { session_start(); }
+		
 		// Evitamos duplicados
 		if(isset($_SESSION) && !isset($_SESSION['Unicorns']))
 		{

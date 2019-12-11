@@ -34,7 +34,7 @@
 		// sesión activa.
 		if ($respuesta == 'true')
 		{
-			session_start();
+			if(!isset($_SESSION)) { session_start(); }
 			$_SESSION['login'] = $_REQUEST['login'];
 			header('Location:../index.php');
 		}
