@@ -1,0 +1,2 @@
+- Warning: mysqli::__construct(): (HY000/1045): Access denied for user 'iu2018'@'localhost' (using password: YES) in C:\xampp\htdocs\UserInterfaces\Model\Access_DB.php on line 67
+- Add Foto in EDIT USUARIOS
