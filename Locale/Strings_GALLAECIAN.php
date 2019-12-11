@@ -106,6 +106,7 @@
 		'Actualización realizada con éxito' => 'Actualización realizada con éxito',
 		'El login no existe' => 'O login non existe',
 		'La password para este usuario no es correcta' => 'O contrasinal para este usuario non é correcto',
-		'El usuario ya existe' => 'O usuario xa existe'
+		'El usuario ya existe' => 'O usuario xa existe',
+		'Error en la inserción' => 'Erro na inserción'
 	);
 ?>

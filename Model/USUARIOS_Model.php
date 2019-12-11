@@ -346,7 +346,7 @@
 			// el mensaje correspondiente
 			if (!$this->mysqli->query($sql))
 			{
-				return 'Error de gestor de base de datos';
+				return 'Error en la inserción';
 			}
 			else
 			{

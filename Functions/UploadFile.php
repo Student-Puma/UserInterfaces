@@ -42,8 +42,8 @@
                 // Añadimos la vista de mensajes    
                 include '../View/MESSAGE_View.php';
                 // Creamos una nueva instancia de la entidad
-                $usuario = new USUARIOS_Model($_REQUEST['login'],$_REQUEST['password'],$_REQUEST['nombre'],
-                $_REQUEST['apellidos'],$_REQUEST['email'],$_REQUEST['dni'],$_REQUEST['telefono'],
+                $usuario = new USUARIOS_Model($_REQUEST['login'],$_REQUEST['password'],$_REQUEST['dni'],$_REQUEST['nombre'],
+                $_REQUEST['apellidos'],$_REQUEST['email'],$_REQUEST['telefono'],
                 $_REQUEST['fechanac'],$_FILES['fotopersonal']['name'],$_REQUEST['sexo']);
                 // Intentamos registrar dicha entidad en la BD
                 $respuesta = $usuario->Register();
