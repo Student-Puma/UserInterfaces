@@ -14,15 +14,16 @@
 	//include '../test/USUARIOS_test.php';
 
 	include '../test/EDIFICIO_test.php';
-	
-	EDIFICIO_ADD_test();
-	popTest(2);
-	
+		EDIFICIO_ADD_test();
+		popTest(2);
 	include '../test/CENTRO_test.php';
+		CENTRO_ADD_test();
+		popTest(2);
+	include '../test/ESPACIO_test.php';
 	include '../test/PROFESOR_test.php';
-
-	EDIFICIO_DELETE_test();
-	popTest(1);
+		CENTRO_DELETE_test();
+		EDIFICIO_DELETE_test();
+		popTest(2);
 ?>
 
 <h1>De <?php echo count($ERRORS_array_test); ?> tests hay </h1>
