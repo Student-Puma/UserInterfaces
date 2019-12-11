@@ -1,18 +1,28 @@
 <?php
-
-// crear el array principal de test
+	// crear el array principal de test
 	$ERRORS_array_test = array();
-// incluimos aqui tantos ficheros de test como entidades
-// include '../test/Global_test.php';
-//include '../test/USUARIOS_test.php';
-include '../test/EDIFICIO_test.php';
-include '../test/PROFESOR_test.php';
 
+	function popTest($times)
+	{
+		global $ERRORS_array_test;
+		for($i = 0; $i < $times; $i++)
+			{ array_pop($ERRORS_array_test); }
+	}
 
+	// incluimos aqui tantos ficheros de test como entidades
+	// include '../test/Global_test.php';
+	//include '../test/USUARIOS_test.php';
 
+	include '../test/EDIFICIO_test.php';
+	
+	EDIFICIO_ADD_test();
+	popTest(2);
+	
+	include '../test/CENTRO_test.php';
+	include '../test/PROFESOR_test.php';
 
-
-
+	EDIFICIO_DELETE_test();
+	popTest(1);
 ?>
 
 <h1>De <?php echo count($ERRORS_array_test); ?> tests hay </h1>
