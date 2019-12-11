@@ -5,6 +5,9 @@
 	 * Fecha: 31/01/2019
 	 */
 
+	// Añadimos las validaciones
+	include '../Functions/Validaciones.php';
+
 	/**
 	 * Modelo de la entidad PROFESOR
 	 * 
@@ -50,6 +53,22 @@
 		{ }
 
 		/**
+		 * Comprueba todos los atributos
+		 * 
+		 * @return true || errores
+		 */
+		function comprobar_atributos()
+		{
+			$resultado = comprobar_DNI($this->dni);
+			if($resultado !== true) { $this->erroresdatos = array_merge($this->erroresdatos, $resultado); }
+			
+			$resultado = comprobar_nombre($this->nombre);
+			if($resultado !== true) { $this->erroresdatos = array_merge($this->erroresdatos, $resultado); }
+
+			return empty($this->erroresdatos);
+		}
+
+		/**
 		 * Inserta valores en la BD
 		 * Comprueba si la clave está vacía o si ya existe en la tabla
 		 * 
@@ -57,6 +76,8 @@
 		 */
 		function ADD()
 		{
+			if($this->comprobar_atributos() !== true) { return $this->erroresdatos; }
+
 			// Consulta SQL
 			$sql = "select * from PROFESOR where DNI = '".$this->dni."'";
 
