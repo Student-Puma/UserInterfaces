@@ -30,9 +30,9 @@
 
         $datos = array(
             "COD"       => "99",
-            "NOMBRE"    => "UVIGO",
-            "DIRECCION" => "OURENSE",
-            "CAMPUS"    => "NUEVO"
+            "NOMBRE"    => "NOMBRE",
+            "DIRECCION" => "DIRECCION",
+            "CAMPUS"    => "CAMPUS"
         );
 
         // Lógica del test
@@ -93,9 +93,9 @@
 
         $datos = array(
             "COD"       => "99",
-            "NOMBRE"    => "VIGO",
-            "DIRECCION" => "OURENSE",
-            "CAMPUS"    => "NUEVO"
+            "NOMBRE"    => "NOMBRES",
+            "DIRECCION" => "DIRECCION",
+            "CAMPUS"    => "CAMPUS"
         );
 
         // Lógica del test
