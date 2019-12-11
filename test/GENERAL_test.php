@@ -3,8 +3,10 @@
 // crear el array principal de test
 	$ERRORS_array_test = array();
 // incluimos aqui tantos ficheros de test como entidades
-include '../test/Global_test.php';
-include '../test/USUARIOS_test.php';
+// include '../test/Global_test.php';
+//include '../test/USUARIOS_test.php';
+include '../test/EDIFICIO_test.php';
+include '../test/PROFESOR_test.php';
 
 
 
