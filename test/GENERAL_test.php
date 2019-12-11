@@ -20,6 +20,7 @@
 		CENTRO_ADD_test();
 		popTest(2);
 	include '../test/ESPACIO_test.php';
+	include '../test/TITULACION_test.php';
 	include '../test/PROFESOR_test.php';
 		CENTRO_DELETE_test();
 		EDIFICIO_DELETE_test();
