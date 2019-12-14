@@ -11,12 +11,6 @@
 
 	// Añadimos la librería de autentificación
 	include_once '../Functions/Authentication.php';
-
-	// Seleccionamos un idioma si no hay uno seleccionado
-	if (!isset($_SESSION['idioma'])) {
-		$_SESSION['idioma'] = 'SPANISH';
-	}
-	include '../Locale/Strings_' . $_SESSION['idioma'] . '.php';
 	
 	// Añadimos el archivo con los iconos
 	include '../Locale/Icons.php';
