@@ -1,5 +1,5 @@
 <?php
-	// crear el array principal de test
+	// Creamos el array principal de test
 	$ERRORS_array_test = array();
 
 	/**
@@ -28,22 +28,34 @@
 		return $num_errors;
 	}
 
-	// incluimos aqui tantos ficheros de test como entidades
-	// include '../test/Global_test.php';
+	// Ejecutamos los Test Unitarios de las Entidades
+	// ------------ INICIO ------------
 
-	include '../test/USUARIOS_test.php';
-	include '../test/EDIFICIO_test.php';
+	include_once '../test/USUARIOS_test.php';
+	include_once '../test/EDIFICIO_test.php';
 		EDIFICIO_ADD_test();
 		popTest(2);
-	include '../test/CENTRO_test.php';
+	include_once '../test/CENTRO_test.php';
 		CENTRO_ADD_test();
 		popTest(2);
-	include '../test/ESPACIO_test.php';
-	include '../test/TITULACION_test.php';
-	include '../test/PROFESOR_test.php';
+	include_once '../test/ESPACIO_test.php';
+	include_once '../test/TITULACION_test.php';
+	include_once '../test/PROFESOR_test.php';
+		ESPACIO_ADD_test();
+		PROFESOR_ADD_test();
+		popTest(4);
+	include_once '../test/PROF_ESPACIO_test.php';
+		TITULACION_ADD_test();
+		popTest(2);
+	include_once '../test/PROF_TITULACION_test.php';
+		TITULACION_DELETE_test();
+		PROFESOR_DELETE_test();
+		ESPACIO_DELETE_test();
 		CENTRO_DELETE_test();
 		EDIFICIO_DELETE_test();
-		popTest(2);
+		popTest(5);
+
+	// ------------ FIN ------------
 ?>
 
 <h1>De <?php echo count($ERRORS_array_test); ?> tests hay <?php echo countErrors(); ?> fallidos.</h1>
