@@ -23,13 +23,11 @@
 		 */
 		function render()
 		{
-			// Añadimos el idioma
-			include_once '../Locale/Strings_'.$_SESSION['idioma'].'.php';
 			// Añadimos la vista Header
 			include '../View/Header.php';
 ?>
 			<div class="centrado">
-				<h2><?php echo $strings['ADD']; ?></h2>
+				<h2 class="trad_ADD"></h2>
 			</div>
 
 			<form name="Form" action="../Controller/PROF_TITULACION_Controller.php" method="post">
@@ -53,7 +51,7 @@
 			</form>
 
 
-			<a href="../Controller/PROF_TITULACION_Controller.php" class="return"><?php echo $strings['Back']; ?></a>		
+			<a href="../Controller/PROF_TITULACION_Controller.php" class="return trad_Back"></a>		
 <?php
 			// Añadimos la vista Footer
 			include '../View/Footer.php';

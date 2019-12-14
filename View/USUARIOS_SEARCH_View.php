@@ -23,13 +23,11 @@
 		 */
 		function render()
 		{
-			// Añadimos el idioma
-			include_once '../Locale/Strings_'.$_SESSION['idioma'].'.php';
 			// Añadimos la vista Header
 			include '../View/Header.php';
 ?>
 		<div class="centrado">
-			<h2><?php echo $strings['SEARCH']; ?></h2>
+			<h2 class="trad_SEARCH"></h2>
 		</div>
 
 		<form name="Form" action="../Controller/USUARIOS_Controller.php" method="post">
@@ -76,7 +74,7 @@
 		</form>
 
 
-		<a href="../Controller/USUARIOS_Controller.php" class="return"><?php echo $strings['Back']; ?></a>
+		<a href="../Controller/USUARIOS_Controller.php" class="return trad_Back"></a>
 
 		<script>
 			document.getElementById('fotopersonal').addEventListener('change', function(event)
