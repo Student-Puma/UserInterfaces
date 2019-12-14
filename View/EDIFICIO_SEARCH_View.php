@@ -35,19 +35,19 @@
 				
 				<li>
 					<label class="trad_Name"></label>
-					<input type="text" pattern="[A-Za-z -]{1,50}" class="campo-largo" id="nombre" name="nombre" placeholder="<?php echo $strings['Name']; ?>">
+					<input type="text" pattern="[A-Za-z -]{1,50}" class="campo-largo" id="nombre" name="nombre">
 				</li>
 				<li>
 				<label class="trad_Address"></label>
-					<input type="text" pattern="[A-Za-z0-9 ,.ºª\\-]{1,150}" class="campo-largo" id="direccion" name="direccion" placeholder="<?php echo $strings['Address']; ?>">
+					<input type="text" pattern="[A-Za-z0-9 ,.ºª\\-]{1,150}" class="campo-largo" id="direccion" name="direccion">
 				</li>
 				<li>
 				<label class="trad_Campus"></label>
-					<input type="text" pattern="[A-Za-z0-9 ,.ºª\\-]{1,10}" class="campo-largo" id="campus" name="campus" placeholder="<?php echo $strings['Campus']; ?>">
+					<input type="text" pattern="[A-Za-z0-9 ,.ºª\\-]{1,10}" class="campo-largo" id="campus" name="campus">
 				</li>
 				<li>
 					<label class="trad_Code"></label>
-					<input type="text" pattern="[A-Za-z0-9_-]{1,10}" class="campo-dividido" id="CODEdificio" name="CODEdificio" placeholder="<?php echo $strings['CODEdificio']; ?>">
+					<input type="text" pattern="[A-Za-z0-9_-]{1,10}" class="campo-dividido" id="CODEdificio" name="CODEdificio">
 
 					<input type="submit" class="campo-dividido" name="action" value="SEARCH">
 				</li>

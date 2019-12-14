@@ -33,7 +33,7 @@
 			<ul class="form-style">
 				<li>
 					<label class="trad_Code"></label>
-					<input type="text" readonly class="campo-largo" id="CODEdificio" name="CODEdificio" placeholder="<?php echo $strings['CODEdificio']; ?>" value='<?php echo $this->tupla['CODEDIFICIO']; ?>' required>
+					<input type="text" readonly class="campo-largo" id="CODEdificio" name="CODEdificio" value='<?php echo $this->tupla['CODEDIFICIO']; ?>' required>
 				</li>
 				<li>
 					<label class="trad_Name"></label>
