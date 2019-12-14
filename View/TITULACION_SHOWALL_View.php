@@ -36,7 +36,7 @@
 			include '../Locale/Icons.php';
 ?>
 			<div class="centrado">
-				<h2><?php echo $strings['GTitulaciones']; ?></h2>
+				<h2 class="trad_GTitulaciones"></h2>
 			</div>
 			
 			<table>
@@ -91,7 +91,7 @@
 				</tbody>
 			</table>
 			
-			<a href="../Controller/Index_Controller.php" class="return"><?php echo $strings['Back']; ?></a>
+			<a href="../Controller/Index_Controller.php" class="return trad_Back"></a>
 <?php
 			// Añadimos la vista Footer
 			include '../View/Footer.php';
