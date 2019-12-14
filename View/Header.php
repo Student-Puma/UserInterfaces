@@ -26,9 +26,7 @@
 
 <html>
 <head>
-	<title>
-		<?php echo $strings['AppName']; ?>
-	</title>
+	<title class="trad_AppName"></title>
 	
 	<meta charset="UTF-8">
 
@@ -36,8 +34,11 @@
 	<link rel="stylesheet" type="text/css" href="../View/public/css/faketic.css">
 	<link rel="icon" type="image/vnd.microsoft.icon" href="../View/public/img/favicon.ico">
 	<script> var _ = true, err = _; </script>
+	<script type="application/javascript" src="../View/public/js/locale.js"></script>
+	<script type="application/javascript" src="../View/public/js/cookies.js"></script>
+	<script type="application/javascript" src="../View/public/js/language.js"></script>
 </head>
-<body>
+<body onload="traducir()">
 	<div class="main">
 		<!-- Logo Image -->
 		<div class="banner">
@@ -45,11 +46,11 @@
 		</div> <!-- banner -->
 		<!-- Menú Superior -->
 		<div class="menu-superior">
-			<span class="title"><?php echo $strings['Title']; ?></span>
+			<span class="title trad_Title"></span>
 			<div class="icons">
-				<a href="../Functions/CambioIdioma.php?idioma=SPANISH"><img height="12" src="<?php echo $icons['flag_es']; ?>"></a>
-				<a href="../Functions/CambioIdioma.php?idioma=ENGLISH"><img height="12" src="<?php echo $icons['flag_en']; ?>"></a>
-				<a href="../Functions/CambioIdioma.php?idioma=GALLAECIAN"><img height="12" src="<?php echo $icons['flag_gl']; ?>"></a>
+				<a onclick="traducir('es')"><img height="12" src="<?php echo $icons['flag_es']; ?>"></a>
+				<a onclick="traducir('en')"><img height="12" src="<?php echo $icons['flag_en']; ?>"></a>
+				<a onclick="traducir('gl')"><img height="12" src="<?php echo $icons['flag_gl']; ?>"></a>
 <?php
 			// Si está autenticado, mostramos el botón de desconectarse
 			if (IsAuthenticated())
@@ -67,6 +68,6 @@
 ?>
 			
 			<div class="contenido-principal">
-                <span class="title"><?php echo $strings['Content']; ?></span>
+                <span class="title trad_Content"></span>
                 <div class="workspace">
 					<div class="datos">
