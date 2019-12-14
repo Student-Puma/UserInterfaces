@@ -12,9 +12,6 @@
 	// Iniciamos la sesión
 	session_start();
 
-	// Incluímos los strings referentes al idioma actual
-	include_once '../Locale/Strings_'.$_SESSION['idioma'].'.php';
-
 	// Si no recibimos el login, mostramos la vista correspondiete
 	if(!isset($_POST['login']))
 	{
