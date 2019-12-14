@@ -39,7 +39,7 @@
 				</li>
 				<li>
 					<label><?php echo $strings['FullName']; ?> <span class="requerido">*</span></label>
-					<input type="text" pattern="[A-Za-z][A-Za-z -]{2,29}" class="campo-dividido" id="nombre" name="nombre" placeholder="<?php echo $strings['Name']; ?>" required>
+					<input type="text" pattern="[A-Za-z][A-Za-z -]{2,29}" class="campo-dividido" id="nombre" name="nombre" required>
 					<input type="text" pattern="[A-Za-z][A-Za-z -]{2,49}" class="campo-dividido" id="apellidos" name="apellidos" placeholder="<?php echo $strings['Surname']; ?>" required>
 				</li>
 				<li>

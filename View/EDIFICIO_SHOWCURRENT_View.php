@@ -37,7 +37,7 @@
 				</li>
 				<li>
 					<label class="trad_Name"></label>
-					<input type="text" readonly class="campo-largo" id="nombre" name="nombre" placeholder="<?php echo $strings['Name']; ?>" value='<?php echo $this->tupla['NOMBREEDIFICIO']; ?>' required>
+					<input type="text" readonly class="campo-largo" id="nombre" name="nombre" value='<?php echo $this->tupla['NOMBREEDIFICIO']; ?>' required>
 				</li>
 				<li>
 				<label><?php echo $strings['Address']; ?></label>

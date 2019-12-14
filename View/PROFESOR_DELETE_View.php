@@ -38,7 +38,7 @@
 				
 				<li>
 					<label><?php echo $strings['FullName']; ?></label>
-					<input type="text" readonly class="campo-dividido" id="nombre" name="nombre" placeholder="<?php echo $strings['Name']; ?>" value="<?php echo $this->tupla['NOMBREPROFESOR']; ?>">
+					<input type="text" readonly class="campo-dividido" id="nombre" name="nombre" value="<?php echo $this->tupla['NOMBREPROFESOR']; ?>">
 					<input type="text" readonly class="campo-dividido" id="apellidos" name="apellidos" placeholder="<?php echo $strings['Surname']; ?>" value="<?php echo $this->tupla['APELLIDOSPROFESOR']; ?>">
 				</li>
 				<li>
