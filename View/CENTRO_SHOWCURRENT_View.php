@@ -21,42 +21,41 @@
 		/**
 		 * Renderiza la vista
 		 */
-		function render(){
-			// Añadimos el idioma
-			include_once '../Locale/Strings_'.$_SESSION['idioma'].'.php';
+		function render()
+		{
 			// Añadimos la vista Header
 			include '../View/Header.php';
 ?>
 		<div class="centrado">
-			<h2><?php echo $strings['SHOWCURRENT']; ?></h2>
+			<h2 class="trad_SHOWCURRENT"></h2>
 		</div>
 
 		<form name="Form" action="../Controller/CENTRO_Controller.php" method="post">
 			<ul class="form-style">
 				<li>
-					<label><?php echo $strings['Codes']; ?></span></label>
-					<input type="text" readonly pattern="[A-Za-z0-9][A-Za-z0-9_-]{0,9}" class="campo-dividido" id="CODCentro" name="CODCentro" placeholder="<?php echo $strings['CODCentro']; ?>" value='<?php echo $this->tupla['CODCENTRO']; ?>'>
+					<label class="trad_Codes"></label>
+					<input type="text" readonly class="campo-dividido" id="CODCentro" name="CODCentro" value='<?php echo $this->tupla['CODCENTRO']; ?>'>
 					<a class="weak" href="../Functions/ShowWeak.php?entity=EDIFICIO&key=<?php echo $this->tupla['CODEDIFICIO']; ?>">
-						<input type="text" readonly pattern="[A-Za-z0-9][A-Za-z0-9_-]{0,9}" class="campo-dividido" id="CODEdificio" name="CODEdificio" placeholder="<?php echo $strings['CODEdificio']; ?>" value='<?php echo $this->tupla['CODEDIFICIO']; ?>'>
+						<input type="text" readonly class="campo-dividido" id="CODEdificio" name="CODEdificio" value='<?php echo $this->tupla['CODEDIFICIO']; ?>'>
 					</a>
 				</li>
 				<li>
-					<label><?php echo $strings['Name']; ?></span></label>
-					<input type="text" readonly pattern="[A-Za-z][A-Za-z -]{1,49}" class="campo-largo" id="nombre" name="nombre" placeholder="<?php echo $strings['Name']; ?>" value='<?php echo $this->tupla['NOMBRECENTRO']; ?>'>
+					<label class="trad_Name"></label>
+					<input type="text" readonly class="campo-largo" id="nombre" name="nombre"  value='<?php echo $this->tupla['NOMBRECENTRO']; ?>'>
 				</li>
 				<li>
-				<label><?php echo $strings['Address']; ?></span></label>
-					<input type="text" readonly pattern="[A-Za-z][A-Za-z0-9 ,.ºª\\-]{2,149}" class="campo-largo" id="direccion" name="direccion" placeholder="<?php echo $strings['Address']; ?>" value='<?php echo $this->tupla['DIRECCIONCENTRO']; ?>'>
+				<label class="trad_Address"></label>
+					<input type="text" readonly class="campo-largo" id="direccion" name="direccion"  value='<?php echo $this->tupla['DIRECCIONCENTRO']; ?>'>
 				</li>
 				<li>
-					<label><?php echo $strings['Responsable']; ?></span></label>
-					<input type="text" readonly pattern="[A-Za-z][A-Za-z -]{2,59}" class="campo-largo" id="responsable" name="responsable" placeholder="<?php echo $strings['Responsable']; ?>" value='<?php echo $this->tupla['RESPONSABLECENTRO']; ?>'>
+					<label class="trad_Responsable"></span></label>
+					<input type="text" readonly class="campo-largo" id="responsable" name="responsable"  value='<?php echo $this->tupla['RESPONSABLECENTRO']; ?>'>
 				</li>
 			</ul>
 		</form>
 
 
-		<a href="../Controller/CENTRO_Controller.php" class="return"><?php echo $strings['Back']; ?></a>
+		<a href="../Controller/CENTRO_Controller.php" class="return trad_Back"></a>
 <?php
 		// Añadimos la vista Footer
 		include '../View/Footer.php';
