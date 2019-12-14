@@ -37,21 +37,21 @@
 			<ul class="form-style">
 				
 				<li>
-					<label><?php echo $strings['FullName']; ?> <span class="requerido">*</span></label>
+					<label><span class="trad_FullName"></span> <span class="requerido">*</span></label>
 					<input type="text" pattern="[A-Za-z][A-Za-z -]{2,14}" class="campo-dividido" id="nombre" name="nombre" value="<?php echo $this->tupla['NOMBREPROFESOR']; ?>" required>
-					<input type="text" pattern="[A-Za-z][A-Za-z -]{2,29}" class="campo-dividido" id="apellidos" name="apellidos" placeholder="<?php echo $strings['Surname']; ?>" value="<?php echo $this->tupla['APELLIDOSPROFESOR']; ?>" required>
+					<input type="text" pattern="[A-Za-z][A-Za-z -]{2,29}" class="campo-dividido" id="apellidos" name="apellidos" value="<?php echo $this->tupla['APELLIDOSPROFESOR']; ?>" required>
 				</li>
 				<li>
-				<label><?php echo $strings['Area']; ?> <span class="requerido">*</span></label>
-					<input type="text" pattern="[A-Za-z][A-Za-z -]{2,59}" class="campo-largo" id="area" name="area" placeholder="<?php echo $strings['Area']; ?>" value="<?php echo $this->tupla['AREAPROFESOR']; ?>" required>
+				<label><span class="trad_Area"></span> <span class="requerido">*</span></label>
+					<input type="text" pattern="[A-Za-z][A-Za-z -]{2,59}" class="campo-largo" id="area" name="area" value="<?php echo $this->tupla['AREAPROFESOR']; ?>" required>
 				</li>
 				<li>
-				<label><?php echo $strings['Department']; ?> <span class="requerido">*</span></label>
-					<input type="text" pattern="[A-Za-z][A-Za-z -]{2,59}" class="campo-largo" id="departamento" name="departamento" placeholder="<?php echo $strings['Department']; ?>" value="<?php echo $this->tupla['DEPARTAMENTOPROFESOR']; ?>" required>
+				<label><span class="trad_Department"></span> <span class="requerido">*</span></label>
+					<input type="text" pattern="[A-Za-z][A-Za-z -]{2,59}" class="campo-largo" id="departamento" name="departamento" value="<?php echo $this->tupla['DEPARTAMENTOPROFESOR']; ?>" required>
 				</li>
 				<li>
-					<label><?php echo $strings['DNI']; ?> <span class="requerido">*</span></label>
-					<input type="text" readonly class="campo-dividido" id="dni" name="dni" placeholder="<?php echo $strings['DNI']; ?>" value="<?php echo $this->tupla['DNI']; ?>" required>
+					<label><span class="trad_DNI"></span> <span class="requerido">*</span></label>
+					<input type="text" readonly class="campo-dividido" id="dni" name="dni" value="<?php echo $this->tupla['DNI']; ?>" required>
 
 					<input type="submit" class="campo-dividido" name="action" value="EDIT">
 				</li>

@@ -33,21 +33,21 @@
 			<ul class="form-style">
 				
 				<li>
-					<label><?php echo $strings['FullName']; ?></label>
+					<label class="trad_FullName"></label>
 					<input type="text" readonly class="campo-dividido" id="nombre" name="nombre" value="<?php echo $this->tupla['NOMBREPROFESOR']; ?>">
-					<input type="text" readonly class="campo-dividido" id="apellidos" name="apellidos" placeholder="<?php echo $strings['Surname']; ?>" value="<?php echo $this->tupla['APELLIDOSPROFESOR']; ?>">
+					<input type="text" readonly class="campo-dividido" id="apellidos" name="apellidos" value="<?php echo $this->tupla['APELLIDOSPROFESOR']; ?>">
 				</li>
 				<li>
-				<label><?php echo $strings['Area']; ?></label>
-					<input type="text" readonly class="campo-largo" id="area" name="area" placeholder="<?php echo $strings['Area']; ?>" value="<?php echo $this->tupla['AREAPROFESOR']; ?>">
+				<label class="trad_Area"></label>
+					<input type="text" readonly class="campo-largo" id="area" name="area" value="<?php echo $this->tupla['AREAPROFESOR']; ?>">
 				</li>
 				<li>
-				<label><?php echo $strings['Department']; ?></label>
-					<input type="text" readonly class="campo-largo" id="departamento" name="departamento" placeholder="<?php echo $strings['Department']; ?>" value="<?php echo $this->tupla['DEPARTAMENTOPROFESOR']; ?>">
+				<label class="trad_Department"></label>
+					<input type="text" readonly class="campo-largo" id="departamento" name="departamento" value="<?php echo $this->tupla['DEPARTAMENTOPROFESOR']; ?>">
 				</li>
 				<li>
-					<label><?php echo $strings['DNI']; ?></label>
-					<input type="text" readonly class="campo-largo" id="dni" name="dni" placeholder="<?php echo $strings['DNI']; ?>" value="<?php echo $this->tupla['DNI']; ?>">
+					<label class="trad_DNI"></label>
+					<input type="text" readonly class="campo-largo" id="dni" name="dni" value="<?php echo $this->tupla['DNI']; ?>">
 				</li>
 			</ul>
 		</form>

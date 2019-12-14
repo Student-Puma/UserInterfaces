@@ -34,21 +34,21 @@
 			<ul class="form-style">
 				
 				<li>
-					<label><?php echo $strings['FullName']; ?></span></label>
-					<input type="text" pattern="[A-Za-z -]{1,15}" class="campo-dividido" id="nombre" name="nombre" placeholder="<?php echo $strings['Name']; ?>">
-					<input type="text" pattern="[A-Za-z -]{1,30}" class="campo-dividido" id="apellidos" name="apellidos" placeholder="<?php echo $strings['Surname']; ?>">
+					<label class="trad_FullName"></label>
+					<input type="text" pattern="[A-Za-z -]{1,15}" class="campo-dividido" id="nombre" name="nombre">
+					<input type="text" pattern="[A-Za-z -]{1,30}" class="campo-dividido" id="apellidos" name="apellidos">
 				</li>
 				<li>
-				<label><?php echo $strings['Area']; ?></span></label>
-					<input type="text" pattern="[A-Za-z -]{1,60}" class="campo-largo" id="area" name="area" placeholder="<?php echo $strings['Area']; ?>">
+				<label class="trad_Area"></label>
+					<input type="text" pattern="[A-Za-z -]{1,60}" class="campo-largo" id="area" name="area">
 				</li>
 				<li>
-				<label><?php echo $strings['Department']; ?></span></label>
-					<input type="text" pattern="[A-Za-z -]{1,60}" class="campo-largo" id="departamento" name="departamento" placeholder="<?php echo $strings['Department']; ?>">
+				<label class="trad_Department"></label>
+					<input type="text" pattern="[A-Za-z -]{1,60}" class="campo-largo" id="departamento" name="departamento">
 				</li>
 				<li>
-					<label><?php echo $strings['DNI']; ?></span></label>
-					<input type="text" pattern="[A-NO-Za-no-z0-9]+" class="campo-dividido" id="dni" name="dni" placeholder="<?php echo $strings['DNI']; ?>">
+				<label class="trad_DNI"></label>
+					<input type="text" pattern="[A-NO-Za-no-z0-9]+" class="campo-dividido" id="dni" name="dni">
 
 					<input type="submit" class="campo-dividido" name="action" value="SEARCH">
 				</li>
