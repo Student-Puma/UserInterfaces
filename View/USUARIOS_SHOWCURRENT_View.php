@@ -33,17 +33,17 @@
 			<ul class="form-style">
 				<li>
 					<label><?php echo $strings['AccountData']; ?></label>
-					<input type="text" readonly pattern=".{4,15}" class="campo-dividido" id="login" name="login" placeholder="<?php echo $strings['Login']; ?>" value="<?php echo $this->tupla['login']; ?>" required>
-					<input type="password" readonly pattern=".{4,60}" class="campo-dividido" id="password" name="password" placeholder="<?php echo $strings['Password']; ?>" value="<?php echo $this->tupla['password']; ?>" required>
+					<input type="text" readonly class="campo-dividido" id="login" name="login" placeholder="<?php echo $strings['Login']; ?>" value="<?php echo $this->tupla['login']; ?>" required>
+					<input type="password" readonly class="campo-dividido" id="password" name="password" placeholder="<?php echo $strings['Password']; ?>" value="<?php echo $this->tupla['password']; ?>" required>
 				</li>
 				<li>
 					<label><?php echo $strings['FullName']; ?></label>
-					<input type="text" readonly pattern="[A-Za-z -]{1,30}" class="campo-dividido" id="nombre" name="nombre" placeholder="<?php echo $strings['Name']; ?>" value="<?php echo $this->tupla['nombre']; ?>" required>
-					<input type="text" readonly pattern="[A-Za-z -]{1,50}" class="campo-dividido" id="apellidos" name="apellidos" placeholder="<?php echo $strings['Surname']; ?>" value="<?php echo $this->tupla['apellidos']; ?>" required>
+					<input type="text" readonly class="campo-dividido" id="nombre" name="nombre" placeholder="<?php echo $strings['Name']; ?>" value="<?php echo $this->tupla['nombre']; ?>" required>
+					<input type="text" readonly class="campo-dividido" id="apellidos" name="apellidos" placeholder="<?php echo $strings['Surname']; ?>" value="<?php echo $this->tupla['apellidos']; ?>" required>
 				</li>
 				<li>
 					<label><?php echo $strings['Email']; ?></label>
-					<input type="email" readonly pattern="[A-Za-z0-9._%+-@]+" class="campo-largo" id="email" name="email" placeholder="<?php echo $strings['Email']; ?>"  value="<?php echo $this->tupla['email']; ?>" required>
+					<input type="email" readonly class="campo-largo" id="email" name="email" placeholder="<?php echo $strings['Email']; ?>"  value="<?php echo $this->tupla['email']; ?>" required>
 				</li>
 				<li>
 					<label><?php echo $strings['Birth']; ?></label>
@@ -56,8 +56,8 @@
 				</li>
 				<li>
 					<label><?php echo $strings['PersonalData']; ?></label>
-					<input type="tel" readonly pattern="[0-9A-NO-Za-no-z]{1,9}" class="campo-dividido" id="dni" name="dni" placeholder="<?php echo $strings['DNI']; ?>" value='<?php echo $this->tupla['DNI']; ?>' required>
-					<input type="tel" readonly pattern="[0-9]{1,9}" class="campo-dividido" id="telefono" name="telefono" placeholder="<?php echo $strings['Phone']; ?>" value='<?php echo $this->tupla['telefono']; ?>' required>
+					<input type="tel" readonly class="campo-dividido" id="dni" name="dni" placeholder="<?php echo $strings['DNI']; ?>" value='<?php echo $this->tupla['DNI']; ?>' required>
+					<input type="tel" readonly class="campo-dividido" id="telefono" name="telefono" placeholder="<?php echo $strings['Phone']; ?>" value='<?php echo $this->tupla['telefono']; ?>' required>
 				</li>
 				<li>
 					<label><?php echo $strings['Genre']; ?></label>

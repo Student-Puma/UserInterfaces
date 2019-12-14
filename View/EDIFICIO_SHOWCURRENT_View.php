@@ -33,19 +33,19 @@
 			<ul class="form-style">
 				<li>
 					<label><?php echo $strings['Code']; ?></label>
-					<input type="text" readonly pattern="[A-Za-z0-9][A-Za-z0-9_-]{0,9}" class="campo-largo" id="CODEdificio" name="CODEdificio" placeholder="<?php echo $strings['CODEdificio']; ?>" value='<?php echo $this->tupla['CODEDIFICIO']; ?>' required>
+					<input type="text" readonly class="campo-largo" id="CODEdificio" name="CODEdificio" placeholder="<?php echo $strings['CODEdificio']; ?>" value='<?php echo $this->tupla['CODEDIFICIO']; ?>' required>
 				</li>
 				<li>
 					<label class="trad_Name"></label>
-					<input type="text" readonly pattern="[A-Za-z][A-Za-z -]{1,49}" class="campo-largo" id="nombre" name="nombre" placeholder="<?php echo $strings['Name']; ?>" value='<?php echo $this->tupla['NOMBREEDIFICIO']; ?>' required>
+					<input type="text" readonly class="campo-largo" id="nombre" name="nombre" placeholder="<?php echo $strings['Name']; ?>" value='<?php echo $this->tupla['NOMBREEDIFICIO']; ?>' required>
 				</li>
 				<li>
 				<label><?php echo $strings['Address']; ?></label>
-					<input type="text" readonly pattern="[A-Za-z][A-Za-z0-9 ,.ºª\\-]{2,149}" class="campo-largo" id="direccion" name="direccion" placeholder="<?php echo $strings['Address']; ?>" value='<?php echo $this->tupla['DIRECCIONEDIFICIO']; ?>' required>
+					<input type="text" readonly class="campo-largo" id="direccion" name="direccion" placeholder="<?php echo $strings['Address']; ?>" value='<?php echo $this->tupla['DIRECCIONEDIFICIO']; ?>' required>
 				</li>
 				<li>
 				<label><?php echo $strings['Campus']; ?></label>
-					<input type="text" readonly pattern="[A-Za-z0-9][A-Za-z0-9 ,.ºª\\-]{0,9}" class="campo-largo" id="campus" name="campus" placeholder="<?php echo $strings['Campus']; ?>" value='<?php echo $this->tupla['CAMPUSEDIFICIO']; ?>' required>
+					<input type="text" readonly class="campo-largo" id="campus" name="campus" placeholder="<?php echo $strings['Campus']; ?>" value='<?php echo $this->tupla['CAMPUSEDIFICIO']; ?>' required>
 				</li>
 			</ul>
 		</form>

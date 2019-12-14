@@ -38,18 +38,18 @@
 					<li>
 						<label><?php echo $strings['DNI']; ?></label>
 						<a class="weak" href="../Functions/ShowWeak.php?entity=PROFESOR&key=<?php echo $this->tupla['DNI']; ?>">
-							<input type="text" readonly pattern="[0-9]{8}[A-NO-Za-no-z]" class="campo-largo" id="dni" name="dni" placeholder="<?php echo $strings['DNI']; ?>" value="<?php echo $this->tupla['DNI']; ?>">
+							<input type="text" readonly class="campo-largo" id="dni" name="dni" placeholder="<?php echo $strings['DNI']; ?>" value="<?php echo $this->tupla['DNI']; ?>">
 						</a>
 					</li>
 					<li>
 						<label><?php echo $strings['Code']; ?></label>
 						<a class="weak" href="../Functions/ShowWeak.php?entity=TITULACION&key=<?php echo $this->tupla['CODTITULACION']; ?>">
-							<input type="text" readonly pattern="[A-Za-z0-9][A-Za-z0-9_-]{0,9}" class="campo-largo" id="CODTitulacion" name="CODTitulacion" placeholder="<?php echo $strings['CODTitulacion']; ?>" value="<?php echo $this->tupla['CODTITULACION']; ?>">
+							<input type="text" readonly class="campo-largo" id="CODTitulacion" name="CODTitulacion" placeholder="<?php echo $strings['CODTitulacion']; ?>" value="<?php echo $this->tupla['CODTITULACION']; ?>">
 						</a>
 					</li>
 					<li>
 						<label><?php echo $strings['Year']; ?></label>
-						<input type="text" readonly pattern="20[0-2][0-9]-20[0-2][0-9]" value="<?php echo $this->tupla['ANHOACADEMICO']; ?>" class="campo-largo" id="anho" name="anho" placeholder="<?php echo $strings['Year']; ?>">
+						<input type="text" readonly value="<?php echo $this->tupla['ANHOACADEMICO']; ?>" class="campo-largo" id="anho" name="anho" placeholder="<?php echo $strings['Year']; ?>">
 					</li>
 					<li>
 						<input type="submit" class="campo-largo" name="action" value="DELETE">

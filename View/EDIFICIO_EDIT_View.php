@@ -50,7 +50,7 @@
 				</li>
 				<li>
 					<label><?php echo $strings['Code']; ?> <span class="requerido">*</span></label>
-					<input type="text" readonly pattern="[A-Za-z0-9][A-Za-z0-9_-]{0,9}" class="campo-dividido" id="CODEdificio" name="CODEdificio" placeholder="<?php echo $strings['CODEdificio']; ?>" value='<?php echo $this->tupla['CODEDIFICIO']; ?>' required>
+					<input type="text" readonly class="campo-dividido" id="CODEdificio" name="CODEdificio" placeholder="<?php echo $strings['CODEdificio']; ?>" value='<?php echo $this->tupla['CODEDIFICIO']; ?>' required>
 
 					<input type="submit" class="campo-dividido" name="action" value="EDIT">
 				</li>

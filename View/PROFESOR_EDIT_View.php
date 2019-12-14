@@ -51,7 +51,7 @@
 				</li>
 				<li>
 					<label><?php echo $strings['DNI']; ?> <span class="requerido">*</span></label>
-					<input type="text" readonly pattern="[0-9]{8}[A-NO-Za-no-z]" class="campo-dividido" id="dni" name="dni" placeholder="<?php echo $strings['DNI']; ?>" value="<?php echo $this->tupla['DNI']; ?>" required>
+					<input type="text" readonly class="campo-dividido" id="dni" name="dni" placeholder="<?php echo $strings['DNI']; ?>" value="<?php echo $this->tupla['DNI']; ?>" required>
 
 					<input type="submit" class="campo-dividido" name="action" value="EDIT">
 				</li>
