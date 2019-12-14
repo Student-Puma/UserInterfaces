@@ -36,7 +36,7 @@
 			include '../Locale/Icons.php';
 ?>
 			<div class="centrado">
-				<h2><?php echo $strings['GProfEspacios']; ?></h2>
+				<h2 class="trad_GProfEspacios"></h2>
 			</div>
 			
 			<table>
