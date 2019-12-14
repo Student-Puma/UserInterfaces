@@ -89,15 +89,15 @@ var strings = {
 		'Error-Email'			: 'Email needs to be shorter',
 		'ErrMySQL'				: 'Failed to connect to MySQL',
 		// Mensajes de Error Predeterminados
-		'Error de gestor de base de datos' : 'Database manager error',
-		'Inserción fallida: el elemento ya existe' : 'Insertion failed: element already exists',
-		'Inserción realizada con éxito' : 'Successful insertion',
-		'Borrado realizado con éxito' : 'Successful deletion',
-		'Actualización realizada con éxito' : 'Update successful',
-		'El login no existe' : 'The login does not exist',
-		'La password para este usuario no es correcta' : 'The password for this user is not correct',
-		'El usuario ya existe' : 'User already exists',
-		'Error en la inserción' : 'Insert error'
+		'Error-SGDB' : 'Database manager error',
+		'Insercion-fallida' : 'Insertion failed: element already exists',
+		'Insercion-realizada' : 'Successful insertion',
+		'Borrado-realizado' : 'Successful deletion',
+		'Actualizacion-realizada' : 'Update successful',
+		'Error-Login' : 'The login does not exist',
+		'Error-Password' : 'The password for this user is not correct',
+		'Error-User' : 'User already exists',
+		'Error-Insert' : 'Insert error'
     },
     'es': {
         // Header
@@ -184,15 +184,15 @@ var strings = {
 		'Error-Email'			: 'El email necesita ser más corto',
 		'ErrMySQL'				: 'Fallo al conectar a MySQL',
 		// Mensajes de Error Predeterminados
-		'Error de gestor de base de datos' : 'Error de gestor de base de datos',
-		'Inserción fallida: el elemento ya existe' : 'Inserción fallida: el elemento ya existe',
-		'Inserción realizada con éxito' : 'Inserción realizada con éxito',
-		'Borrado realizado con éxito' : 'Borrado realizado con éxito',
-		'Actualización realizada con éxito' : 'Actualización realizada con éxito',
-		'El login no existe' : 'El login no existe',
-		'La password para este usuario no es correcta' : 'La password para este usuario no es correcta',
-		'El usuario ya existe' : 'El usuario ya existe',
-		'Error en la inserción' : 'Error en la inserción'
+		'Error-SGDB' : 'Error de gestor de base de datos',
+		'Insercion-fallida' : 'Inserción fallida: el elemento ya existe',
+		'Insercion-realizada' : 'Inserción realizada con éxito',
+		'Borrado-realizado' : 'Borrado realizado con éxito',
+		'Actualizacion-realizada' : 'Actualización realizada con éxito',
+		'Error-Login' : 'El login no existe',
+		'Error-Password' : 'La password para este usuario no es correcta',
+		'Error-User' : 'El usuario ya existe',
+		'Error-Insert' : 'Error en la inserción'
     },
     'gl': {
         // Header
@@ -284,15 +284,15 @@ var strings = {
 		'Error-Email'			: 'O email necesita ser mais curto',
 		'ErrMySQL'				: 'Fallo ó conectar a MySQL',
 		// Mensajes de Error Predeterminados
-		'Error de gestor de base de datos' : 'Error de xestor de base de datos',
-		'Inserción fallida: el elemento ya existe' : 'Inserción fallida: o elemento xa existe',
-		'Inserción realizada con éxito' : 'Inserción realizada con éxito',
-		'Borrado realizado con éxito' : 'Borrado realizado con éxito',
-		'Actualización realizada con éxito' : 'Actualización realizada con éxito',
-		'El login no existe' : 'O login non existe',
-		'La password para este usuario no es correcta' : 'O contrasinal para este usuario non é correcto',
-		'El usuario ya existe' : 'O usuario xa existe',
-		'Error en la inserción' : 'Erro na inserción'
+		'Error-SGDB' : 'Error de xestor de base de datos',
+		'Insercion-fallida' : 'Inserción fallida: o elemento xa existe',
+		'Insercion-realizada' : 'Inserción realizada con éxito',
+		'Borrado-realizado' : 'Borrado realizado con éxito',
+		'Actualizacion-realizada' : 'Actualización realizada con éxito',
+		'Error-Login' : 'O login non existe',
+		'Error-Password' : 'O contrasinal para este usuario non é correcto',
+		'Error-User' : 'O usuario xa existe',
+		'Error-Insert' : 'Erro na inserción'
     }
 };
 

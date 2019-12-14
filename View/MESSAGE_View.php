@@ -37,8 +37,22 @@
 <?php
 			if(is_string($this->datos))
 			{
+				$msg = "Error";
+				switch($this->datos)
+				{
+					case "Error de gestor de base de datos": $msg = "Error-SGDB"; break;
+					case "Inserción fallida: el elemento ya existe": $msg = "Insercion-fallida"; break;
+					case "Inserción realizada con éxito": $msg = "Insercion-realizada"; break;
+					case "Borrado realizado con éxito": $msg = "Borrado-realizado"; break;
+					case "Actualización realizada con éxito": $msg = "Actualizacion-realizada"; break;
+					case "El login no existe": $msg = "Error-Login"; break;
+					case "La password para este usuario no es correcta": $msg = "Error-Password"; break;
+					case "El usuario ya existe": $msg = "Error-User"; break;
+					case "Error en la inserción": $msg = "Error-Insert"; break;
+					default: $msg = "Error";
+				}
 ?>
-				<span class="msg"><?php echo $strings[$this->datos]; ?></span>
+				<span class="msg trad_<?php echo $msg; ?>"></span>
 <?php
 			}
 			else
@@ -72,7 +86,7 @@
 ?>
 			</div>
 
-			<a href="<?php echo $this->volver; ?>" class="return"><?php echo $strings['Back']; ?></a>
+			<a href="<?php echo $this->volver; ?>" class="return trad_Back"></a>
 <?php
 			// Añadimos la vista Footer
 			include '../View/Footer.php';
