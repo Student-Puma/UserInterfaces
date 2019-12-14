@@ -33,16 +33,16 @@
 			<form name="Form" action="../Controller/PROF_TITULACION_Controller.php" method="post">
 				<ul class="form-style">
 					<li>
-						<label><?php echo $strings['DNI']; ?></label>
-						<input type="text" pattern="[0-9A-NO-Za-no-z]{0,9}" class="campo-largo" id="dni" name="dni" placeholder="<?php echo $strings['DNI']; ?>">						
+						<label class="trad_DNI"></label>
+						<input type="text" pattern="[0-9A-NO-Za-no-z]{0,9}" class="campo-largo" id="dni" name="dni">						
 					</li>
 					<li>
 						<label class="trad_Code"></label>
-						<input type="text" pattern="[A-Za-z0-9_-]{0,10}" class="campo-largo" id="CODTitulacion" name="CODTitulacion" placeholder="<?php echo $strings['CODTitulacion']; ?>">
+						<input type="text" pattern="[A-Za-z0-9_-]{0,10}" class="campo-largo" id="CODTitulacion" name="CODTitulacion">
 					</li>
 					<li>
-						<label><?php echo $strings['Year']; ?></label>
-						<input type="text" pattern="[0-9-]{0,9}" class="campo-largo" id="anho" name="anho" placeholder="<?php echo $strings['Year']; ?>">
+						<label class="trad_Year"></label>
+						<input type="text" pattern="[0-9-]{0,9}" class="campo-largo" id="anho" name="anho">
 					</li>
 					<li>
 						<input type="submit" class="campo-largo" name="action" value="SEARCH">

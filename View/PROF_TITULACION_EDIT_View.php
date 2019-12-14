@@ -36,20 +36,20 @@
 			<form name="Form" action="../Controller/PROF_TITULACION_Controller.php" method="post">
 				<ul class="form-style">
 					<li>
-						<label><?php echo $strings['DNI']; ?> <span class="requerido">*</span></label>
+						<label><span class="trad_DNI"></span> <span class="requerido">*</span></label>
 						<a class="weak" href="../Functions/ShowWeak.php?entity=PROFESOR&key=<?php echo $this->tupla['DNI']; ?>">
-							<input type="text" readonly class="campo-largo" id="dni" name="dni" placeholder="<?php echo $strings['DNI']; ?>" value="<?php echo $this->tupla['DNI']; ?>" required>
+							<input type="text" readonly class="campo-largo" id="dni" name="dni" value="<?php echo $this->tupla['DNI']; ?>" required>
 						</a>
 					</li>
 					<li>
-						<label><?php echo $strings['Code']; ?> <span class="requerido">*</span></label>
+						<label><span class="trad_Code"></span> <span class="requerido">*</span></label>
 						<a class="weak" href="../Functions/ShowWeak.php?entity=TITULACION&key=<?php echo $this->tupla['CODTITULACION']; ?>">
-							<input type="text" readonly class="campo-largo" id="CODTitulacion" name="CODTitulacion" placeholder="<?php echo $strings['CODTitulacion']; ?>" value="<?php echo $this->tupla['CODTITULACION']; ?>" required>
+							<input type="text" readonly class="campo-largo" id="CODTitulacion" name="CODTitulacion" value="<?php echo $this->tupla['CODTITULACION']; ?>" required>
 						</a>
 					</li>
 					<li>
-						<label><?php echo $strings['Year']; ?> <span class="requerido">*</span></label>
-						<input type="text" pattern="20[0-2][0-9]-20[0-2][0-9]" value="<?php echo $this->tupla['ANHOACADEMICO']; ?>" class="campo-largo" id="anho" name="anho" placeholder="<?php echo $strings['Year']; ?>" onblur="comprobarAnho(this);" required>
+						<label><span class="trad_Year"></span> <span class="requerido">*</span></label>
+						<input type="text" pattern="20[0-2][0-9]-20[0-2][0-9]" value="<?php echo $this->tupla['ANHOACADEMICO']; ?>" class="campo-largo" id="anho" name="anho"  onblur="comprobarAnho(this);" required>
 					</li>
 					<li>
 						<input type="submit" class="campo-largo" name="action" value="EDIT">

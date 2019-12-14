@@ -36,7 +36,7 @@
 			include '../Locale/Icons.php';
 ?>
 			<div class="centrado">
-				<h2><?php echo $strings['GProfTitulaciones']; ?></h2>
+				<h2 class="GProfTitulaciones"></h2>
 			</div>
 			
 			<table>

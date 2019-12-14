@@ -33,16 +33,16 @@
 			<form name="Form" action="../Controller/PROF_TITULACION_Controller.php" method="post">
 				<ul class="form-style">
 					<li>
-						<label><?php echo $strings['DNI']; ?> <span class="requerido">*</span></label>
-						<input type="text" pattern="[0-9]{8}[A-NO-Za-no-z]" class="campo-largo" id="dni" name="dni" placeholder="<?php echo $strings['DNI']; ?>" required>						
+						<label><span class="trad_DNI"></span> <span class="requerido">*</span></label>
+						<input type="text" pattern="[0-9]{8}[A-NO-Za-no-z]" class="campo-largo" id="dni" name="dni" required>						
 					</li>
 					<li>
-						<label><?php echo $strings['Code']; ?> <span class="requerido">*</span></label>
-						<input type="text" pattern="[A-Za-z0-9][A-Za-z0-9_-]{0,9}" class="campo-largo" id="CODTitulacion" name="CODTitulacion" placeholder="<?php echo $strings['CODTitulacion']; ?>" required>
+						<label><span class="trad_Code"></span> <span class="requerido">*</span></label>
+						<input type="text" pattern="[A-Za-z0-9][A-Za-z0-9_-]{0,9}" class="campo-largo" id="CODTitulacion" name="CODTitulacion" required>
 					</li>
 					<li>
-						<label><?php echo $strings['Year']; ?> <span class="requerido">*</span></label>
-						<input type="text" pattern="20[0-2][0-9]-20[0-2][0-9]" value="2019-2020" class="campo-largo" id="anho" name="anho" placeholder="<?php echo $strings['Year']; ?>" onblur="comprobarAnho(this);" required>
+						<label><span class="trad_Year"></span> <span class="requerido">*</span></label>
+						<input type="text" pattern="20[0-2][0-9]-20[0-2][0-9]" value="2019-2020" class="campo-largo" id="anho" name="anho" onblur="comprobarAnho(this);" required>
 					</li>
 					<li>
 						<input type="submit" class="campo-largo" name="action" value="ADD">
