@@ -19,14 +19,14 @@
 	{
 ?>
 		<li class="title trad_Management"></li>
-		<a class="trad_GUsuarios" href="../Controller/USUARIOS_Controller.php"><li></li></a>
-		<a class="trad_GEdificios" href="../Controller/EDIFICIO_Controller.php"><li></li></a>
-		<a class="trad_GCentros" href="../Controller/CENTRO_Controller.php"><li></li></a>
-		<a class="trad_GEspacios" href="../Controller/ESPACIO_Controller.php"><li></li></a>
-		<a class="trad_GProfesores" href="../Controller/PROFESOR_Controller.php"><li></li></a>
-		<a class="trad_GTitulaciones" href="../Controller/TITULACION_Controller.php"><li></li></a>
-		<a class="trad_GProfEspacios" href="../Controller/PROF_ESPACIO_Controller.php"><li></li></a>
-		<a class="trad_GProfTitulaciones" href="../Controller/PROF_TITULACION_Controller.php"><li></li></a>
+		<a href="../Controller/USUARIOS_Controller.php"><li class="trad_GUsuarios"></li></a>
+		<a href="../Controller/EDIFICIO_Controller.php"><li class="trad_GEdificios" ></li></a>
+		<a href="../Controller/CENTRO_Controller.php"><li class="trad_GCentros" ></li></a>
+		<a href="../Controller/ESPACIO_Controller.php"><li class="trad_GEspacios" ></li></a>
+		<a href="../Controller/PROFESOR_Controller.php"><li class="trad_GProfesores" ></li></a>
+		<a href="../Controller/TITULACION_Controller.php"><li class="trad_GTitulaciones" ></li></a>
+		<a href="../Controller/PROF_ESPACIO_Controller.php"><li class="trad_GProfEspacios" ></li></a>
+		<a href="../Controller/PROF_TITULACION_Controller.php"><li class="trad_GProfTitulaciones" ></li></a>
 <?php
 	}
 	// Si no está autenticado, mostramos el Menú de Login
