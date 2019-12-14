@@ -15,7 +15,7 @@
 		</div> <!-- contenido -->
 	
 		<div class="footer">
-			<p><span class="blue">6j7vi2</span><span> | </span><span class="today"><?php echo ($strings['Today'] . ' ' . date("d-M-Y", time())); ?></span></p>
+			<p><span class="blue">pn532x</span><span> | </span><span class="trad_Today"></span><span class="today"><?php echo(date("d-M-Y", time())); ?></span></p>
 		</div> <!-- footer -->
 
 	</div> <!-- main -->
@@ -23,9 +23,9 @@
 	<div class="centrado">
 		<div  id="modal" class="modal">
 			<form onsubmit="closeModal(event);">
-				<h2><span><?php echo $strings['Error']; ?></span></h2>
-				<h4><span id="modal-msg-photo"><?php echo $strings['Error-Photo']; ?></span></h4>
-				<h4><span id="modal-msg-email"><?php echo $strings['Error-Email']; ?></span></h4>
+				<h2><span class="trad_Error"></span></h2>
+				<h4><span id="modal-msg-photo" class="trad_Error-Photo"></span></h4>
+				<h4><span id="modal-msg-email" class="trad_Error-Email"></span></h4>
 				<input type="submit" class="return" value="Enviar">
 			</form>
 		</div>

@@ -5,7 +5,7 @@ var strings = {
 		'Title'					: 'Management Portal',
 		'User'					: 'User',
 		'UserNotAuth'			: 'User not found',
-		'ActualUser'			: 'Current user',
+		'ActualUser'			: 'Current user :',
 		'Disconnect'			: 'Disconnect',
 		// Footer
 		'Back'					: 'Back',
@@ -105,7 +105,7 @@ var strings = {
 		'Title'					: 'Portal de Gestión',
 		'User'					: 'Usuario',
 		'UserNotAuth'			: 'Usuario no autenticado',
-		'ActualUser'			: 'Usuario actual',
+		'ActualUser'			: 'Usuario actual :',
 		'Disconnect'			: 'Desconectarse',
 		// Footer
 		'Back'					: 'Volver',
@@ -200,7 +200,7 @@ var strings = {
 		'Title'					: 'Portal de Xestión',
 		'User'					: 'Usuario',
 		'UserNotAuth'			: 'Usuario non autenticado',
-		'ActualUser'			: 'Usuario actual',
+		'ActualUser'			: 'Usuario actual :',
 		'Disconnect'			: 'Desconectarse',
 		// Footer
 		'Back'					: 'Voltar',

@@ -22,13 +22,12 @@
 		 */
 		function render()
 		{
-			// Añadimos el idioma
-			include '../Locale/Strings_SPANISH.php';
 			// Añadimos la vista Header
 			include '../View/Header.php';
 ?>
-			<h2><?php echo $strings['Welcome']; ?></h2>
-			<h4><?php echo $strings['ActualUser'] . ': '; ?>
+			<h2 class="trad_Welcome"></h2>
+			<h4>
+				<span class="trad_ActualUser"></span>
 				<span class="blue"><?php echo $_SESSION['login']; ?></span>
 			</h4>
 <?php
