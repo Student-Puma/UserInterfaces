@@ -38,7 +38,7 @@
 						</a>
 					</li>
 					<li>
-						<label><?php echo $strings['Code']; ?></label>
+						<label class="trad_Code"></label>
 						<a class="weak" href="../Functions/ShowWeak.php?entity=ESPACIO&key=<?php echo $this->tupla['CODESPACIO']; ?>">
 							<input type="text" readonly class="campo-largo" id="CODEspacio" name="CODEspacio" placeholder="<?php echo $strings['CODEspacio']; ?>" value="<?php echo $this->tupla['CODESPACIO']; ?>">
 						</a>

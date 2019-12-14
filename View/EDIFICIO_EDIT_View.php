@@ -42,11 +42,11 @@
 				</li>
 				<li>
 				<label><?php echo $strings['Address']; ?> <span class="requerido">*</span></label>
-					<input type="text" pattern="[A-Za-z][A-Za-z0-9 ,.ºª\\-]{2,149}" class="campo-largo" id="direccion" name="direccion" placeholder="<?php echo $strings['Address']; ?>" value='<?php echo $this->tupla['DIRECCIONEDIFICIO']; ?>' required>
+					<input type="text" pattern="[A-Za-z][A-Za-z0-9 ,.ºª\\-]{2,149}" class="campo-largo" id="direccion" name="direccion" value='<?php echo $this->tupla['DIRECCIONEDIFICIO']; ?>' required>
 				</li>
 				<li>
 				<label><?php echo $strings['Campus']; ?> <span class="requerido">*</span></label>
-					<input type="text" pattern="[A-Za-z0-9][A-Za-z0-9 ,.ºª\\-]{0,9}" class="campo-largo" id="campus" name="campus" placeholder="<?php echo $strings['Campus']; ?>" value='<?php echo $this->tupla['CAMPUSEDIFICIO']; ?>' required>
+					<input type="text" pattern="[A-Za-z0-9][A-Za-z0-9 ,.ºª\\-]{0,9}" class="campo-largo" id="campus" name="campus" value='<?php echo $this->tupla['CAMPUSEDIFICIO']; ?>' required>
 				</li>
 				<li>
 					<label><?php echo $strings['Code']; ?> <span class="requerido">*</span></label>

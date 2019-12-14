@@ -37,7 +37,7 @@
 						<input type="text" pattern="[0-9A-NO-Za-no-z]{0,9}" class="campo-largo" id="dni" name="dni" placeholder="<?php echo $strings['DNI']; ?>">						
 					</li>
 					<li>
-						<label><?php echo $strings['Code']; ?></label>
+						<label class="trad_Code"></label>
 						<input type="text" pattern="[A-Za-z0-9_-]{0,10}" class="campo-largo" id="CODTitulacion" name="CODTitulacion" placeholder="<?php echo $strings['CODTitulacion']; ?>">
 					</li>
 					<li>

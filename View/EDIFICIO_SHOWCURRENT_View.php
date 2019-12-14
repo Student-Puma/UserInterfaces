@@ -32,7 +32,7 @@
 		<form name="Form" action="../Controller/EDIFICIO_Controller.php" method="post">
 			<ul class="form-style">
 				<li>
-					<label><?php echo $strings['Code']; ?></label>
+					<label class="trad_Code"></label>
 					<input type="text" readonly class="campo-largo" id="CODEdificio" name="CODEdificio" placeholder="<?php echo $strings['CODEdificio']; ?>" value='<?php echo $this->tupla['CODEDIFICIO']; ?>' required>
 				</li>
 				<li>
@@ -40,12 +40,12 @@
 					<input type="text" readonly class="campo-largo" id="nombre" name="nombre" value='<?php echo $this->tupla['NOMBREEDIFICIO']; ?>' required>
 				</li>
 				<li>
-				<label><?php echo $strings['Address']; ?></label>
-					<input type="text" readonly class="campo-largo" id="direccion" name="direccion" placeholder="<?php echo $strings['Address']; ?>" value='<?php echo $this->tupla['DIRECCIONEDIFICIO']; ?>' required>
+				<label class="trad_Address"></label>
+					<input type="text" readonly class="campo-largo" id="direccion" name="direccion" value='<?php echo $this->tupla['DIRECCIONEDIFICIO']; ?>' required>
 				</li>
 				<li>
-				<label><?php echo $strings['Campus']; ?></label>
-					<input type="text" readonly class="campo-largo" id="campus" name="campus" placeholder="<?php echo $strings['Campus']; ?>" value='<?php echo $this->tupla['CAMPUSEDIFICIO']; ?>' required>
+				<label class="trad_Campus"></label>
+					<input type="text" readonly class="campo-largo" id="campus" name="campus" value='<?php echo $this->tupla['CAMPUSEDIFICIO']; ?>' required>
 				</li>
 			</ul>
 		</form>
