@@ -33,25 +33,25 @@
 		<form name="Form" action="../Controller/ESPACIO_Controller.php" method="post" onsubmit="submitEspacio(this);">
 			<ul class="form-style">
 				<li>
-					<label><?php echo $strings['Type']; ?> <span class="requerido">*</span></label>
+					<label><span class="trad_Type"></span> <span class="requerido">*</span></label>
 					<select class="campo-largo" id="tipo" name="tipo" required>
-						<option value="DESPACHO" selected><?php echo $strings['DESPACHO']; ?></option>
-						<option value="LABORATORIO"><?php echo $strings['LABORATORIO']; ?></option>
-						<option value="PAS"><?php echo $strings['PAS']; ?></option>
+						<option value="DESPACHO" class="trad_DESPACHO" selected></option>
+						<option value="LABORATORIO" class="trad_LABORATORIO"></option>
+						<option value="PAS" class="trad_PAS"></option>
 					</select>
 				</li>
 				<li>
-					<label><?php echo $strings['Details']; ?> <span class="requerido">*</span></label>
-					<input type="text" pattern="[0-9]{1,4}" class="campo-dividido" id="superficie" name="superficie" placeholder="<?php echo $strings['Surface']; ?>" required>
-					<input type="text" pattern="[0-9]{1,8}" class="campo-dividido" id="numinventario" name="numinventario" placeholder="<?php echo $strings['NumInvent']; ?>" required>
+					<label><span class="trad_Details"></span> <span class="requerido">*</span></label>
+					<input type="text" pattern="[0-9]{1,4}" class="campo-dividido" id="superficie" name="superficie" placeholder="m²" required>
+					<input type="text" pattern="[0-9]{1,8}" class="campo-dividido" id="numinventario" name="numinventario" placeholder="Nº" required>
 				</li>
 				<li>
 					<label><span class="trad_Codes"> <span class="requerido">*</span></label>
-					<input type="text" pattern="[A-Za-z0-9][A-Za-z0-9_-]{0,9}" class="campo-dividido" id="CODEdificio" name="CODEdificio" placeholder="<?php echo $strings['CODEdificio']; ?>" required>
-					<input type="text" pattern="[A-Za-z0-9][A-Za-z0-9_-]{0,9}" class="campo-dividido" id="CODCentro" name="CODCentro" placeholder="<?php echo $strings['CODCentro']; ?>" required>
+					<input type="text" pattern="[A-Za-z0-9][A-Za-z0-9_-]{0,9}" class="campo-dividido" id="CODEdificio" name="CODEdificio" placeholder="EDIFICIO" required>
+					<input type="text" pattern="[A-Za-z0-9][A-Za-z0-9_-]{0,9}" class="campo-dividido" id="CODCentro" name="CODCentro" placeholder="CENTRO" required>
 				</li>
 				<li>
-					<input type="text" pattern="[A-Za-z0-9][A-Za-z0-9_-]{0,9}" class="campo-dividido" id="CODEspacio" name="CODEspacio" placeholder="<?php echo $strings['CODEspacio']; ?>" required>
+					<input type="text" pattern="[A-Za-z0-9][A-Za-z0-9_-]{0,9}" class="campo-dividido" id="CODEspacio" name="CODEspacio" placeholder="COD" required>
 
 					<input type="submit" class="campo-dividido" name="action" value="ADD">
 				</li>

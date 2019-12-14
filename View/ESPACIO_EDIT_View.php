@@ -36,25 +36,25 @@
 		<form name="Form" action="../Controller/ESPACIO_Controller.php" method="post" onsubmit="submitEspacio(this);">
 			<ul class="form-style">
 				<li>
-					<label><?php echo $strings['Type']; ?> <span class="requerido">*</span></label>
+					<label><span class="trad_Type"></span> <span class="requerido">*</span></label>
 					<select class="campo-largo" id="tipo" name="tipo" required>
-						<option value="DESPACHO" <?php if($this->tupla['TIPO'] == "DESPACHO") { echo "selected"; } ?>><?php echo $strings['DESPACHO']; ?></option>
-						<option value="LABORATORIO" <?php if($this->tupla['TIPO'] == "LABORATORIO") { echo "selected"; } ?>><?php echo $strings['LABORATORIO']; ?></option>
-						<option value="PAS" <?php if($this->tupla['TIPO'] == "PAS") { echo "selected"; } ?>><?php echo $strings['PAS']; ?></option>
+						<option value="DESPACHO" <?php if($this->tupla['TIPO'] == "DESPACHO") { echo "selected"; } ?> class="trad_DESPACHO"></option>
+						<option value="LABORATORIO" <?php if($this->tupla['TIPO'] == "LABORATORIO") { echo "selected"; } ?> class="trad_LABORATORIO"></option>
+						<option value="PAS" <?php if($this->tupla['TIPO'] == "PAS") { echo "selected"; } ?> class="trad_PAS"></option>
 					</select>
 				</li>
 				<li>
-					<label><?php echo $strings['Details']; ?> <span class="requerido">*</span></label>
-					<input type="text" pattern="[0-9]{1,4}" class="campo-dividido" id="superficie" name="superficie" placeholder="<?php echo $strings['Surface']; ?>" value="<?php echo $this->tupla['SUPERFICIEESPACIO']; ?>" required>
-					<input type="text" pattern="[0-9]{1,8}" class="campo-dividido" id="numinventario" name="numinventario" placeholder="<?php echo $strings['NumInvent']; ?>" value="<?php echo $this->tupla['NUMINVENTARIOESPACIO']; ?>" required>
+					<label><span class="trad_Details"></span> <span class="requerido">*</span></label>
+					<input type="text" pattern="[0-9]{1,4}" class="campo-dividido" id="superficie" name="superficie" placeholder="m²" value="<?php echo $this->tupla['SUPERFICIEESPACIO']; ?>" required>
+					<input type="text" pattern="[0-9]{1,8}" class="campo-dividido" id="numinventario" name="numinventario" placeholder="Nº" value="<?php echo $this->tupla['NUMINVENTARIOESPACIO']; ?>" required>
 				</li>
 				<li>
 					<label class="campo-dividido"><span class="trad_Codes"> <span class="requerido">*</span></label>
-					<input type="text" pattern="[A-Za-z0-9][A-Za-z0-9_-]{0,9}" class="campo-dividido" id="CODEdificio" name="CODEdificio" placeholder="<?php echo $strings['CODEdificio']; ?>" value="<?php echo $this->tupla['CODEDIFICIO']; ?>" required>
-					<input type="text" pattern="[A-Za-z0-9][A-Za-z0-9_-]{0,9}" class="campo-dividido" id="CODCentro" name="CODCentro" placeholder="<?php echo $strings['CODCentro']; ?>" value="<?php echo $this->tupla['CODCENTRO']; ?>" required>
+					<input type="text" pattern="[A-Za-z0-9][A-Za-z0-9_-]{0,9}" class="campo-dividido" id="CODEdificio" name="CODEdificio" placeholder="EDIFICIO" value="<?php echo $this->tupla['CODEDIFICIO']; ?>" required>
+					<input type="text" pattern="[A-Za-z0-9][A-Za-z0-9_-]{0,9}" class="campo-dividido" id="CODCentro" name="CODCentro" placeholder="CENTRO" value="<?php echo $this->tupla['CODCENTRO']; ?>" required>
 				</li>
 				<li>
-					<input type="text" readonly class="campo-dividido" id="CODEspacio" name="CODEspacio" placeholder="<?php echo $strings['CODEspacio']; ?>" value="<?php echo $this->tupla['CODESPACIO']; ?>" required>
+					<input type="text" readonly class="campo-dividido" id="CODEspacio" name="CODEspacio" placeholder="COD" value="<?php echo $this->tupla['CODESPACIO']; ?>" required>
 
 					<input type="submit" class="campo-dividido" name="action" value="EDIT">
 				</li>
