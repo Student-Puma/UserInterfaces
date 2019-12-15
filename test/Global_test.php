@@ -41,7 +41,7 @@
 		
 		// Lógica del test
 
-		@$mysqli = new mysqli(host, user, pass, 'ERROR');
+		@$mysqli = new mysqli(host, user, pass, 'error');
 		$DB_array_error['error_obtenido'] = !$mysqli ? "Error inesperado. Comprueba que la BD esté levantada" :
 			$mysqli->connect_errno ? $mysqli->connect_error : "FALSE";
 		$DB_array_error['resultado'] = $DB_array_error['error_obtenido'] === $DB_array_error['error_esperado'] ? 'OK' : 'FALSE';
