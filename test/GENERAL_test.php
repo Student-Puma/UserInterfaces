@@ -50,6 +50,7 @@
 	include_once '../test/CENTRO_VALIDACION_test.php';
 	include_once '../test/ESPACIO_VALIDACION_test.php';
 	include_once '../test/PROFESOR_VALIDACION_test.php';
+	include_once '../test/TITULACION_VALIDACION_test.php';
 	include_once '../test/PROF_ESPACIO_VALIDACION_test.php';
 	include_once '../test/PROF_TITULACION_VALIDACION_test.php';
 

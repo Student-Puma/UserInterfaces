@@ -5,6 +5,9 @@
 	 * Fecha: 31/01/2019
 	 */
 
+	// Añadimos las validaciones
+	include_once '../Functions/Validaciones.php';
+
 	/**
 	 * Modelo de la entidad TITULACION
 	 * 
@@ -31,7 +34,7 @@
             $this->nombre = $nombre;
             $this->responsable = $responsable;
 			
-			$this->erroresdatos = array(); // FIX: ? Unused variable
+			$this->erroresdatos = array();
 
 			// Añadimos el modelo de acceso a la base de datos
 			include_once '../Model/Access_DB.php';
@@ -46,6 +49,31 @@
 		{ }
 
 		/**
+		 * Comprueba todos los atributos
+		 * 
+		 * @return true || errores
+		 */
+		function comprobar_atributos()
+		{
+			// Eliminamos anteriores errores
+			$this->erroresdatos = array();
+
+			$resultado = comprobar_codigo_titulacion($this->CODTitulacion);
+			if($resultado !== true) { $this->erroresdatos = array_merge($this->erroresdatos, $resultado); }
+			
+			$resultado = comprobar_codigo($this->CODCentro,"codigo centro");
+			if($resultado !== true) { $this->erroresdatos = array_merge($this->erroresdatos, $resultado); }
+
+			$resultado = comprobar_titulacion($this->nombre, "nombre");
+			if($resultado !== true) { $this->erroresdatos = array_merge($this->erroresdatos, $resultado); }
+
+			$resultado = comprobar_responsable($this->responsable);
+			if($resultado !== true) { $this->erroresdatos = array_merge($this->erroresdatos, $resultado); }
+
+			return empty($this->erroresdatos);
+		}
+
+		/**
 		 * Inserta valores en la BD
 		 * Comprueba si la clave está vacía o si ya existe en la tabla
 		 * 
@@ -53,6 +81,9 @@
 		 */
 		function ADD()
 		{
+			// Comprobamos atributos
+			if($this->comprobar_atributos() !== true) { return $this->erroresdatos; }
+
 			// Consulta SQL
 			$sql = "select * from TITULACION where CODTITULACION = '".$this->CODTitulacion."'";
 
@@ -129,6 +160,12 @@
 		 */
 		function DELETE()
 		{
+			// Eliminamos anteriores errores
+			$this->erroresdatos = array();
+
+			// Comprobamos atributos
+			if(comprobar_codigo_titulacion($this->CODTitulacion) !== true) { return $this->erroresdatos; }
+
 			// Sentencia SQL
 			$sql = "DELETE FROM 
 						TITULACION
@@ -182,6 +219,9 @@
 		 */
 		function EDIT()
 		{
+			// Comprobamos atributos
+			if($this->comprobar_atributos() !== true) { return $this->erroresdatos; }
+			
 			// Sentencia SQL
 			$sql = "UPDATE TITULACION
 					SET
