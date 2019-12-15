@@ -42,6 +42,13 @@
 
 	// Contamos la cantidad de test unitarios
 	$count_utest = count($ERRORS_array_test);
+
+	// Ejecutamos los Test de Atributos de las Entidades
+	// ------------ INICIO ------------
+
+	include_once '../test/PROFESOR_VALIDACION_test.php';
+
+	// ------------ FIN ------------
 ?>
 <head>
 	<link rel="stylesheet" type="text/css" href="../View/public/css/faketic.css">

@@ -6,7 +6,7 @@
 	 */
 
 	// Añadimos las validaciones
-	include '../Functions/Validaciones.php';
+	include_once '../Functions/Validaciones.php';
 
 	/**
 	 * Modelo de la entidad PROFESOR
@@ -65,6 +65,15 @@
 			$resultado = comprobar_nombre($this->nombre);
 			if($resultado !== true) { $this->erroresdatos = array_merge($this->erroresdatos, $resultado); }
 
+			$resultado = comprobar_apellidoprofesor($this->apellidos);
+			if($resultado !== true) { $this->erroresdatos = array_merge($this->erroresdatos, $resultado); }
+
+			$resultado = comprobar_area($this->area);
+			if($resultado !== true) { $this->erroresdatos = array_merge($this->erroresdatos, $resultado); }
+
+			$resultado = comprobar_departamento($this->departamento);
+			if($resultado !== true) { $this->erroresdatos = array_merge($this->erroresdatos, $resultado); }
+
 			return empty($this->erroresdatos);
 		}
 
@@ -76,6 +85,7 @@
 		 */
 		function ADD()
 		{
+			// Comprobamos atributos
 			if($this->comprobar_atributos() !== true) { return $this->erroresdatos; }
 
 			// Consulta SQL
@@ -157,6 +167,9 @@
 		 */
 		function DELETE()
 		{
+			// Comprobamos atributos
+			if($this->comprobar_DNI() !== true) { return $this->erroresdatos; }
+
 			// Sentencia SQL
 			$sql = "DELETE FROM 
 						PROFESOR
@@ -210,6 +223,9 @@
 		 */
 		function EDIT()
 		{
+			// Comprobamos atributos
+			if($this->comprobar_atributos() !== true) { return $this->erroresdatos; }
+			
 			// Sentencia SQL
 			$sql = "UPDATE PROFESOR
 					SET

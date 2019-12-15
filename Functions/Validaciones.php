@@ -1,7 +1,7 @@
 <?php
     $GLOBALS['INCIDENCIAS'] = array(
         '00001' => 'Atributo vacío',
-        '00002' => 'Valor del atributo demasiado largo',
+        '00002' => 'Valor de atributo demasiado largo',
         '00003' => 'Valor de atributo no numérico demasiado corto',
         '00004' => 'Valor de atributo numérico demasiado corto',
         '00005' => 'Password demasiado larga',
@@ -38,7 +38,7 @@
             { array_push($errores,array('atributo' => $atributo, 'codigo' => '00002', 'incidencia' => $GLOBALS['INCIDENCIAS']['00002'])); }
         if(strlen($value) < 3)
             { array_push($errores,array('atributo' => $atributo, 'codigo' => '00003', 'incidencia' => $GLOBALS['INCIDENCIAS']['00003'])); }
-        if(!preg_match('/[A-Za-z][A-Za-z]/',$value))
+        if(!preg_match('/^[A-Za-z]*$/',$value))
             { array_push($errores,array('atributo' => $atributo, 'codigo' => '00090', 'incidencia' => $GLOBALS['INCIDENCIAS']['00090'])); }
 
         return empty($errores) ? true : $errores;
@@ -56,7 +56,7 @@
             { array_push($errores,array('atributo' => $atributo, 'codigo' => '00005', 'incidencia' => $GLOBALS['INCIDENCIAS']['00005'])); }
         if(strlen($value) < 3)
             { array_push($errores,array('atributo' => $atributo, 'codigo' => '00003', 'incidencia' => $GLOBALS['INCIDENCIAS']['00003'])); }
-        if(!preg_match('/[A-Za-z][A-Za-z]/',$value))
+        if(!preg_match('/^[A-Za-z]*$/',$value))
             { array_push($errores,array('atributo' => $atributo, 'codigo' => '00090', 'incidencia' => $GLOBALS['INCIDENCIAS']['00090'])); }
 
         return empty($errores) ? true : $errores;
@@ -72,7 +72,7 @@
             { array_push($errores,array('atributo' => $atributo, 'codigo' => '00002', 'incidencia' => $GLOBALS['INCIDENCIAS']['00002'])); }
         if(strlen($value) < 3)
             { array_push($errores,array('atributo' => $atributo, 'codigo' => '00003', 'incidencia' => $GLOBALS['INCIDENCIAS']['00003'])); }
-        if(!preg_match('/[A-Za-zÁÉÍÓÚÏÜáéíóúïü][A-Za-z ÁÉÍÓÚÏÜáéíóúïü]/',$value))
+        if(!preg_match('/^[A-Za-zÁÉÍÓÚÏÜáéíóúïü][A-Za-z ÁÉÍÓÚÏÜáéíóúïü]*$/',$value))
             { array_push($errores,array('atributo' => $atributo, 'codigo' => '00030', 'incidencia' => $GLOBALS['INCIDENCIAS']['00030'])); }
 
         return empty($errores) ? true : $errores;
@@ -88,7 +88,7 @@
             { array_push($errores,array('atributo' => $atributo, 'codigo' => '00002', 'incidencia' => $GLOBALS['INCIDENCIAS']['00002'])); }
         if(strlen($value) < 3)
             { array_push($errores,array('atributo' => $atributo, 'codigo' => '00003', 'incidencia' => $GLOBALS['INCIDENCIAS']['00003'])); }
-        if(!preg_match('/[A-Za-zÁÉÍÓÚÏÜáéíóúïü][A-Za-z ÁÉÍÓÚÏÜáéíóúïü]/',$value))
+        if(!preg_match('/^[A-Za-zÁÉÍÓÚÏÜáéíóúïü][A-Za-z ÁÉÍÓÚÏÜáéíóúïü]*$/',$value))
             { array_push($errores,array('atributo' => $atributo, 'codigo' => '00030', 'incidencia' => $GLOBALS['INCIDENCIAS']['00030'])); }
 
         return empty($errores) ? true : $errores;
@@ -104,7 +104,7 @@
             { array_push($errores,array('atributo' => $atributo, 'codigo' => '00002', 'incidencia' => $GLOBALS['INCIDENCIAS']['00002'])); }
         if(strlen($value) < 3)
             { array_push($errores,array('atributo' => $atributo, 'codigo' => '00003', 'incidencia' => $GLOBALS['INCIDENCIAS']['00003'])); }
-        if(!preg_match('/[A-Za-zÁÉÍÓÚÏÜáéíóúïü][A-Za-z ÁÉÍÓÚÏÜáéíóúïü]/',$value))
+        if(!preg_match('/^[A-Za-zÁÉÍÓÚÏÜáéíóúïü][A-Za-z ÁÉÍÓÚÏÜáéíóúïü]*$/',$value))
             { array_push($errores,array('atributo' => $atributo, 'codigo' => '00030', 'incidencia' => $GLOBALS['INCIDENCIAS']['00030'])); }
 
         return empty($errores) ? true : $errores;
@@ -120,7 +120,7 @@
             { array_push($errores,array('atributo' => $atributo, 'codigo' => '00002', 'incidencia' => $GLOBALS['INCIDENCIAS']['00002'])); }
         if(strlen($value) < 9)
             { array_push($errores,array('atributo' => $atributo, 'codigo' => '00003', 'incidencia' => $GLOBALS['INCIDENCIAS']['00003'])); }
-        if(!preg_match('/[0-9]{8}[TRWAGMYFPDXBNJZSQVHLCKE]/',$value))
+        if(!preg_match('/^[0-9]{8}[TRWAGMYFPDXBNJZSQVHLCKE]$/',$value))
             { array_push($errores,array('atributo' => $atributo, 'codigo' => '00010', 'incidencia' => $GLOBALS['INCIDENCIAS']['00010'])); }
         if(!validarLetraDNI($value))
             { array_push($errores,array('atributo' => $atributo, 'codigo' => '00011', 'incidencia' => $GLOBALS['INCIDENCIAS']['00011'])); }
@@ -138,7 +138,7 @@
             { array_push($errores,array('atributo' => $atributo, 'codigo' => '00002', 'incidencia' => $GLOBALS['INCIDENCIAS']['00002'])); }
         if(strlen($value) < 3)
             { array_push($errores,array('atributo' => $atributo, 'codigo' => '00003', 'incidencia' => $GLOBALS['INCIDENCIAS']['00003'])); }
-        if(!preg_match('/[0-9A-Za-z-]*/',$value))
+        if(!preg_match('/^[0-9A-Za-z-]*$/',$value))
             { array_push($errores,array('atributo' => $atributo, 'codigo' => '00040', 'incidencia' => $GLOBALS['INCIDENCIAS']['00040'])); }
 
         return empty($errores) ? true : $errores;
@@ -154,7 +154,7 @@
             { array_push($errores,array('atributo' => $atributo, 'codigo' => '00002', 'incidencia' => $GLOBALS['INCIDENCIAS']['00002'])); }
         if(strlen($value) < 3)
             { array_push($errores,array('atributo' => $atributo, 'codigo' => '00003', 'incidencia' => $GLOBALS['INCIDENCIAS']['00003'])); }
-        if(!preg_match('/[0-9A-Za-z]*/',$value))
+        if(!preg_match('/^[0-9A-Za-z]*$/',$value))
             { array_push($errores,array('atributo' => $atributo, 'codigo' => '00060', 'incidencia' => $GLOBALS['INCIDENCIAS']['00060'])); }
 
         return empty($errores) ? true : $errores;
@@ -170,7 +170,7 @@
             { array_push($errores,array('atributo' => $atributo, 'codigo' => '00002', 'incidencia' => $GLOBALS['INCIDENCIAS']['00002'])); }
         if(strlen($value) < 8)
             { array_push($errores,array('atributo' => $atributo, 'codigo' => '00004', 'incidencia' => $GLOBALS['INCIDENCIAS']['00004'])); }
-        if(!preg_match('/[0-9]{4}-[0-9]{1,2}-[0-9]{1,2}/',$value))
+        if(!preg_match('/^[0-9]{4}-[0-9]{1,2}-[0-9]{1,2}$/',$value))
             { array_push($errores,array('atributo' => $atributo, 'codigo' => '00020', 'incidencia' => $GLOBALS['INCIDENCIAS']['00020'])); }
 
         return empty($errores) ? true : $errores;
@@ -186,9 +186,9 @@
             { array_push($errores,array('atributo' => $atributo, 'codigo' => '00002', 'incidencia' => $GLOBALS['INCIDENCIAS']['00002'])); }
         if(strlen($value) < 9)
             { array_push($errores,array('atributo' => $atributo, 'codigo' => '00004', 'incidencia' => $GLOBALS['INCIDENCIAS']['00004'])); }
-        if(!preg_match('/[0-9\+]*/',$value))
+        if(!preg_match('/^[0-9\+]*$/',$value))
             { array_push($errores,array('atributo' => $atributo, 'codigo' => '00070', 'incidencia' => $GLOBALS['INCIDENCIAS']['00070'])); }
-        if(!preg_match('/\+?(34)?[976][0-9]{8}/',$value))
+        if(!preg_match('/^\+?(34)?[976][0-9]{8}$/',$value))
             { array_push($errores,array('atributo' => $atributo, 'codigo' => '00006', 'incidencia' => $GLOBALS['INCIDENCIAS']['00006'])); }
 
         return empty($errores) ? true : $errores;
@@ -204,7 +204,7 @@
             { array_push($errores,array('atributo' => $atributo, 'codigo' => '00002', 'incidencia' => $GLOBALS['INCIDENCIAS']['00002'])); }
         if(strlen($value) < 1)
             { array_push($errores,array('atributo' => $atributo, 'codigo' => '00004', 'incidencia' => $GLOBALS['INCIDENCIAS']['00004'])); }
-        if(!preg_match('/[0-9]*/',$value))
+        if(!preg_match('/^[0-9]*$/',$value))
             { array_push($errores,array('atributo' => $atributo, 'codigo' => '00070', 'incidencia' => $GLOBALS['INCIDENCIAS']['00070'])); }
 
         return empty($errores) ? true : $errores;
@@ -220,7 +220,7 @@
             { array_push($errores,array('atributo' => $atributo, 'codigo' => '00002', 'incidencia' => $GLOBALS['INCIDENCIAS']['00002'])); }
         if(strlen($value) < 1)
             { array_push($errores,array('atributo' => $atributo, 'codigo' => '00004', 'incidencia' => $GLOBALS['INCIDENCIAS']['00004'])); }
-        if(!preg_match('/[0-9]*/',$value))
+        if(!preg_match('/^[0-9]*$/',$value))
             { array_push($errores,array('atributo' => $atributo, 'codigo' => '00070', 'incidencia' => $GLOBALS['INCIDENCIAS']['00070'])); }
 
         return empty($errores) ? true : $errores;
@@ -262,7 +262,7 @@
             { array_push($errores,array('atributo' => $atributo, 'codigo' => '00002', 'incidencia' => $GLOBALS['INCIDENCIAS']['00002'])); }
         if(strlen($value) < 9)
             { array_push($errores,array('atributo' => $atributo, 'codigo' => '00004', 'incidencia' => $GLOBALS['INCIDENCIAS']['00004'])); }
-        if(!preg_match('/[0-9]{4}-[0-9]{4}/',$value))
+        if(!preg_match('/^[0-9]{4}-[0-9]{4}$/',$value))
             { array_push($errores,array('atributo' => $atributo, 'codigo' => '00110', 'incidencia' => $GLOBALS['INCIDENCIAS']['00110'])); }
 
         return empty($errores) ? true : $errores;
@@ -277,8 +277,8 @@
         if(strlen($value) > 60)
             { array_push($errores,array('atributo' => $atributo, 'codigo' => '00002', 'incidencia' => $GLOBALS['INCIDENCIAS']['00002'])); }
         if(strlen($value) < 5)
-            { array_push($errores,array('atributo' => $atributo, 'codigo' => '00003', 'incidencia' => $GLOBALS['INCIDENCIAS']['00004'])); }
-        if(!preg_match('/[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}/',$value))
+            { array_push($errores,array('atributo' => $atributo, 'codigo' => '00003', 'incidencia' => $GLOBALS['INCIDENCIAS']['00003'])); }
+        if(!preg_match('/^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/',$value))
             { array_push($errores,array('atributo' => $atributo, 'codigo' => '00120', 'incidencia' => $GLOBALS['INCIDENCIAS']['00120'])); }
 
         return empty($errores) ? true : $errores;
@@ -293,8 +293,8 @@
         if(strlen($value) > 50)
             { array_push($errores,array('atributo' => $atributo, 'codigo' => '00002', 'incidencia' => $GLOBALS['INCIDENCIAS']['00002'])); }
         if(strlen($value) < 3)
-            { array_push($errores,array('atributo' => $atributo, 'codigo' => '00003', 'incidencia' => $GLOBALS['INCIDENCIAS']['00004'])); }
-        if(!preg_match('/[A-Za-zÁÉÍÓÚáéíóúïüÏÜ ]/',$value))
+            { array_push($errores,array('atributo' => $atributo, 'codigo' => '00003', 'incidencia' => $GLOBALS['INCIDENCIAS']['00003'])); }
+        if(!preg_match('/^[A-Za-zÁÉÍÓÚáéíóúïüÏÜ ]*$/',$value))
             { array_push($errores,array('atributo' => $atributo, 'codigo' => '00030', 'incidencia' => $GLOBALS['INCIDENCIAS']['00030'])); }
 
         return empty($errores) ? true : $errores;
@@ -309,8 +309,8 @@
         if(strlen($value) > 60)
             { array_push($errores,array('atributo' => $atributo, 'codigo' => '00002', 'incidencia' => $GLOBALS['INCIDENCIAS']['00002'])); }
         if(strlen($value) < 3)
-            { array_push($errores,array('atributo' => $atributo, 'codigo' => '00003', 'incidencia' => $GLOBALS['INCIDENCIAS']['00004'])); }
-        if(!preg_match('/[A-Za-zÁÉÍÓÚáéíóúïüÏÜ ]/',$value))
+            { array_push($errores,array('atributo' => $atributo, 'codigo' => '00003', 'incidencia' => $GLOBALS['INCIDENCIAS']['00003'])); }
+        if(!preg_match('/^[A-Za-zÁÉÍÓÚáéíóúïüÏÜ ]*$/',$value))
             { array_push($errores,array('atributo' => $atributo, 'codigo' => '00030', 'incidencia' => $GLOBALS['INCIDENCIAS']['00030'])); }
 
         return empty($errores) ? true : $errores;
@@ -325,8 +325,8 @@
         if(strlen($value) > 10)
             { array_push($errores,array('atributo' => $atributo, 'codigo' => '00002', 'incidencia' => $GLOBALS['INCIDENCIAS']['00002'])); }
         if(strlen($value) < 3)
-            { array_push($errores,array('atributo' => $atributo, 'codigo' => '00003', 'incidencia' => $GLOBALS['INCIDENCIAS']['00004'])); }
-        if(!preg_match('/[A-Za-zÁÉÍÓÚáéíóúïüÏÜ ]/',$value))
+            { array_push($errores,array('atributo' => $atributo, 'codigo' => '00003', 'incidencia' => $GLOBALS['INCIDENCIAS']['00003'])); }
+        if(!preg_match('/^[A-Za-zÁÉÍÓÚáéíóúïüÏÜ ]*$/',$value))
             { array_push($errores,array('atributo' => $atributo, 'codigo' => '00030', 'incidencia' => $GLOBALS['INCIDENCIAS']['00030'])); }
 
         return empty($errores) ? true : $errores;
@@ -341,8 +341,8 @@
         if(strlen($value) > 60)
             { array_push($errores,array('atributo' => $atributo, 'codigo' => '00002', 'incidencia' => $GLOBALS['INCIDENCIAS']['00002'])); }
         if(strlen($value) < 3)
-            { array_push($errores,array('atributo' => $atributo, 'codigo' => '00003', 'incidencia' => $GLOBALS['INCIDENCIAS']['00004'])); }
-        if(!preg_match('/[A-Za-zÁÉÍÓÚáéíóúïüÏÜ ]/',$value))
+            { array_push($errores,array('atributo' => $atributo, 'codigo' => '00003', 'incidencia' => $GLOBALS['INCIDENCIAS']['00003'])); }
+        if(!preg_match('/^[A-Za-zÁÉÍÓÚáéíóúïüÏÜ ]*$/',$value))
             { array_push($errores,array('atributo' => $atributo, 'codigo' => '00030', 'incidencia' => $GLOBALS['INCIDENCIAS']['00030'])); }
 
         return empty($errores) ? true : $errores;
@@ -357,8 +357,8 @@
         if(strlen($value) > 60)
             { array_push($errores,array('atributo' => $atributo, 'codigo' => '00002', 'incidencia' => $GLOBALS['INCIDENCIAS']['00002'])); }
         if(strlen($value) < 3)
-            { array_push($errores,array('atributo' => $atributo, 'codigo' => '00003', 'incidencia' => $GLOBALS['INCIDENCIAS']['00004'])); }
-        if(!preg_match('/[A-Za-zÁÉÍÓÚáéíóúïüÏÜ ]/',$value))
+            { array_push($errores,array('atributo' => $atributo, 'codigo' => '00003', 'incidencia' => $GLOBALS['INCIDENCIAS']['00003'])); }
+        if(!preg_match('/^[A-Za-zÁÉÍÓÚáéíóúïüÏÜ ]*$/',$value))
             { array_push($errores,array('atributo' => $atributo, 'codigo' => '00030', 'incidencia' => $GLOBALS['INCIDENCIAS']['00030'])); }
 
         return empty($errores) ? true : $errores;
@@ -373,8 +373,8 @@
         if(strlen($value) > 50)
             { array_push($errores,array('atributo' => $atributo, 'codigo' => '00002', 'incidencia' => $GLOBALS['INCIDENCIAS']['00002'])); }
         if(strlen($value) < 3)
-            { array_push($errores,array('atributo' => $atributo, 'codigo' => '00003', 'incidencia' => $GLOBALS['INCIDENCIAS']['00004'])); }
-        if(!preg_match('/[A-Za-zÁÉÍÓÚáéíóúïüÏÜ ]/',$value))
+            { array_push($errores,array('atributo' => $atributo, 'codigo' => '00003', 'incidencia' => $GLOBALS['INCIDENCIAS']['00003'])); }
+        if(!preg_match('/^[A-Za-zÁÉÍÓÚáéíóúïüÏÜ ]*$/',$value))
             { array_push($errores,array('atributo' => $atributo, 'codigo' => '00030', 'incidencia' => $GLOBALS['INCIDENCIAS']['00030'])); }
 
         return empty($errores) ? true : $errores;
@@ -389,8 +389,8 @@
         if(strlen($value) > 150)
             { array_push($errores,array('atributo' => $atributo, 'codigo' => '00002', 'incidencia' => $GLOBALS['INCIDENCIAS']['00002'])); }
         if(strlen($value) < 3)
-            { array_push($errores,array('atributo' => $atributo, 'codigo' => '00003', 'incidencia' => $GLOBALS['INCIDENCIAS']['00004'])); }
-        if(!preg_match('/[A-Za-zÁÉÍÓÚáéíóúïüÏÜ 0-9\-\/ºª]/',$value))
+            { array_push($errores,array('atributo' => $atributo, 'codigo' => '00003', 'incidencia' => $GLOBALS['INCIDENCIAS']['00003'])); }
+        if(!preg_match('/^[A-Za-zÁÉÍÓÚáéíóúïüÏÜ 0-9\-\/ºª]$/',$value))
             { array_push($errores,array('atributo' => $atributo, 'codigo' => '00050', 'incidencia' => $GLOBALS['INCIDENCIAS']['00050'])); }
 
         return empty($errores) ? true : $errores;
