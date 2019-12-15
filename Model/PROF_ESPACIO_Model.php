@@ -53,7 +53,7 @@
 			// Eliminamos anteriores errores
 			$this->erroresdatos = array();
 
-			$resultado = comprobar_dni($this->dni);
+			$resultado = comprobar_DNI($this->dni);
 			if($resultado !== true) { $this->erroresdatos = array_merge($this->erroresdatos, $resultado); }
 
 			$resultado = comprobar_codigo($this->CODEspacio);
