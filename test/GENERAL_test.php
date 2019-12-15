@@ -46,6 +46,7 @@
 	// Ejecutamos los Test de Atributos de las Entidades
 	// ------------ INICIO ------------
 
+	include_once '../test/EDIFICIO_VALIDACION_test.php';
 	include_once '../test/CENTRO_VALIDACION_test.php';
 	include_once '../test/PROFESOR_VALIDACION_test.php';
 

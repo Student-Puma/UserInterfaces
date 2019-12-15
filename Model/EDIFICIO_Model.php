@@ -5,6 +5,9 @@
 	 * Fecha: 31/01/2019
 	 */
 
+	// Añadimos las validaciones
+	include_once '../Functions/Validaciones.php';
+
 	/**
 	 * Modelo de la entidad EDIFICIO
 	 * 
@@ -32,7 +35,7 @@
 			$this->direccion = $direccion;
 			$this->campus = $campus;
 
-			$this->erroresdatos = array(); // FIX: ? Unused variable
+			$this->erroresdatos = array();
 
 			// Añadimos el modelo de acceso a la base de datos
 			include_once '../Model/Access_DB.php';
@@ -47,6 +50,31 @@
 		{ }
 
 		/**
+		 * Comprueba todos los atributos
+		 * 
+		 * @return true || errores
+		 */
+		function comprobar_atributos()
+		{
+			// Eliminamos anteriores errores
+			$this->erroresdatos = array();
+
+			$resultado = comprobar_codigo($this->CODEdificio);
+			if($resultado !== true) { $this->erroresdatos = array_merge($this->erroresdatos, $resultado); }
+			
+			$resultado = comprobar_nombreedificio($this->nombre,"nombre");
+			if($resultado !== true) { $this->erroresdatos = array_merge($this->erroresdatos, $resultado); }
+
+			$resultado = comprobar_direccion($this->direccion);
+			if($resultado !== true) { $this->erroresdatos = array_merge($this->erroresdatos, $resultado); }
+
+			$resultado = comprobar_campus($this->campus);
+			if($resultado !== true) { $this->erroresdatos = array_merge($this->erroresdatos, $resultado); }
+
+			return empty($this->erroresdatos);
+		}
+
+		/**
 		 * Inserta valores en la BD
 		 * Comprueba si la clave está vacía o si ya existe en la tabla
 		 * 
@@ -54,6 +82,9 @@
 		 */
 		function ADD()
 		{
+			// Comprobamos atributos
+			if($this->comprobar_atributos() !== true) { return $this->erroresdatos; }
+
 			// Consulta SQL
 			$sql = "select * from EDIFICIO where CODEDIFICIO = '".$this->CODEdificio."'";
 
@@ -130,6 +161,12 @@
 		 */
 		function DELETE()
 		{
+			// Eliminamos anteriores errores
+			$this->erroresdatos = array();
+
+			// Comprobamos atributos
+			if(comprobar_codigo($this->CODEdificio) !== true) { return $this->erroresdatos; }
+
 			// Sentencia SQL
 			$sql = "DELETE FROM 
 					EDIFICIO
@@ -182,7 +219,10 @@
 		 * @return resultado Mensaje correspondiente al resultado
 		 */
 		function EDIT()
-		{	
+		{
+			// Comprobamos atributos
+			if($this->comprobar_atributos() !== true) { return $this->erroresdatos; }
+
 			// Sentencia SQL
 			$sql = "UPDATE EDIFICIO
 					SET
