@@ -136,7 +136,7 @@
             { array_push($errores,array('atributo' => $atributo, 'codigo' => '00001', 'incidencia' => $GLOBALS['INCIDENCIAS']['00001'])); }
         if(strlen($value) > 10)
             { array_push($errores,array('atributo' => $atributo, 'codigo' => '00002', 'incidencia' => $GLOBALS['INCIDENCIAS']['00002'])); }
-        if(strlen($value) < 3)
+        if(strlen($value) < 1)
             { array_push($errores,array('atributo' => $atributo, 'codigo' => '00003', 'incidencia' => $GLOBALS['INCIDENCIAS']['00003'])); }
         if(!preg_match('/^[0-9A-Za-z-]*$/',$value))
             { array_push($errores,array('atributo' => $atributo, 'codigo' => '00040', 'incidencia' => $GLOBALS['INCIDENCIAS']['00040'])); }
@@ -152,7 +152,7 @@
             { array_push($errores,array('atributo' => $atributo, 'codigo' => '00001', 'incidencia' => $GLOBALS['INCIDENCIAS']['00001'])); }
         if(strlen($value) > 10)
             { array_push($errores,array('atributo' => $atributo, 'codigo' => '00002', 'incidencia' => $GLOBALS['INCIDENCIAS']['00002'])); }
-        if(strlen($value) < 3)
+        if(strlen($value) < 1)
             { array_push($errores,array('atributo' => $atributo, 'codigo' => '00003', 'incidencia' => $GLOBALS['INCIDENCIAS']['00003'])); }
         if(!preg_match('/^[0-9A-Za-z]*$/',$value))
             { array_push($errores,array('atributo' => $atributo, 'codigo' => '00060', 'incidencia' => $GLOBALS['INCIDENCIAS']['00060'])); }
@@ -390,7 +390,7 @@
             { array_push($errores,array('atributo' => $atributo, 'codigo' => '00002', 'incidencia' => $GLOBALS['INCIDENCIAS']['00002'])); }
         if(strlen($value) < 3)
             { array_push($errores,array('atributo' => $atributo, 'codigo' => '00003', 'incidencia' => $GLOBALS['INCIDENCIAS']['00003'])); }
-        if(!preg_match('/^[A-Za-zÁÉÍÓÚáéíóúïüÏÜ 0-9\-\/ºª]$/',$value))
+        if(!preg_match('/^[A-Za-zÁÉÍÓÚáéíóúïüÏÜ 0-9\-\/ºª]*$/',$value))
             { array_push($errores,array('atributo' => $atributo, 'codigo' => '00050', 'incidencia' => $GLOBALS['INCIDENCIAS']['00050'])); }
 
         return empty($errores) ? true : $errores;
