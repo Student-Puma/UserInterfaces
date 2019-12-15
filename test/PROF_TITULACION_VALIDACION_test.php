@@ -178,6 +178,15 @@
             }
         }
 
+        // Atributos incorrectos (todos en uno)
+
+        $PROF_TITULACION_array_error['metodo'] = "comprobar_atributos";
+        $PROF_TITULACION_array_error["error"] = "Dos o más valores incorrectos";
+        $PROF_TITULACION_array_error["error_esperado"] = "false";
+        $PROF_TITULACION_array_error["error_obtenido"] = empty($PROF_TITULACION->erroresdatos) ? "true" : "false";
+        $PROF_TITULACION_array_error['resultado'] = ($PROF_TITULACION_array_error["error_esperado"] === $PROF_TITULACION_array_error["error_obtenido"]) ? "OK" : "FALSE";
+        array_push($ERRORS_array_test, $PROF_TITULACION_array_error);
+
         // -----------------------------------------------------------
 
         // Datos usados
@@ -207,6 +216,15 @@
             $PROF_TITULACION_array_error['resultado'] = ($PROF_TITULACION_array_error["error_esperado"] === $PROF_TITULACION_array_error["error_obtenido"]) ? "OK" : "FALSE";
             array_push($ERRORS_array_test, $PROF_TITULACION_array_error);
         }
+
+        // Atributos correctos (todos en uno)
+
+        $PROF_TITULACION_array_error['metodo'] = "comprobar_atributos";
+        $PROF_TITULACION_array_error["error"] = "Valor correcto";
+        $PROF_TITULACION_array_error["error_esperado"] = "true";
+        $PROF_TITULACION_array_error["error_obtenido"] = empty($PROF_TITULACION->erroresdatos) ? "true" : "false";
+        $PROF_TITULACION_array_error['resultado'] = ($PROF_TITULACION_array_error["error_esperado"] === $PROF_TITULACION_array_error["error_obtenido"]) ? "OK" : "FALSE";
+        array_push($ERRORS_array_test, $PROF_TITULACION_array_error);
     }
 
     PROF_TITULACION_Validar();

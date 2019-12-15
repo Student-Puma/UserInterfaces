@@ -166,6 +166,15 @@
             }
         }
 
+        // Atributos incorrectos (todos en uno)
+
+        $CENTRO_array_error['metodo'] = "comprobar_atributos";
+        $CENTRO_array_error["error"] = "Dos o más valores incorrectos";
+        $CENTRO_array_error["error_esperado"] = "false";
+        $CENTRO_array_error["error_obtenido"] = empty($CENTRO->erroresdatos) ? "true" : "false";
+        $CENTRO_array_error['resultado'] = ($CENTRO_array_error["error_esperado"] === $CENTRO_array_error["error_obtenido"]) ? "OK" : "FALSE";
+        array_push($ERRORS_array_test, $CENTRO_array_error);
+
         // -----------------------------------------------------------
 
         // Datos usados
@@ -197,6 +206,15 @@
             $CENTRO_array_error['resultado'] = ($CENTRO_array_error["error_esperado"] === $CENTRO_array_error["error_obtenido"]) ? "OK" : "FALSE";
             array_push($ERRORS_array_test, $CENTRO_array_error);
         }
+
+        // Atributos correctos (todos en uno)
+
+        $CENTRO_array_error['metodo'] = "comprobar_atributos";
+        $CENTRO_array_error["error"] = "Valor correcto";
+        $CENTRO_array_error["error_esperado"] = "true";
+        $CENTRO_array_error["error_obtenido"] = empty($CENTRO->erroresdatos) ? "true" : "false";
+        $CENTRO_array_error['resultado'] = ($CENTRO_array_error["error_esperado"] === $CENTRO_array_error["error_obtenido"]) ? "OK" : "FALSE";
+        array_push($ERRORS_array_test, $CENTRO_array_error);
     }
 
     CENTRO_Validar();

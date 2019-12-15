@@ -167,6 +167,15 @@
                 array_push($ERRORS_array_test, $PROFESOR_array_error);
             }
         }
+        
+        // Atributos incorrectos (todos en uno)
+
+        $PROFESOR_array_error['metodo'] = "comprobar_atributos";
+        $PROFESOR_array_error["error"] = "Dos o más valores incorrectos";
+        $PROFESOR_array_error["error_esperado"] = "false";
+        $PROFESOR_array_error["error_obtenido"] = empty($PROFESOR->erroresdatos) ? "true" : "false";
+        $PROFESOR_array_error['resultado'] = ($PROFESOR_array_error["error_esperado"] === $PROFESOR_array_error["error_obtenido"]) ? "OK" : "FALSE";
+        array_push($ERRORS_array_test, $PROFESOR_array_error);
 
         // -----------------------------------------------------------
 
@@ -200,6 +209,15 @@
             $PROFESOR_array_error['resultado'] = ($PROFESOR_array_error["error_esperado"] === $PROFESOR_array_error["error_obtenido"]) ? "OK" : "FALSE";
             array_push($ERRORS_array_test, $PROFESOR_array_error);
         }
+
+        // Atributos correctos (todos en uno)
+
+        $PROFESOR_array_error['metodo'] = "comprobar_atributos";
+        $PROFESOR_array_error["error"] = "Valor correcto";
+        $PROFESOR_array_error["error_esperado"] = "true";
+        $PROFESOR_array_error["error_obtenido"] = empty($PROFESOR->erroresdatos) ? "true" : "false";
+        $PROFESOR_array_error['resultado'] = ($PROFESOR_array_error["error_esperado"] === $PROFESOR_array_error["error_obtenido"]) ? "OK" : "FALSE";
+        array_push($ERRORS_array_test, $PROFESOR_array_error);
     }
 
     PROFESOR_Validar();

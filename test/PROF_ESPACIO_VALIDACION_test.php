@@ -160,6 +160,15 @@
             }
         }
 
+        // Atributos incorrectos (todos en uno)
+
+        $PROF_ESPACIO_array_error['metodo'] = "comprobar_atributos";
+        $PROF_ESPACIO_array_error["error"] = "Dos o más valores incorrectos";
+        $PROF_ESPACIO_array_error["error_esperado"] = "false";
+        $PROF_ESPACIO_array_error["error_obtenido"] = empty($PROF_ESPACIO->erroresdatos) ? "true" : "false";
+        $PROF_ESPACIO_array_error['resultado'] = ($PROF_ESPACIO_array_error["error_esperado"] === $PROF_ESPACIO_array_error["error_obtenido"]) ? "OK" : "FALSE";
+        array_push($ERRORS_array_test, $PROF_ESPACIO_array_error);
+
         // -----------------------------------------------------------
 
         // Datos usados
@@ -188,6 +197,15 @@
             $PROF_ESPACIO_array_error['resultado'] = ($PROF_ESPACIO_array_error["error_esperado"] === $PROF_ESPACIO_array_error["error_obtenido"]) ? "OK" : "FALSE";
             array_push($ERRORS_array_test, $PROF_ESPACIO_array_error);
         }
+
+        // Atributos correctos (todos en uno)
+
+        $PROF_ESPACIO_array_error['metodo'] = "comprobar_atributos";
+        $PROF_ESPACIO_array_error["error"] = "Valor correcto";
+        $PROF_ESPACIO_array_error["error_esperado"] = "true";
+        $PROF_ESPACIO_array_error["error_obtenido"] = empty($PROF_ESPACIO->erroresdatos) ? "true" : "false";
+        $PROF_ESPACIO_array_error['resultado'] = ($PROF_ESPACIO_array_error["error_esperado"] === $PROF_ESPACIO_array_error["error_obtenido"]) ? "OK" : "FALSE";
+        array_push($ERRORS_array_test, $PROF_ESPACIO_array_error);
     }
 
     PROF_ESPACIO_Validar();

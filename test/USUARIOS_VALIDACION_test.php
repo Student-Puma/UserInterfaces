@@ -288,6 +288,15 @@
             }
         }
 
+        // Atributos incorrectos (todos en uno)
+
+        $USUARIOS_array_error['metodo'] = "comprobar_atributos";
+        $USUARIOS_array_error["error"] = "Dos o más valores incorrectos";
+        $USUARIOS_array_error["error_esperado"] = "false";
+        $USUARIOS_array_error["error_obtenido"] = empty($USUARIOS->erroresdatos) ? "true" : "false";
+        $USUARIOS_array_error['resultado'] = ($USUARIOS_array_error["error_esperado"] === $USUARIOS_array_error["error_obtenido"]) ? "OK" : "FALSE";
+        array_push($ERRORS_array_test, $USUARIOS_array_error);
+
         // -----------------------------------------------------------
 
         // Datos usados
@@ -324,6 +333,15 @@
             $USUARIOS_array_error['resultado'] = ($USUARIOS_array_error["error_esperado"] === $USUARIOS_array_error["error_obtenido"]) ? "OK" : "FALSE";
             array_push($ERRORS_array_test, $USUARIOS_array_error);
         }
+
+        // Atributos correctos (todos en uno)
+
+        $USUARIOS_array_error['metodo'] = "comprobar_atributos";
+        $USUARIOS_array_error["error"] = "Valor correcto";
+        $USUARIOS_array_error["error_esperado"] = "true";
+        $USUARIOS_array_error["error_obtenido"] = empty($USUARIOS->erroresdatos) ? "true" : "false";
+        $USUARIOS_array_error['resultado'] = ($USUARIOS_array_error["error_esperado"] === $USUARIOS_array_error["error_obtenido"]) ? "OK" : "FALSE";
+        array_push($ERRORS_array_test, $USUARIOS_array_error);
     }
 
     USUARIOS_Validar();
