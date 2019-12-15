@@ -69,7 +69,7 @@ body { margin: 0; min-height: 100vh; overflow: hidden; overflow-y: auto; }
 
 /* Current content messages and titles */
     .contenido-principal .workspace .datos .msg { color: #333; font-size: 20px; padding: 20px; }
-    .contenido-principal .workspace .datos h2, .datos h4 { width: 100%; text-align: center; color: #333; }
+    .contenido-principal .workspace .datos h1, .contenido-principal .workspace .datos h2, .datos h4 { width: 100%; text-align: center; color: #333; }
     .contenido-principal .workspace .datos a { color: #0067E2; }
 
 /* Forms */
@@ -97,6 +97,8 @@ body { margin: 0; min-height: 100vh; overflow: hidden; overflow-y: auto; }
     .datos table tr:nth-of-type(even) { background: #EEE; }
     .datos table thead th.addnsearch { border: 0 !important; background:#FFF !important; }
     .datos table tbody td.buttons, thead th.addnsearch { width: 60px; text-align: center; }
+    .datos table tr.test_ok { background: #EEE; }
+    .datos table tr.test_bad { background: #ff5656; }
 
 /* Readonly Inputs */
     .readonly, input[readonly] { background: #E8E8E8; }

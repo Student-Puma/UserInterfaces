@@ -2,31 +2,14 @@
 	// Creamos el array principal de test
 	$ERRORS_array_test = array();
 
-	/**
-	 * Elimina mensajes no deseados de la pila de tests
-	 * 
-	 * @param times Número de mensajes que se desean sacar
-	 */
-	function popTest($times)
-	{
-		global $ERRORS_array_test;
-		for($i = 0; $i < $times; $i++)
-			{ array_pop($ERRORS_array_test); }
-	}
+	// Incluímos las funciones de apoyo
+	include_once '../Functions/TestFunc.php';
 
-	/**
-	 * Cuenta el número de test fallidos
-	 * 
-	 * @return num_errors Número de test fallidos
-	 */
-	function countErrors()
-	{
-		global $ERRORS_array_test;
-		$num_errors = 0;
-		foreach($ERRORS_array_test as $result)
-			{ if($result['resultado'] == "FALSE") { $num_errors++; } }
-		return $num_errors;
-	}
+	// Ejecutamos el test Global
+	include_once '../test/Global_test.php';
+
+	// Contamos la cantidad de test globales
+	$count_global = count($ERRORS_array_test);
 
 	// Ejecutamos los Test Unitarios de las Entidades
 	// ------------ INICIO ------------
@@ -56,62 +39,95 @@
 		popTest(5);
 
 	// ------------ FIN ------------
-?>
 
-<h1>De <?php echo count($ERRORS_array_test); ?> tests hay <?php echo countErrors(); ?> fallidos.</h1>
-<br>
-
-<?php
-// presentacion de resultados
+	// Contamos la cantidad de test unitarios
+	$count_utest = count($ERRORS_array_test);
 ?>
-<h1>Test de unidad</h1>
-<table>
-	<tr>
-		<th>
-			Entidad
-		</th>
-		<th>
-			Método
-		</th>
-		<th>
-			Error testeado
-		</th>
-		<th>
-			Error Esperado
-		</th>
-		<th>
-			Error Obtenido
-		</th>
-		<th>
-			Resultado
-		</th>
-	</tr>
-<?php
-	foreach ($ERRORS_array_test as $test)
+<head>
+	<link rel="stylesheet" type="text/css" href="../View/public/css/faketic.css">
+</head>
+<body>
+	<div class="main">
+		<div class="contenido">
+			<div class="contenido-principal">
+				<div class="workspace">
+					<div class="datos">
+					<h1>Resumen</h1>
+					<h2>De <?php echo count($ERRORS_array_test); ?> tests hay <?php echo countErrors(); ?> fallidos.</h2>
+<?php				
+	foreach($ERRORS_array_test as $i=>$test)
 	{
+		// Global Test
+		if($i == 0)
+		{
 ?>
-	<tr>
-		<td>
-			<?php echo $test['entidad'];?>
-		</td>
-		<td>
-			<?php echo $test['metodo']; ?>
-		</td>
-		<td>
-			<?php echo $test['error']; ?>
-		</td>
-		<td>
-			<?php echo $test['error_esperado']; ?>
-		</td>
-		<td>
-			<?php echo $test['error_obtenido']; ?>
-		</td>
-		<td>
-			<?php echo $test['resultado']; ?>
-		</td>
-	</tr>
-<?php	
+			<h4>Pruebas Globales</h4>
+			<table>
+				<tr>
+					<th>Error testeado</th>
+					<th>Valor esperado</th>
+					<th>Error obtenido</th>
+					<th>Resultado</th>
+				</tr>
+<?php
+		} else if ($i == $count_global) {
+?>
+			</table>
+			<h4>Pruebas Unitarias</h4>
+			<table>
+				<tr>
+					<th>Entidad</th>
+					<th>Método</th>
+					<th>Error testeado</th>
+					<th>Valor esperado</th>
+					<th>Error obtenido</th>
+					<th>Resultado</th>
+				</tr>
+<?php
+		} else if ($i == $count_utest) {
+?>
+			</table>
+			<h4>Pruebas Validación</h4>
+			<table>
+				<tr>
+					<th>Entidad</th>
+					<th>Atributo</th>
+					<th>Error testeado</th>
+					<th>Valor esperado</th>
+					<th>Error obtenido</th>
+					<th>Resultado</th>
+				</tr>
+<?php
+		}
+
+		if($i < $count_global)
+		{
+?>
+				<tr class="<?php echo($test['resultado'] === "OK" ? "test_ok" : "test_bad"); ?>">
+					<td><?php echo $test['error']; ?></td>
+					<td><?php echo $test['error_esperado']; ?></td>
+					<td><?php echo $test['error_obtenido']; ?></td>
+					<td><?php echo $test['resultado']; ?></td>
+				</tr>
+<?php
+		} else {
+?>
+			<tr class="<?php echo($test['resultado'] === "OK" ? "test_ok" : "test_bad"); ?>">
+				<td><?php echo $test['entidad']; ?></td>
+				<td><?php echo $test['metodo']; ?></td>
+				<td><?php echo $test['error']; ?></td>
+				<td><?php echo $test['error_esperado']; ?></td>
+				<td><?php echo $test['error_obtenido']; ?></td>
+				<td><?php echo $test['resultado']; ?></td>
+			</tr>
+<?php
+		}
 	}
 ?>
-</table>
-
+			</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
