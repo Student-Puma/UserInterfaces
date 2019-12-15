@@ -53,14 +53,19 @@
 			// Eliminamos anteriores errores
 			$this->erroresdatos = array();
 
-			$resultado = comprobar_DNI($this->dni);
-			if($resultado !== true) { $this->erroresdatos = array_merge($this->erroresdatos, $resultado); }
-
-			$resultado = comprobar_codigo($this->CODEspacio);
-			if($resultado !== true) { $this->erroresdatos = array_merge($this->erroresdatos, $resultado); }
+			// Ejecutamos los test
+			$this->comprobar_DNI();
+			$this->comprobar_CODESPACIO();
 
 			return empty($this->erroresdatos);
 		}
+
+		/**
+		 * Funciones simbólicas para cada atributo
+		 */
+		function comprobar_DNI() { $resultado = comprobar_DNI($this->dni); if($resultado !== true) { $this->erroresdatos = array_merge($this->erroresdatos, $resultado); } return $resultado; }
+		function comprobar_CODESPACIO() { $resultado = comprobar_codigo($this->CODEspacio); if($resultado !== true) { $this->erroresdatos = array_merge($this->erroresdatos, $resultado); } return $resultado; }
+
 
 		/**
 		 * Inserta valores en la BD

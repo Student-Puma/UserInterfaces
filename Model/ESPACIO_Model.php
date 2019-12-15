@@ -65,26 +65,26 @@
 			// Eliminamos anteriores errores
 			$this->erroresdatos = array();
 
-			$resultado = comprobar_codigo($this->CODEspacio, "codigo espacio");
-			if($resultado !== true) { $this->erroresdatos = array_merge($this->erroresdatos, $resultado); }
-
-			$resultado = comprobar_codigo($this->CODEdificio, "codigo edificio");
-			if($resultado !== true) { $this->erroresdatos = array_merge($this->erroresdatos, $resultado); }
-
-			$resultado = comprobar_codigo($this->CODCentro, "codigo centro");
-			if($resultado !== true) { $this->erroresdatos = array_merge($this->erroresdatos, $resultado); }
-			
-			$resultado = comprobar_tipo($this->tipo);
-			if($resultado !== true) { $this->erroresdatos = array_merge($this->erroresdatos, $resultado); }
-
-			$resultado = comprobar_superficie($this->superficie);
-			if($resultado !== true) { $this->erroresdatos = array_merge($this->erroresdatos, $resultado); }
-
-			$resultado = comprobar_numinventario($this->numinventario);
-			if($resultado !== true) { $this->erroresdatos = array_merge($this->erroresdatos, $resultado); }
+			// Ejecutamos los test
+			$this->comprobar_CODESPACIO();
+			$this->comprobar_CODEDIFICIO();
+			$this->comprobar_CODCENTRO();
+			$this->comprobar_TIPO();
+			$this->comprobar_SUPERFICIEESPACIO();
+			$this->comprobar_NUMINVENTARIO();
 
 			return empty($this->erroresdatos);
 		}
+
+		/**
+		 * Funciones simbólicas para cada atributo
+		 */
+		function comprobar_CODESPACIO() { $resultado = comprobar_codigo($this->CODEspacio, "codigo espacio"); if($resultado !== true) { $this->erroresdatos = array_merge($this->erroresdatos, $resultado); } return $resultado; }
+		function comprobar_CODEDIFICIO() { $resultado = comprobar_codigo($this->CODEdificio, "codigo edificio"); if($resultado !== true) { $this->erroresdatos = array_merge($this->erroresdatos, $resultado); } return $resultado; }
+		function comprobar_CODCENTRO() { $resultado = comprobar_codigo($this->CODCentro, "codigo centro"); if($resultado !== true) { $this->erroresdatos = array_merge($this->erroresdatos, $resultado); } return $resultado; }
+		function comprobar_TIPO() { $resultado = comprobar_tipo($this->tipo); if($resultado !== true) { $this->erroresdatos = array_merge($this->erroresdatos, $resultado); } return $resultado; }
+		function comprobar_SUPERFICIEESPACIO() { $resultado = comprobar_superficie($this->superficie); if($resultado !== true) { $this->erroresdatos = array_merge($this->erroresdatos, $resultado); } return $resultado; }
+		function comprobar_NUMINVENTARIO() { $resultado = comprobar_numinventario($this->numinventario); if($resultado !== true) { $this->erroresdatos = array_merge($this->erroresdatos, $resultado); } return $resultado; }
 
 		/**
 		 * Inserta valores en la BD
@@ -181,7 +181,7 @@
 			$this->erroresdatos = array();
 
 			// Comprobamos atributos
-			if(comprobar_codigo($this->CODEspacio) !== true) { return $this->erroresdatos; }
+			if($this->comprobar_CODESPACIO() !== true) { return $this->erroresdatos; }
 
 			// Sentencia SQL
 			$sql = "DELETE FROM 

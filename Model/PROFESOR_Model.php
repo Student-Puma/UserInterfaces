@@ -62,23 +62,24 @@
 			// Eliminamos anteriores errores
 			$this->erroresdatos = array();
 
-			$resultado = comprobar_DNI($this->dni);
-			if($resultado !== true) { $this->erroresdatos = array_merge($this->erroresdatos, $resultado); }
-			
-			$resultado = comprobar_nombre($this->nombre);
-			if($resultado !== true) { $this->erroresdatos = array_merge($this->erroresdatos, $resultado); }
-
-			$resultado = comprobar_apellidoprofesor($this->apellidos);
-			if($resultado !== true) { $this->erroresdatos = array_merge($this->erroresdatos, $resultado); }
-
-			$resultado = comprobar_area($this->area);
-			if($resultado !== true) { $this->erroresdatos = array_merge($this->erroresdatos, $resultado); }
-
-			$resultado = comprobar_departamento($this->departamento);
-			if($resultado !== true) { $this->erroresdatos = array_merge($this->erroresdatos, $resultado); }
+			// Ejecutamos los test
+			$this->comprobar_DNI();
+			$this->comprobar_NOMBREPROFESOR();
+			$this->comprobar_APELLIDOSPROFESOR();
+			$this->comprobar_AREAPROFESOR();
+			$this->comprobar_DEPARTAMENTOPROFESOR();
 
 			return empty($this->erroresdatos);
 		}
+
+		/**
+		 * Funciones simbólicas para cada atributo
+		 */
+		function comprobar_DNI() { $resultado = comprobar_DNI($this->dni); if($resultado !== true) { $this->erroresdatos = array_merge($this->erroresdatos, $resultado); } return $resultado; }
+		function comprobar_NOMBREPROFESOR() { $resultado = comprobar_nombre($this->nombre); if($resultado !== true) { $this->erroresdatos = array_merge($this->erroresdatos, $resultado); } return $resultado; }
+		function comprobar_APELLIDOSPROFESOR() { $resultado = comprobar_apellidoprofesor($this->apellidos); if($resultado !== true) { $this->erroresdatos = array_merge($this->erroresdatos, $resultado); } return $resultado; }
+		function comprobar_AREAPROFESOR() { $resultado = comprobar_area($this->area); if($resultado !== true) { $this->erroresdatos = array_merge($this->erroresdatos, $resultado); } return $resultado; }
+		function comprobar_DEPARTAMENTOPROFESOR() { $resultado = comprobar_departamento($this->departamento); if($resultado !== true) { $this->erroresdatos = array_merge($this->erroresdatos, $resultado); } return $resultado; }
 
 		/**
 		 * Inserta valores en la BD
@@ -174,7 +175,7 @@
 			$this->erroresdatos = array();
 
 			// Comprobamos atributos
-			if(comprobar_DNI($this->dni) !== true) { return $this->erroresdatos; }
+			if($this->comprobar_DNI() !== true) { return $this->erroresdatos; }
 
 			// Sentencia SQL
 			$sql = "DELETE FROM 

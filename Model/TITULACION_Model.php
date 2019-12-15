@@ -58,20 +58,22 @@
 			// Eliminamos anteriores errores
 			$this->erroresdatos = array();
 
-			$resultado = comprobar_codigo_titulacion($this->CODTitulacion);
-			if($resultado !== true) { $this->erroresdatos = array_merge($this->erroresdatos, $resultado); }
-			
-			$resultado = comprobar_codigo($this->CODCentro,"codigo centro");
-			if($resultado !== true) { $this->erroresdatos = array_merge($this->erroresdatos, $resultado); }
-
-			$resultado = comprobar_titulacion($this->nombre, "nombre");
-			if($resultado !== true) { $this->erroresdatos = array_merge($this->erroresdatos, $resultado); }
-
-			$resultado = comprobar_responsable($this->responsable);
-			if($resultado !== true) { $this->erroresdatos = array_merge($this->erroresdatos, $resultado); }
+			// Ejecutamos los test
+			$this->comprobar_CODTITULACION();
+			$this->comprobar_CODCENTRO();
+			$this->comprobar_NOMBRETITULACION();
+			$this->comprobar_RESPONSABLETITULACION();
 
 			return empty($this->erroresdatos);
 		}
+
+		/**
+		 * Funciones simbólicas para cada atributo
+		 */
+		function comprobar_CODTITULACION() { $resultado = comprobar_codigo_titulacion($this->CODTitulacion); if($resultado !== true) { $this->erroresdatos = array_merge($this->erroresdatos, $resultado); } return $resultado; }
+		function comprobar_CODCENTRO() { $resultado = comprobar_codigo($this->CODCentro,"codigo centro"); if($resultado !== true) { $this->erroresdatos = array_merge($this->erroresdatos, $resultado); } return $resultado; }
+		function comprobar_NOMBRETITULACION() { $resultado = comprobar_titulacion($this->nombre, "nombre"); if($resultado !== true) { $this->erroresdatos = array_merge($this->erroresdatos, $resultado); } return $resultado; }
+		function comprobar_RESPONSABLETITULACION() { $resultado = comprobar_responsable($this->responsable); if($resultado !== true) { $this->erroresdatos = array_merge($this->erroresdatos, $resultado); } return $resultado; }
 
 		/**
 		 * Inserta valores en la BD
@@ -164,7 +166,7 @@
 			$this->erroresdatos = array();
 
 			// Comprobamos atributos
-			if(comprobar_codigo_titulacion($this->CODTitulacion) !== true) { return $this->erroresdatos; }
+			if($this->comprobar_CODTITULACION() !== true) { return $this->erroresdatos; }
 
 			// Sentencia SQL
 			$sql = "DELETE FROM 

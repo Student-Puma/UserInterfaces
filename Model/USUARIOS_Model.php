@@ -87,7 +87,7 @@
 			$this->comprobar_apellidos();
 			$this->comprobar_email();
 			$this->comprobar_telefono();
-			$this->comprobar_fecha();
+			$this->comprobar_FechaNacimiento();
 			$this->comprobar_sexo();
 
 			return empty($this->erroresdatos);
@@ -103,7 +103,7 @@
 		function comprobar_apellidos() { $resultado = comprobar_apellido($this->apellidos); if($resultado !== true) { $this->erroresdatos = array_merge($this->erroresdatos, $resultado); } return $resultado; }
 		function comprobar_email() { $resultado = comprobar_email($this->email); if($resultado !== true) { $this->erroresdatos = array_merge($this->erroresdatos, $resultado); } }
 		function comprobar_telefono() { $resultado = comprobar_telefono($this->telefono); if($resultado !== true) { $this->erroresdatos = array_merge($this->erroresdatos, $resultado); } return $resultado; }
-		function comprobar_fecha() { $resultado = comprobar_fecha($this->fechanac); if($resultado !== true) { $this->erroresdatos = array_merge($this->erroresdatos, $resultado); } return $resultado; }
+		function comprobar_FechaNacimiento() { $resultado = comprobar_fecha($this->fechanac); if($resultado !== true) { $this->erroresdatos = array_merge($this->erroresdatos, $resultado); } return $resultado; }
 		function comprobar_sexo() { $resultado = comprobar_sexo($this->sexo); if($resultado !== true) { $this->erroresdatos = array_merge($this->erroresdatos, $resultado); } return $resultado; }
 
 		/**
@@ -310,6 +310,14 @@
 		 */
 		function login()
 		{
+			// Eliminamos anteriores errores
+			$this->erroresdatos = array();
+
+			// Comprobamos atributos
+			$this->comprobar_login();
+			$this->comprobar_password();
+			if(!empty($this->erroresdatos)) { return $this->erroresdatos; }
+
 			// Sentencia SQL
 			$sql = "SELECT *
 					FROM USUARIOS
@@ -346,6 +354,12 @@
 		 */
 		function Register()
 		{
+			// Eliminamos anteriores errores
+			$this->erroresdatos = array();
+
+			// Comprobamos atributos
+			if($this->comprobar_login() !== true) { return $this->erroresdatos; }
+
 			// Sentencia SQL
 			$sql = "select * from USUARIOS where login = '".$this->login."'";
 
@@ -369,6 +383,9 @@
 		 */
 		function registrar()
 		{
+			// Comprobamos atributos
+			if($this->comprobar_atributos() !== true) { return $this->erroresdatos; }
+			
 			// Sentencia SQL
 			$sql = "INSERT INTO USUARIOS (
 						login,

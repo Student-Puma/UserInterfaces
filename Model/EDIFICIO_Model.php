@@ -59,20 +59,22 @@
 			// Eliminamos anteriores errores
 			$this->erroresdatos = array();
 
-			$resultado = comprobar_codigo($this->CODEdificio);
-			if($resultado !== true) { $this->erroresdatos = array_merge($this->erroresdatos, $resultado); }
-			
-			$resultado = comprobar_nombreedificio($this->nombre,"nombre");
-			if($resultado !== true) { $this->erroresdatos = array_merge($this->erroresdatos, $resultado); }
-
-			$resultado = comprobar_direccion($this->direccion);
-			if($resultado !== true) { $this->erroresdatos = array_merge($this->erroresdatos, $resultado); }
-
-			$resultado = comprobar_campus($this->campus);
-			if($resultado !== true) { $this->erroresdatos = array_merge($this->erroresdatos, $resultado); }
+			// Ejecutamos los test
+			$this->comprobar_CODEDIFICIO();
+			$this->comprobar_NOMBREEDIFICIO();
+			$this->comprobar_DIRECCIONEDIFICIO();
+			$this->comprobar_CAMPUSEDIFICIO();
 
 			return empty($this->erroresdatos);
 		}
+
+		/**
+		 * Funciones simbólicas para cada atributo
+		 */
+		function comprobar_CODEDIFICIO() { $resultado = comprobar_codigo($this->CODEdificio); if($resultado !== true) { $this->erroresdatos = array_merge($this->erroresdatos, $resultado); } return $resultado; }
+		function comprobar_NOMBREEDIFICIO() { $resultado = comprobar_nombreedificio($this->nombre,"nombre"); if($resultado !== true) { $this->erroresdatos = array_merge($this->erroresdatos, $resultado); } return $resultado; }
+		function comprobar_DIRECCIONEDIFICIO() { $resultado = comprobar_direccion($this->direccion); if($resultado !== true) { $this->erroresdatos = array_merge($this->erroresdatos, $resultado); } return $resultado; }
+		function comprobar_CAMPUSEDIFICIO() { $resultado = comprobar_campus($this->campus); if($resultado !== true) { $this->erroresdatos = array_merge($this->erroresdatos, $resultado); } return $resultado; }
 
 		/**
 		 * Inserta valores en la BD
@@ -165,7 +167,7 @@
 			$this->erroresdatos = array();
 
 			// Comprobamos atributos
-			if(comprobar_codigo($this->CODEdificio) !== true) { return $this->erroresdatos; }
+			if($this->comprobar_CODEDIFICIO() !== true) { return $this->erroresdatos; }
 
 			// Sentencia SQL
 			$sql = "DELETE FROM 

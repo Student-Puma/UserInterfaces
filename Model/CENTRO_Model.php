@@ -62,23 +62,24 @@
 			// Eliminamos anteriores errores
 			$this->erroresdatos = array();
 
-			$resultado = comprobar_codigo($this->CODCentro,"codigo centro");
-			if($resultado !== true) { $this->erroresdatos = array_merge($this->erroresdatos, $resultado); }
+			// Ejecutamos los test
+			$this->comprobar_CODCENTRO();
+			$this->comprobar_CODEDIFICIO();
+			$this->comprobar_NOMBRECENTRO();
+			$this->comprobar_DIRECCIONCENTRO();
+			$this->comprobar_RESPONSABLECENTRO();
 			
-			$resultado = comprobar_codigo($this->CODEdificio,"codigo edificio");
-			if($resultado !== true) { $this->erroresdatos = array_merge($this->erroresdatos, $resultado); }
-
-			$resultado = comprobar_nombreedificio($this->nombre,"nombre");
-			if($resultado !== true) { $this->erroresdatos = array_merge($this->erroresdatos, $resultado); }
-
-			$resultado = comprobar_direccion($this->direccion);
-			if($resultado !== true) { $this->erroresdatos = array_merge($this->erroresdatos, $resultado); }
-
-			$resultado = comprobar_responsable($this->responsable);
-			if($resultado !== true) { $this->erroresdatos = array_merge($this->erroresdatos, $resultado); }
-
 			return empty($this->erroresdatos);
 		}
+
+		/**
+		 * Funciones simbólicas para cada atributo
+		 */
+		function comprobar_CODCENTRO() { $resultado = comprobar_codigo($this->CODCentro,"codigo centro"); if($resultado !== true) { $this->erroresdatos = array_merge($this->erroresdatos, $resultado); } return $resultado; }
+		function comprobar_CODEDIFICIO() { $resultado = comprobar_codigo($this->CODEdificio,"codigo edificio"); if($resultado !== true) { $this->erroresdatos = array_merge($this->erroresdatos, $resultado); } return $resultado; }
+		function comprobar_NOMBRECENTRO() { $resultado = comprobar_nombreedificio($this->nombre,"nombre"); if($resultado !== true) { $this->erroresdatos = array_merge($this->erroresdatos, $resultado); } return $resultado; }
+		function comprobar_DIRECCIONCENTRO() { $resultado = comprobar_direccion($this->direccion); if($resultado !== true) { $this->erroresdatos = array_merge($this->erroresdatos, $resultado); } return $resultado; }
+		function comprobar_RESPONSABLECENTRO() { $resultado = comprobar_responsable($this->responsable); if($resultado !== true) { $this->erroresdatos = array_merge($this->erroresdatos, $resultado); } return $resultado; }
 
 		/**
 		 * Inserta valores en la BD
@@ -173,7 +174,7 @@
 			$this->erroresdatos = array();
 
 			// Comprobamos atributos
-			if(comprobar_codigo($this->CODCentro) !== true) { return $this->erroresdatos; }
+			if($this->comprobar_CODCENTRO() !== true) { return $this->erroresdatos; }
 
 			// Sentencia SQL
 			$sql = "DELETE FROM 

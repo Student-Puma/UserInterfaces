@@ -40,6 +40,12 @@
 		}
 
 		/**
+		 * Destructor de la clase
+		 */
+		function __destruct()
+		{ }
+
+		/**
 		 * Comprueba todos los atributos
 		 * 
 		 * @return true || errores
@@ -49,23 +55,20 @@
 			// Eliminamos anteriores errores
 			$this->erroresdatos = array();
 
-			$resultado = comprobar_codigo_titulacion($this->CODTitulacion, "codigo");
-			if($resultado !== true) { $this->erroresdatos = array_merge($this->erroresdatos, $resultado); }
-			
-			$resultado = comprobar_DNI($this->dni);
-			if($resultado !== true) { $this->erroresdatos = array_merge($this->erroresdatos, $resultado); }
-
-			$resultado = comprobar_anhoacademico($this->anho);
-			if($resultado !== true) { $this->erroresdatos = array_merge($this->erroresdatos, $resultado); }
+			// Ejecutamos los test
+			$this->comprobar_DNI();
+			$this->comprobar_CODTITULACION();
+			$this->comprobar_ANHOACADEMICO();
 
 			return empty($this->erroresdatos);
 		}
 
 		/**
-		 * Destructor de la clase
+		 * Funciones simbólicas para cada atributo
 		 */
-		function __destruct()
-		{ }
+		function comprobar_DNI() { $resultado = comprobar_DNI($this->dni); if($resultado !== true) { $this->erroresdatos = array_merge($this->erroresdatos, $resultado); } return $resultado; }
+		function comprobar_CODTITULACION() { $resultado = comprobar_codigo_titulacion($this->CODTitulacion, "codigo"); if($resultado !== true) { $this->erroresdatos = array_merge($this->erroresdatos, $resultado); } return $resultado; }
+		function comprobar_ANHOACADEMICO() { $resultado = comprobar_anhoacademico($this->anho); if($resultado !== true) { $this->erroresdatos = array_merge($this->erroresdatos, $resultado); } return $resultado; }
 
 		/**
 		 * Inserta valores en la BD
@@ -155,8 +158,8 @@
 			$this->erroresdatos = array();
 
 			// Comprobamos atributos
-			comprobar_DNI($this->dni);
-			comprobar_codigo_titulacion($this->CODTitulacion, "codigo");
+			$this->comprobar_DNI();
+			$this->comprobar_CODTITULACION();
 			if(!empty($this->erroresdatos)) { return $this->erroresdatos; }
 
 			// Sentencia SQL
