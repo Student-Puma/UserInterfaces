@@ -38,7 +38,7 @@
 			$this->area = $area;
 			$this->departamento = $departamento;
 
-			$this->erroresdatos = array(); // FIX: ? Unused variable
+			$this->erroresdatos = array();
 
 			// Añadimos el modelo de acceso a la base de datos
 			include_once '../Model/Access_DB.php';
@@ -59,6 +59,9 @@
 		 */
 		function comprobar_atributos()
 		{
+			// Eliminamos anteriores errores
+			$this->erroresdatos = array();
+
 			$resultado = comprobar_DNI($this->dni);
 			if($resultado !== true) { $this->erroresdatos = array_merge($this->erroresdatos, $resultado); }
 			
@@ -223,9 +226,12 @@
 		 */
 		function EDIT()
 		{
-			// Comprobamos atributos
-			if($this->comprobar_atributos() !== true) { return $this->erroresdatos; }
+			// Eliminamos anteriores errores
+			$this->erroresdatos = array();
 			
+			// Comprobamos atributos
+			if($this->comprobar_atributos($this->dni) !== true) { return $this->erroresdatos; }
+
 			// Sentencia SQL
 			$sql = "UPDATE PROFESOR
 					SET
