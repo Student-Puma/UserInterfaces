@@ -170,8 +170,11 @@
 		 */
 		function DELETE()
 		{
+			// Eliminamos anteriores errores
+			$this->erroresdatos = array();
+
 			// Comprobamos atributos
-			if($this->comprobar_DNI() !== true) { return $this->erroresdatos; }
+			if(comprobar_DNI($this->dni) !== true) { return $this->erroresdatos; }
 
 			// Sentencia SQL
 			$sql = "DELETE FROM 
@@ -226,11 +229,8 @@
 		 */
 		function EDIT()
 		{
-			// Eliminamos anteriores errores
-			$this->erroresdatos = array();
-			
 			// Comprobamos atributos
-			if($this->comprobar_atributos($this->dni) !== true) { return $this->erroresdatos; }
+			if($this->comprobar_atributos() !== true) { return $this->erroresdatos; }
 
 			// Sentencia SQL
 			$sql = "UPDATE PROFESOR
