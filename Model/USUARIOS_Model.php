@@ -5,6 +5,9 @@
 	 * Fecha: 31/01/2019
 	 */
 
+	// Añadimos las validaciones
+	include_once '../Functions/Validaciones.php';
+
 	/**
 	 * Modelo de la entidad USUARIOS
 	 * 
@@ -67,6 +70,43 @@
 		{ }
 
 		/**
+		 * Comprueba todos los atributos
+		 * 
+		 * @return true || errores
+		 */
+		function comprobar_atributos()
+		{
+			// Eliminamos anteriores errores
+			$this->erroresdatos = array();
+
+			// Ejecutamos los test
+			$this->comprobar_login();
+			$this->comprobar_password();
+			$this->comprobar_DNI();
+			$this->comprobar_nombre();
+			$this->comprobar_apellidos();
+			$this->comprobar_email();
+			$this->comprobar_telefono();
+			$this->comprobar_fecha();
+			$this->comprobar_sexo();
+
+			return empty($this->erroresdatos);
+		}
+
+		/**
+		 * Funciones simbólicas para cada atributo
+		 */
+		function comprobar_login() { $resultado = comprobar_login($this->login); if($resultado !== true) { $this->erroresdatos = array_merge($this->erroresdatos, $resultado); } return $resultado; }
+		function comprobar_password() { $resultado = comprobar_password($this->password); if($resultado !== true) { $this->erroresdatos = array_merge($this->erroresdatos, $resultado); } return $resultado; }
+		function comprobar_dni() { $resultado = comprobar_DNI($this->dni); if($resultado !== true) { $this->erroresdatos = array_merge($this->erroresdatos, $resultado); } return $resultado; }
+		function comprobar_nombre() { $resultado = comprobar_nombre($this->nombre); if($resultado !== true) { $this->erroresdatos = array_merge($this->erroresdatos, $resultado); } return $resultado; }
+		function comprobar_apellidos() { $resultado = comprobar_apellido($this->apellidos); if($resultado !== true) { $this->erroresdatos = array_merge($this->erroresdatos, $resultado); } return $resultado; }
+		function comprobar_email() { $resultado = comprobar_email($this->email); if($resultado !== true) { $this->erroresdatos = array_merge($this->erroresdatos, $resultado); } }
+		function comprobar_telefono() { $resultado = comprobar_telefono($this->telefono); if($resultado !== true) { $this->erroresdatos = array_merge($this->erroresdatos, $resultado); } return $resultado; }
+		function comprobar_fecha() { $resultado = comprobar_fecha($this->fechanac); if($resultado !== true) { $this->erroresdatos = array_merge($this->erroresdatos, $resultado); } return $resultado; }
+		function comprobar_sexo() { $resultado = comprobar_sexo($this->sexo); if($resultado !== true) { $this->erroresdatos = array_merge($this->erroresdatos, $resultado); } return $resultado; }
+
+		/**
 		 * Inserta valores en la BD
 		 * Comprueba si la clave está vacía o si ya existe en la tabla
 		 * 
@@ -74,6 +114,9 @@
 		 */
 		function ADD()
 		{
+			// Comprobamos atributos
+			if($this->comprobar_atributos() !== true) { return $this->erroresdatos; }
+
 			// Consulta SQL
 			$sql = "select * from USUARIOS where login = '".$this->login."'";
 
@@ -168,6 +211,12 @@
 		 */
 		function DELETE()
 		{
+			// Eliminamos anteriores errores
+			$this->erroresdatos = array();
+
+			// Comprobamos atributos
+			if($this->comprobar_login() !== true) { return $this->erroresdatos; }
+
 			// Sentencia SQL
 			$sql = "DELETE FROM 
 						USUARIOS
@@ -221,6 +270,9 @@
 		 */
 		function EDIT()
 		{
+			// Comprobamos atributos
+			if($this->comprobar_atributos() !== true) { return $this->erroresdatos; }
+			
 			// Sentencia SQL
 			$sql = "UPDATE USUARIOS
 					SET 
