@@ -5,6 +5,9 @@
 	 * Fecha: 31/01/2019
 	 */
 
+	// Añadimos las validaciones
+	include_once '../Functions/Validaciones.php';
+
 	/**
 	 * Modelo de la entidad PROF_ESPACIO
 	 * 
@@ -26,7 +29,7 @@
 			$this->dni = $dni;
 			$this->CODEspacio = $CODEspacio;
 
-			$this->erroresdatos = array(); // FIX: ? Unused variable
+			$this->erroresdatos = array();
 
 			// Añadimos el modelo de acceso a la base de datos
 			include_once '../Model/Access_DB.php';
@@ -41,6 +44,25 @@
 		{ }
 
 		/**
+		 * Comprueba todos los atributos
+		 * 
+		 * @return true || errores
+		 */
+		function comprobar_atributos()
+		{
+			// Eliminamos anteriores errores
+			$this->erroresdatos = array();
+
+			$resultado = comprobar_dni($this->dni);
+			if($resultado !== true) { $this->erroresdatos = array_merge($this->erroresdatos, $resultado); }
+
+			$resultado = comprobar_codigo($this->CODEspacio);
+			if($resultado !== true) { $this->erroresdatos = array_merge($this->erroresdatos, $resultado); }
+
+			return empty($this->erroresdatos);
+		}
+
+		/**
 		 * Inserta valores en la BD
 		 * Comprueba si la clave está vacía o si ya existe en la tabla
 		 * 
@@ -48,6 +70,9 @@
 		 */
 		function ADD()
 		{
+			// Comprobamos atributos
+			if($this->comprobar_atributos() !== true) { return $this->erroresdatos; }
+
 			// Consulta SQL
 			$sql = "select * from PROF_ESPACIO where (DNI = '".$this->dni."' AND CODESPACIO = '".$this->CODEspacio."')";
 
@@ -117,6 +142,9 @@
 		 */
 		function DELETE()
 		{
+			// Comprobamos atributos
+			if($this->comprobar_atributos() !== true) { return $this->erroresdatos; }
+
 			// Sentencia SQL
 			$sql = "DELETE FROM 
 						PROF_ESPACIO
@@ -173,6 +201,9 @@
 		 */
 		function EDIT()
 		{
+			// Comprobamos atributos
+			if($this->comprobar_atributos() !== true) { return $this->erroresdatos; }
+			
 			// Sentencia SQL
 			$sql = "UPDATE PROF_ESPACIO
 					SET

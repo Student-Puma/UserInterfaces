@@ -50,6 +50,7 @@
 	include_once '../test/CENTRO_VALIDACION_test.php';
 	include_once '../test/ESPACIO_VALIDACION_test.php';
 	include_once '../test/PROFESOR_VALIDACION_test.php';
+	include_once '../test/PROF_ESPACIO_VALIDACION_test.php';
 
 	// ------------ FIN ------------
 ?>
@@ -73,7 +74,7 @@
 		{
 ?>
 			<h2>Pruebas Globales</h2>
-			<table style="max-width: 300px">
+			<table>
 				<tr>
 					<th>Error testeado</th>
 					<th>Valor esperado</th>
@@ -85,7 +86,7 @@
 ?>
 			</table>
 			<h2>Pruebas Unitarias</h2>
-			<table style="max-width: 300px">
+			<table>
 				<tr>
 					<th>Entidad</th>
 					<th>Método</th>
