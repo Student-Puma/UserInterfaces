@@ -5,6 +5,9 @@
 	 * Fecha: 31/01/2019
 	 */
 
+	// Añadimos las validaciones
+	include_once '../Functions/Validaciones.php';
+
 	/**
 	 * Modelo de la entidad PROF_TITULACION
 	 * 
@@ -28,12 +31,34 @@
 			$this->CODTitulacion = $CODTitulacion;
 			$this->anho = $anho;
 			
-			$this->erroresdatos = array(); // FIX: ? Unused variable
+			$this->erroresdatos = array();
 
 			// Añadimos el modelo de acceso a la base de datos
 			include_once '../Model/Access_DB.php';
 			// Nos conectamos con la base de datos
 			$this->mysqli = ConnectDB();
+		}
+
+		/**
+		 * Comprueba todos los atributos
+		 * 
+		 * @return true || errores
+		 */
+		function comprobar_atributos()
+		{
+			// Eliminamos anteriores errores
+			$this->erroresdatos = array();
+
+			$resultado = comprobar_codigo_titulacion($this->CODTitulacion, "codigo");
+			if($resultado !== true) { $this->erroresdatos = array_merge($this->erroresdatos, $resultado); }
+			
+			$resultado = comprobar_DNI($this->dni);
+			if($resultado !== true) { $this->erroresdatos = array_merge($this->erroresdatos, $resultado); }
+
+			$resultado = comprobar_anhoacademico($this->anho);
+			if($resultado !== true) { $this->erroresdatos = array_merge($this->erroresdatos, $resultado); }
+
+			return empty($this->erroresdatos);
 		}
 
 		/**
@@ -50,6 +75,9 @@
 		 */
 		function ADD()
 		{
+			// Comprobamos atributos
+			if($this->comprobar_atributos() !== true) { return $this->erroresdatos; }
+
 			// Consulta SQL
 			$sql = "select * from PROF_TITULACION where (DNI = '".$this->dni."' AND CODTITULACION = '".$this->CODTitulacion."')";
 
@@ -123,6 +151,14 @@
 		 */
 		function DELETE()
 		{
+			// Eliminamos anteriores errores
+			$this->erroresdatos = array();
+
+			// Comprobamos atributos
+			comprobar_DNI($this->dni);
+			comprobar_codigo_titulacion($this->CODTitulacion, "codigo");
+			if(!empty($this->erroresdatos)) { return $this->erroresdatos; }
+
 			// Sentencia SQL
 			$sql = "DELETE FROM 
 						PROF_TITULACION
@@ -178,6 +214,9 @@
 		 */
 		function EDIT()
 		{
+			// Comprobamos atributos
+			if($this->comprobar_atributos() !== true) { return $this->erroresdatos; }
+			
 			// Sentencia SQL
 			$sql = "UPDATE PROF_TITULACION
 					SET
