@@ -1,6 +1,6 @@
-- Warning: mysqli::__construct(): (HY000/1045): Access denied for user 'iu2018'@'localhost' (using password: YES) in C:\xampp\htdocs\UserInterfaces\Model\Access_DB.php on line 67
 - Add Foto in EDIT USUARIOS
-- Constructores de los Model con los atributos ordenados
-- Cambio de idioma por front
-- Mejorar telefono (+34)
-- Mejorar placeholder="CENTRO" (por ejemplo)
+- Mejorar placeholder="CENTRO" (por ejemplo) con una clase trad_COD[EDIFICIO] que modifique placeholder
+- MessageView cambiar idioma cabeceras de arrays
+- Revisar faltas de entregas anteriores
+- Crear comprobaciones por JS a la hora de hacer submit
+- Cambiar comprobaciones HTML para que se ajusten a las validaciones actuales
