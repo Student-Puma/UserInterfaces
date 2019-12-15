@@ -53,7 +53,8 @@
 				<div class="workspace">
 					<div class="datos">
 					<h1>Resumen</h1>
-					<h2>De <?php echo count($ERRORS_array_test); ?> tests hay <?php echo countErrors(); ?> fallidos.</h2>
+					<h2>De <?php echo count($ERRORS_array_test); ?> tests hay <?php echo countErrors(); ?> fallidos</h2>
+					<h1>Detalle</h1>
 <?php				
 	foreach($ERRORS_array_test as $i=>$test)
 	{
@@ -61,7 +62,7 @@
 		if($i == 0)
 		{
 ?>
-			<h4>Pruebas Globales</h4>
+			<h2>Pruebas Globales</h2>
 			<table>
 				<tr>
 					<th>Error testeado</th>
@@ -73,7 +74,7 @@
 		} else if ($i == $count_global) {
 ?>
 			</table>
-			<h4>Pruebas Unitarias</h4>
+			<h2>Pruebas Unitarias</h2>
 			<table>
 				<tr>
 					<th>Entidad</th>
@@ -87,7 +88,7 @@
 		} else if ($i == $count_utest) {
 ?>
 			</table>
-			<h4>Pruebas Validación</h4>
+			<h2>Pruebas Validación</h2>
 			<table>
 				<tr>
 					<th>Entidad</th>
