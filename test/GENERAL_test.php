@@ -48,6 +48,7 @@
 
 	include_once '../test/EDIFICIO_VALIDACION_test.php';
 	include_once '../test/CENTRO_VALIDACION_test.php';
+	include_once '../test/ESPACIO_VALIDACION_test.php';
 	include_once '../test/PROFESOR_VALIDACION_test.php';
 
 	// ------------ FIN ------------
@@ -56,7 +57,7 @@
 	<link rel="stylesheet" type="text/css" href="../View/public/css/faketic.css">
 </head>
 <body>
-	<div class="main">
+	<div class="main" style="width: 95vw">
 		<div class="contenido">
 			<div class="contenido-principal">
 				<div class="workspace">
@@ -72,7 +73,7 @@
 		{
 ?>
 			<h2>Pruebas Globales</h2>
-			<table>
+			<table style="max-width: 300px">
 				<tr>
 					<th>Error testeado</th>
 					<th>Valor esperado</th>
@@ -84,7 +85,7 @@
 ?>
 			</table>
 			<h2>Pruebas Unitarias</h2>
-			<table>
+			<table style="max-width: 300px">
 				<tr>
 					<th>Entidad</th>
 					<th>Método</th>

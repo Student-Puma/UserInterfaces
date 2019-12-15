@@ -14,7 +14,7 @@
         '00050' => 'Solo están permitidas alfabéticos y espacios, números y los símbolos  “- / º ª”',
         '00060' => 'Solo se permiten alfabéticos y números',
         '00070' => 'Solo se permiten números',
-        '00080' => 'Solo se permiten los valores \'DESPACHO\',\'LABORATORIO\',\'PAS\'',
+        '00080' => 'Solo se permiten los valores \'DESPACHO\', \'LABORATORIO\', \'PAS\'',
         '00090' => 'Solo se permiten alfabéticos',
         '00100' => 'Solo se permiten los valores \'hombre\',\'mujer\'',
         '00110' => 'Solo se permiten dddd-dddd donde d es un dígito',
@@ -194,7 +194,7 @@
         return empty($errores) ? true : $errores;
     }
 
-    function comprobar_espacio($value, $atributo="espacio")
+    function comprobar_superficie($value, $atributo="superficie")
     {
         $errores = array();
 
