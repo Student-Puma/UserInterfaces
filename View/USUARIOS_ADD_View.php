@@ -33,38 +33,38 @@
 		<form name="Form" action="../Functions/UploadFile.php" enctype="multipart/form-data" method="post">
 			<ul class="form-style">
 				<li>
-					<label><?php echo $strings['AccountData']; ?> <span class="requerido">*</span></label>
-					<input type="text" pattern=".{4,15}" class="campo-dividido" id="login" name="login" placeholder="<?php echo $strings['Login']; ?>" required>
-					<input type="password" pattern=".{4,60}" class="campo-dividido" id="password" name="password" placeholder="<?php echo $strings['Password']; ?>" required>
+					<label><span class="trad_AccountData"></span> <span class="requerido">*</span></label>
+					<input type="text" pattern=".{4,15}" class="campo-dividido" id="login" name="login" placeholder="LOGIN" required>
+					<input type="password" pattern=".{4,60}" class="campo-dividido" id="password" name="password" placeholder="PASSWD" required>
 				</li>
 				<li>
-					<label><?php echo $strings['FullName']; ?> <span class="requerido">*</span></label>
+					<label><span class="trad_FullName"></span> <span class="requerido">*</span></label>
 					<input type="text" pattern="[A-Za-z][A-Za-z -]{2,29}" class="campo-dividido" id="nombre" name="nombre" required>
-					<input type="text" pattern="[A-Za-z][A-Za-z -]{2,49}" class="campo-dividido" id="apellidos" name="apellidos" placeholder="<?php echo $strings['Surname']; ?>" required>
+					<input type="text" pattern="[A-Za-z][A-Za-z -]{2,49}" class="campo-dividido" id="apellidos" name="apellidos" required>
 				</li>
 				<li>
-					<label><?php echo $strings['Email']; ?> <span class="requerido">*</span></label>
-					<input type="email" pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}" class="campo-largo" id="email" name="email" placeholder="<?php echo $strings['Email']; ?>" required>
+					<label><span class="trad_Email"></span> <span class="requerido">*</span></label>
+					<input type="email" pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}" class="campo-largo" id="email" name="email" required>
 				</li>
 				<li>
-					<label><?php echo $strings['Birth']; ?> <span class="requerido">*</span></label>
-					<input type="date" class="campo-largo" name="fechanac" id="fechanac" max="2018-12-31" placeholder="<?php echo $strings['Birth']; ?>" required>
+					<label><span class="trad_Birth"></span> <span class="requerido">*</span></label>
+					<input type="date" class="campo-largo" name="fechanac" id="fechanac" max="2018-12-31" required>
 				</li>
 				<li>
-					<label><?php echo $strings['Picture']; ?> <span class="requerido">*</span></label>
-					<label class="file-upload" id="fileuploader" for="fotopersonal"><?php echo $strings['UploadFile']; ?></label>
+					<label><span class="trad_Picture"></span> <span class="requerido">*</span></label>
+					<label class="file-upload" id="fileuploader" for="fotopersonal" class="trad_UploadFile"></label>
 					<input type="file" class="campo-largo" accept="image/*" name="fotopersonal" id="fotopersonal" required>
 				</li>
 				<li>
-					<label><?php echo $strings['PersonalData']; ?> <span class="requerido">*</span></label>
-					<input type="tel" pattern="[0-9]{8}[A-NO-Za-no-z]" class="campo-dividido" id="dni" name="dni" placeholder="<?php echo $strings['DNI']; ?>" required>
-					<input type="tel" pattern="[9|6|7][0-9]{8}" class="campo-dividido" id="telefono" name="telefono" placeholder="<?php echo $strings['Phone']; ?>" required>
+					<label><span class="trad_PersonalData"></span> <span class="requerido">*</span></label>
+					<input type="tel" pattern="[0-9]{8}[A-NO-Za-no-z]" class="campo-dividido" id="dni" name="dni" placeholder="NIF" required>
+					<input type="tel" pattern="[9|6|7][0-9]{8}" class="campo-dividido" id="telefono" name="telefono" placeholder="986000000" required>
 				</li>
 				<li>
-					<label><?php echo $strings['Genre']; ?> <span class="requerido">*</span></label>
+					<label><span class="trad_Genre"></span> <span class="requerido">*</span></label>
 					<select class="campo-dividido" id="sexo" name="sexo" required>
-						<option value="hombre" selected><?php echo $strings['Male']; ?></option>
-						<option value="mujer"><?php echo $strings['Female']; ?></option>
+						<option value="hombre" class="trad_Male" selected></option>
+						<option value="mujer" class="trad_Female"></option>
 					</select>
 
 					<input type="submit" class="campo-dividido" name="action" value="ADD" onclick="submitUsuario();">
@@ -79,7 +79,7 @@
 			document.getElementById('fotopersonal').addEventListener('change', function(event)
 			{
 				var files = document.getElementById('fotopersonal').files;
-				document.getElementById('fileuploader').innerText = files.length > 0 ? files[0].name : "<?php echo $strings['UploadFile']; ?>";
+				document.getElementById('fileuploader').innerText = files.length > 0 ? files[0].name : "";
 			});
 		</script>
 <?php

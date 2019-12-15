@@ -74,7 +74,7 @@
 				document.getElementById('fotopersonal').addEventListener('change', function(event)
 				{
 					var files = document.getElementById('fotopersonal').files;
-					document.getElementById('fileuploader').innerText = files.length > 0 ? files[0].name : "--- x ---";
+					document.getElementById('fileuploader').innerText = files.length > 0 ? files[0].name : "";
 				});
 			</script>
 	<?php
