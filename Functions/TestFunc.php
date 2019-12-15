@@ -1,5 +1,15 @@
 <?php
 	/**
+	 * Autor: Diego Enrique Fontán Lorenzo
+	 * DNI: 77482941N
+	 * Fecha: 15/12/2019
+	 */
+
+	/**
+	 * Funciones para el testing
+	 */
+
+	/**
 	 * Elimina mensajes no deseados de la pila de tests
 	 * 
 	 * @param times Número de mensajes que se desean sacar

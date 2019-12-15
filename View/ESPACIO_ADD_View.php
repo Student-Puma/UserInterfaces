@@ -2,7 +2,7 @@
 	/**
 	 * Autor: Diego Enrique Fontán Lorenzo
 	 * DNI: 77482941N
-	 * Fecha: 31/01/2019
+	 * Fecha: 15/12/2019
 	 */
 
 	/**
@@ -47,11 +47,11 @@
 				</li>
 				<li>
 					<label><span class="trad_Codes"> <span class="requerido">*</span></label>
-					<input type="text" pattern="[A-Za-z0-9][A-Za-z0-9_-]{0,9}" class="campo-dividido" id="CODEdificio" name="CODEdificio" placeholder="EDIFICIO" required>
-					<input type="text" pattern="[A-Za-z0-9][A-Za-z0-9_-]{0,9}" class="campo-dividido" id="CODCentro" name="CODCentro" placeholder="CENTRO" required>
+					<input type="text" pattern="[0-9A-Za-z-]{1,10}" class="campo-dividido" id="CODEdificio" name="CODEdificio" placeholder="EDIFICIO" required>
+					<input type="text" pattern="[0-9A-Za-z-]{1,10}" class="campo-dividido" id="CODCentro" name="CODCentro" placeholder="CENTRO" required>
 				</li>
 				<li>
-					<input type="text" pattern="[A-Za-z0-9][A-Za-z0-9_-]{0,9}" class="campo-dividido" id="CODEspacio" name="CODEspacio" placeholder="COD" required>
+					<input type="text" pattern="[0-9A-Za-z-]{1,10}" class="campo-dividido" id="CODEspacio" name="CODEspacio" placeholder="COD" required>
 
 					<input type="submit" class="campo-dividido" name="action" value="ADD">
 				</li>

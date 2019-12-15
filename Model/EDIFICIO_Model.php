@@ -2,10 +2,14 @@
 	/**
 	 * Autor: Diego Enrique Fontán Lorenzo
 	 * DNI: 77482941N
-	 * Fecha: 31/01/2019
+	 * Fecha: 15/12/2019
 	 */
 
-	// Añadimos las validaciones
+	/**
+	 * Modelo de la entidad
+	 */
+	
+	 // Añadimos las validaciones
 	include_once '../Functions/Validaciones.php';
 
 	/**

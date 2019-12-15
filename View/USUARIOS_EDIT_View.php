@@ -2,7 +2,7 @@
 	/**
 	 * Autor: Diego Enrique Fontán Lorenzo
 	 * DNI: 77482941N
-	 * Fecha: 31/01/2019
+	 * Fecha: 15/12/2019
 	 */
 
 	/**
@@ -42,7 +42,7 @@
 				</li>
 				<li>
 					<label><span class="trad_FullName"></span> <span class="requerido">*</span></label>
-					<input type="text" pattern="[A-Za-z][A-Za-z -]{2,29}" class="campo-dividido" id="nombre" name="nombre" value="<?php echo $this->tupla['nombre']; ?>" required>
+					<input type="text" pattern="[A-Za-zÁÉÍÓÚÏÜáéíóúïü][A-Za-z ÁÉÍÓÚÏÜáéíóúïü]{2,14}" class="campo-dividido" id="nombre" name="nombre" value="<?php echo $this->tupla['nombre']; ?>" required>
 					<input type="text" pattern="[A-Za-z][A-Za-z -]{2,49}" class="campo-dividido" id="apellidos" name="apellidos" value="<?php echo $this->tupla['apellidos']; ?>" required>
 				</li>
 				<li>
@@ -67,7 +67,7 @@
 				<li>
 					<label><span class="trad_PersonalData"></span> <span class="requerido">*</span></label>
 					<input type="tel" pattern="[0-9]{8}[A-NO-Za-no-z]" class="campo-dividido" id="dni" name="dni" value='<?php echo $this->tupla['DNI']; ?>' required>
-					<input type="tel" pattern="[9|6|7][0-9]{8}" class="campo-dividido" id="telefono" name="telefono" value='<?php echo $this->tupla['telefono']; ?>' required>
+					<input type="tel" pattern="\+?(34)?[976][0-9]{8}" class="campo-dividido" id="telefono" name="telefono" value='<?php echo $this->tupla['telefono']; ?>' required>
 				</li>
 				<li>
 					<label><span class="trad_Genre"></span> <span class="requerido">*</span></label>

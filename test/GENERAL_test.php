@@ -1,4 +1,14 @@
 <?php
+	/**
+	 * Autor: Diego Enrique Fontán Lorenzo
+	 * DNI: 77482941N
+	 * Fecha: 15/12/2019
+	 */
+
+    /**
+     * Archivo de ejecución y visualización de los test unitarios
+     */
+
 	// Creamos el array principal de test
 	$ERRORS_array_test = array();
 

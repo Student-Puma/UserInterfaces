@@ -1,4 +1,15 @@
 <?php
+    /**
+	 * Autor: Diego Enrique Fontán Lorenzo
+	 * DNI: 77482941N
+	 * Fecha: 15/12/2019
+	 */
+
+    /**
+     * Test unitario
+     */
+
+    // Incluímos el modelo
     include_once '../Model/PROFESOR_Model.php';
 
     /**

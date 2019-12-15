@@ -1,12 +1,25 @@
 <?php
-	//testing funcionalidades globales
+	/**
+	 * Autor: Diego Enrique Fontán Lorenzo
+	 * DNI: 77482941N
+	 * Fecha: 15/12/2019
+	 */
+
+    /**
+     * Test unitario
+     */
+
+    // Incluímos el modelo
 	include '../Model/config.php';
 
 	/**
      * Test para comprobar la existencia de la Base de Datos
      * 
      * Valida:
-     *  
+     *  La existencia de la base de datos
+	 *  El login
+	 *  La contraseña
+	 *  Conseguir conectarse
      */
 	function ExisteBD()
 	{
@@ -102,6 +115,12 @@
 		array_push($ERRORS_array_test, $DB_array_error);
 	}
 
+	/**
+     * Test para comprobar la existencia de las ENTIDADES
+     * 
+     * Valida:
+     *  Existencia de las tablas
+     */
 	function ExistenTablas()
 	{
 		// Array para almacenar los errores

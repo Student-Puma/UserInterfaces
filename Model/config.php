@@ -2,8 +2,12 @@
     /**
 	 * Autor: Diego Enrique Fontán Lorenzo
 	 * DNI: 77482941N
-	 * Fecha: 31/01/2019
+	 * Fecha: 15/12/2019
 	 */
+
+    /**
+     * Variables de configuración de la base de datos
+     */
 
 	// Constantes de configuración de la BD
     define("BD","IU2018");          // Base de datos

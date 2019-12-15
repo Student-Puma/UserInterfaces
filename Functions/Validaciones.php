@@ -1,4 +1,16 @@
 <?php
+    /**
+	 * Autor: Diego Enrique Fontán Lorenzo
+	 * DNI: 77482941N
+	 * Fecha: 15/12/2019
+	 */
+
+    /**
+	 * Validaciones de atributos
+	 */
+
+    // Array con las incidencias según su código
+
     $GLOBALS['INCIDENCIAS'] = array(
         '00001' => 'Atributo vacío',
         '00002' => 'Valor de atributo demasiado largo',
@@ -21,6 +33,13 @@
         '00120' => 'Formato email erroneo'
     );
 
+    /**
+     * Validación de la letra del DNI
+     * 
+     * @param dni String con el DNI
+     * 
+     * @return true || false
+     */
     function validarLetraDNI($dni)
     {
         $letra = strtoupper(substr($dni, -1));
@@ -28,10 +47,19 @@
         return substr("TRWAGMYFPDXBNJZSQVHLCKE", $numeros % 23, 1) === $letra;
     }
 
+    /**
+     * Validación del login
+     * 
+     * @param value Valor de la variable a comprobar
+     * @param atributo Nombre del atributo
+     * 
+     * @return true || errores
+     */
     function comprobar_login($value, $atributo="login")
     {
         $errores = array();
 
+        // Comprobaciones
         if(empty($value))
             { array_push($errores,array('atributo' => $atributo, 'codigo' => '00001', 'incidencia' => $GLOBALS['INCIDENCIAS']['00001'])); }
         if(strlen($value) > 15)
@@ -44,10 +72,19 @@
         return empty($errores) ? true : $errores;
     }
 
+    /**
+     * Validación de la contraseña
+     * 
+     * @param value Valor de la variable a comprobar
+     * @param atributo Nombre del atributo
+     * 
+     * @return true || errores
+     */
     function comprobar_password($value, $atributo="password")
     {
         $errores = array();
 
+        // Comprobaciones
         if(empty($value))
             { array_push($errores,array('atributo' => $atributo, 'codigo' => '00001', 'incidencia' => $GLOBALS['INCIDENCIAS']['00001'])); }
         if(strlen($value) > 128)
@@ -62,10 +99,19 @@
         return empty($errores) ? true : $errores;
     }
 
+    /**
+     * Validación del nombre
+     * 
+     * @param value Valor de la variable a comprobar
+     * @param atributo Nombre del atributo
+     * 
+     * @return true || errores
+     */
     function comprobar_nombre($value, $atributo="nombre")
     {
         $errores = array();
 
+        // Comprobaciones
         if(empty($value))
             { array_push($errores,array('atributo' => $atributo, 'codigo' => '00001', 'incidencia' => $GLOBALS['INCIDENCIAS']['00001'])); }
         if(strlen($value) > 15)
@@ -78,10 +124,19 @@
         return empty($errores) ? true : $errores;
     }
 
+    /**
+     * Validación del apellido
+     * 
+     * @param value Valor de la variable a comprobar
+     * @param atributo Nombre del atributo
+     * 
+     * @return true || errores
+     */
     function comprobar_apellido($value, $atributo="apellido")
     {
         $errores = array();
 
+        // Comprobaciones
         if(empty($value))
             { array_push($errores,array('atributo' => $atributo, 'codigo' => '00001', 'incidencia' => $GLOBALS['INCIDENCIAS']['00001'])); }
         if(strlen($value) > 50)
@@ -94,10 +149,19 @@
         return empty($errores) ? true : $errores;
     }
 
+    /**
+     * Validación del apellido del profesor
+     * 
+     * @param value Valor de la variable a comprobar
+     * @param atributo Nombre del atributo
+     * 
+     * @return true || errores
+     */
     function comprobar_apellidoprofesor($value, $atributo="apellido")
     {
         $errores = array();
 
+        // Comprobaciones
         if(empty($value))
             { array_push($errores,array('atributo' => $atributo, 'codigo' => '00001', 'incidencia' => $GLOBALS['INCIDENCIAS']['00001'])); }
         if(strlen($value) > 30)
@@ -110,10 +174,19 @@
         return empty($errores) ? true : $errores;
     }
 
+    /**
+     * Validación del DNI
+     * 
+     * @param value Valor de la variable a comprobar
+     * @param atributo Nombre del atributo
+     * 
+     * @return true || errores
+     */
     function comprobar_DNI($value, $atributo="dni")
     {
         $errores = array();
 
+        // Comprobaciones
         if(empty($value))
             { array_push($errores,array('atributo' => $atributo, 'codigo' => '00001', 'incidencia' => $GLOBALS['INCIDENCIAS']['00001'])); }
         if(strlen($value) > 9)
@@ -128,10 +201,19 @@
         return empty($errores) ? true : $errores;
     }
 
+    /**
+     * Validación del código
+     * 
+     * @param value Valor de la variable a comprobar
+     * @param atributo Nombre del atributo
+     * 
+     * @return true || errores
+     */
     function comprobar_codigo($value, $atributo="codigo")
     {
         $errores = array();
 
+        // Comprobaciones
         if(empty($value))
             { array_push($errores,array('atributo' => $atributo, 'codigo' => '00001', 'incidencia' => $GLOBALS['INCIDENCIAS']['00001'])); }
         if(strlen($value) > 10)
@@ -144,10 +226,19 @@
         return empty($errores) ? true : $errores;
     }
 
+    /**
+     * Validación del código de la titulación
+     * 
+     * @param value Valor de la variable a comprobar
+     * @param atributo Nombre del atributo
+     * 
+     * @return true || errores
+     */
     function comprobar_codigo_titulacion($value, $atributo="codigo titulación")
     {
         $errores = array();
 
+        // Comprobaciones
         if(empty($value))
             { array_push($errores,array('atributo' => $atributo, 'codigo' => '00001', 'incidencia' => $GLOBALS['INCIDENCIAS']['00001'])); }
         if(strlen($value) > 10)
@@ -160,10 +251,19 @@
         return empty($errores) ? true : $errores;
     }
 
+    /**
+     * Validación de la fecha
+     * 
+     * @param value Valor de la variable a comprobar
+     * @param atributo Nombre del atributo
+     * 
+     * @return true || errores
+     */
     function comprobar_fecha($value, $atributo="fecha")
     {
         $errores = array();
 
+        // Comprobaciones
         if(empty($value))
             { array_push($errores,array('atributo' => $atributo, 'codigo' => '00001', 'incidencia' => $GLOBALS['INCIDENCIAS']['00001'])); }
         if(strlen($value) > 10)
@@ -176,10 +276,19 @@
         return empty($errores) ? true : $errores;
     }
 
+    /**
+     * Validación del numero de telefono
+     * 
+     * @param value Valor de la variable a comprobar
+     * @param atributo Nombre del atributo
+     * 
+     * @return true || errores
+     */
     function comprobar_telefono($value, $atributo="telefono")
     {
         $errores = array();
 
+        // Comprobaciones
         if(empty($value))
             { array_push($errores,array('atributo' => $atributo, 'codigo' => '00001', 'incidencia' => $GLOBALS['INCIDENCIAS']['00001'])); }
         if(strlen($value) > 12)
@@ -194,10 +303,19 @@
         return empty($errores) ? true : $errores;
     }
 
+    /**
+     * Validación de la superficie
+     * 
+     * @param value Valor de la variable a comprobar
+     * @param atributo Nombre del atributo
+     * 
+     * @return true || errores
+     */
     function comprobar_superficie($value, $atributo="superficie")
     {
         $errores = array();
 
+        // Comprobaciones
         if(empty($value))
             { array_push($errores,array('atributo' => $atributo, 'codigo' => '00001', 'incidencia' => $GLOBALS['INCIDENCIAS']['00001'])); }
         if(strlen($value) > 4)
@@ -210,10 +328,19 @@
         return empty($errores) ? true : $errores;
     }
 
+    /**
+     * Validación del inventario
+     * 
+     * @param value Valor de la variable a comprobar
+     * @param atributo Nombre del atributo
+     * 
+     * @return true || errores
+     */
     function comprobar_numinventario($value, $atributo="numinventario")
     {
         $errores = array();
 
+        // Comprobaciones
         if(empty($value))
             { array_push($errores,array('atributo' => $atributo, 'codigo' => '00001', 'incidencia' => $GLOBALS['INCIDENCIAS']['00001'])); }
         if(strlen($value) > 8)
@@ -226,11 +353,20 @@
         return empty($errores) ? true : $errores;
     }
 
+    /**
+     * Validación del tipo
+     * 
+     * @param value Valor de la variable a comprobar
+     * @param atributo Nombre del atributo
+     * 
+     * @return true || errores
+     */
     function comprobar_tipo($value, $atributo="tipo")
     {
         $upper = strtoupper($value);
         $errores = array();
 
+        // Comprobaciones
         if(empty($value))
             { array_push($errores,array('atributo' => $atributo, 'codigo' => '00001', 'incidencia' => $GLOBALS['INCIDENCIAS']['00001'])); }
         if($upper !== "DESPACHO" && $upper !== "LABORATORIO" && $upper !== "PAS")
@@ -239,11 +375,20 @@
         return empty($errores) ? true : $errores;
     }
 
+    /**
+     * Validación del sexo
+     * 
+     * @param value Valor de la variable a comprobar
+     * @param atributo Nombre del atributo
+     * 
+     * @return true || errores
+     */
     function comprobar_sexo($value, $atributo="sexo")
     {
         $upper = strtoupper($value);
         $errores = array();
 
+        // Comprobaciones
         if(empty($value))
             { array_push($errores,array('atributo' => $atributo, 'codigo' => '00001', 'incidencia' => $GLOBALS['INCIDENCIAS']['00001'])); }
         if($upper !== "HOMBRE" && $upper !== "MUJER")
@@ -252,10 +397,19 @@
         return empty($errores) ? true : $errores;
     }
 
+    /**
+     * Validación del año
+     * 
+     * @param value Valor de la variable a comprobar
+     * @param atributo Nombre del atributo
+     * 
+     * @return true || errores
+     */
     function comprobar_anhoacademico($value, $atributo="año académico")
     {
         $errores = array();
 
+        // Comporbaciones
         if(empty($value))
             { array_push($errores,array('atributo' => $atributo, 'codigo' => '00001', 'incidencia' => $GLOBALS['INCIDENCIAS']['00001'])); }
         if(strlen($value) > 9)
@@ -268,10 +422,19 @@
         return empty($errores) ? true : $errores;
     }
 
+    /**
+     * Validación del email
+     * 
+     * @param value Valor de la variable a comprobar
+     * @param atributo Nombre del atributo
+     * 
+     * @return true || errores
+     */
     function comprobar_email($value, $atributo="email")
     {
         $errores = array();
 
+        // Comprobaciones
         if(empty($value))
             { array_push($errores,array('atributo' => $atributo, 'codigo' => '00001', 'incidencia' => $GLOBALS['INCIDENCIAS']['00001'])); }
         if(strlen($value) > 60)
@@ -284,10 +447,19 @@
         return empty($errores) ? true : $errores;
     }
 
+    /**
+     * Validación del nombre de la titulacion
+     * 
+     * @param value Valor de la variable a comprobar
+     * @param atributo Nombre del atributo
+     * 
+     * @return true || errores
+     */
     function comprobar_titulacion($value, $atributo="titulacion")
     {
         $errores = array();
 
+        // Comprobaciones
         if(empty($value))
             { array_push($errores,array('atributo' => $atributo, 'codigo' => '00001', 'incidencia' => $GLOBALS['INCIDENCIAS']['00001'])); }
         if(strlen($value) > 50)
@@ -300,10 +472,19 @@
         return empty($errores) ? true : $errores;
     }
 
+    /**
+     * Validación del responsable
+     * 
+     * @param value Valor de la variable a comprobar
+     * @param atributo Nombre del atributo
+     * 
+     * @return true || errores
+     */
     function comprobar_responsable($value, $atributo="responsable")
     {
         $errores = array();
 
+        // Comprobaciones
         if(empty($value))
             { array_push($errores,array('atributo' => $atributo, 'codigo' => '00001', 'incidencia' => $GLOBALS['INCIDENCIAS']['00001'])); }
         if(strlen($value) > 60)
@@ -316,10 +497,19 @@
         return empty($errores) ? true : $errores;
     }
 
+    /**
+     * Validación del campus
+     * 
+     * @param value Valor de la variable a comprobar
+     * @param atributo Nombre del atributo
+     * 
+     * @return true || errores
+     */
     function comprobar_campus($value, $atributo="campus")
     {
         $errores = array();
 
+        // Comprobaciones
         if(empty($value))
             { array_push($errores,array('atributo' => $atributo, 'codigo' => '00001', 'incidencia' => $GLOBALS['INCIDENCIAS']['00001'])); }
         if(strlen($value) > 10)
@@ -332,10 +522,19 @@
         return empty($errores) ? true : $errores;
     }
 
+    /**
+     * Validación del area
+     * 
+     * @param value Valor de la variable a comprobar
+     * @param atributo Nombre del atributo
+     * 
+     * @return true || errores
+     */
     function comprobar_area($value, $atributo="área")
     {
         $errores = array();
 
+        // Comprobaciones
         if(empty($value))
             { array_push($errores,array('atributo' => $atributo, 'codigo' => '00001', 'incidencia' => $GLOBALS['INCIDENCIAS']['00001'])); }
         if(strlen($value) > 60)
@@ -348,10 +547,19 @@
         return empty($errores) ? true : $errores;
     }
 
+    /**
+     * Validación del login
+     * 
+     * @param value Valor de la variable a departamento
+     * @param atributo Nombre del atributo
+     * 
+     * @return true || errores
+     */
     function comprobar_departamento($value, $atributo="departamento")
     {
         $errores = array();
 
+        // Comprobaciones
         if(empty($value))
             { array_push($errores,array('atributo' => $atributo, 'codigo' => '00001', 'incidencia' => $GLOBALS['INCIDENCIAS']['00001'])); }
         if(strlen($value) > 60)
@@ -364,10 +572,19 @@
         return empty($errores) ? true : $errores;
     }
 
+    /**
+     * Validación del nombre del edificio
+     * 
+     * @param value Valor de la variable a comprobar
+     * @param atributo Nombre del atributo
+     * 
+     * @return true || errores
+     */
     function comprobar_nombreedificio($value, $atributo="nombre edificio")
     {
         $errores = array();
 
+        // Comprobaciones
         if(empty($value))
             { array_push($errores,array('atributo' => $atributo, 'codigo' => '00001', 'incidencia' => $GLOBALS['INCIDENCIAS']['00001'])); }
         if(strlen($value) > 50)
@@ -380,10 +597,19 @@
         return empty($errores) ? true : $errores;
     }
 
+    /**
+     * Validación de la direccion
+     * 
+     * @param value Valor de la variable a comprobar
+     * @param atributo Nombre del atributo
+     * 
+     * @return true || errores
+     */
     function comprobar_direccion($value, $atributo="dirección")
     {
         $errores = array();
 
+        // Comprobaciones
         if(empty($value))
             { array_push($errores,array('atributo' => $atributo, 'codigo' => '00001', 'incidencia' => $GLOBALS['INCIDENCIAS']['00001'])); }
         if(strlen($value) > 150)

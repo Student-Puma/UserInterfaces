@@ -2,7 +2,7 @@
 	/**
 	 * Autor: Diego Enrique Fontán Lorenzo
 	 * DNI: 77482941N
-	 * Fecha: 31/01/2019
+	 * Fecha: 15/12/2019
 	 */
 
 	/**
@@ -35,7 +35,7 @@
 				
 				<li>
 					<label><span class="trad_Name"> <span class="requerido">*</span></label>
-					<input type="text" pattern="[A-Za-z][A-Za-z -]{1,49}" class="campo-largo" id="nombre" name="nombre" required>
+					<input type="text" pattern="[A-Za-zÁÉÍÓÚáéíóúïüÏÜ ]{3,50}" class="campo-largo" id="nombre" name="nombre" required>
 				</li>
 				<li>
 				<label><span class="trad_Address"></span> <span class="requerido">*</span></label>
@@ -47,7 +47,7 @@
 				</li>
 				<li>
 					<label><span class="trad_Code"></span> <span class="requerido">*</span></label>
-					<input type="text" pattern="[A-Za-z0-9][A-Za-z0-9_-]{0,9}" class="campo-dividido" id="CODEdificio" name="CODEdificio" required>
+					<input type="text" pattern="[0-9A-Za-z-]{1,10}" class="campo-dividido" id="CODEdificio" name="CODEdificio" required>
 
 					<input type="submit" class="campo-dividido" name="action" value="ADD">
 				</li>
